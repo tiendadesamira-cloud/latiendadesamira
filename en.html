@@ -193,6 +193,84 @@
     .lang-dropdown a:hover { background: var(--gray-bg); }
     .lang-dropdown a.lang-active { color: var(--pink); background: var(--pink-light); }
 
+    /* ─── LANG SWITCHER ─── */
+    .lang-bar {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .lang-bar a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      text-decoration: none;
+      font-size: 1.15rem;
+      background: rgba(255,255,255,0.1);
+      border: 2px solid rgba(255,255,255,0.2);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      line-height: 1;
+    }
+    .lang-bar a:hover {
+      background: rgba(255,255,255,0.25);
+      border-color: rgba(255,255,255,0.5);
+      transform: scale(1.15);
+    }
+    .lang-bar a.lang-active {
+      background: #E91E8C;
+      border-color: #E91E8C;
+      box-shadow: 0 2px 12px rgba(233,30,140,0.4);
+    }
+    nav.scrolled .lang-bar a {
+      background: #F8F9FA;
+      border-color: #E0E0E0;
+    }
+    nav.scrolled .lang-bar a:hover {
+      background: #FCE4F3;
+      border-color: #E91E8C;
+    }
+    nav.scrolled .lang-bar a.lang-active {
+      background: #E91E8C;
+      border-color: #E91E8C;
+    }
+    .footer-lang-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 1rem;
+    }
+    .footer-lang-bar a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 0.4rem 0.85rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #4A4A6A;
+      background: #FFFFFF;
+      border: 1px solid #E0E0E0;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .footer-lang-bar a:hover {
+      border-color: #E91E8C;
+      color: #E91E8C;
+      transform: translateY(-2px);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+    .footer-lang-bar a.lang-active {
+      background: #E91E8C;
+      color: #FFFFFF;
+      border-color: #E91E8C;
+    }
+    @media (max-width: 768px) {
+      .lang-bar a { width: 30px; height: 30px; font-size: 1rem; }
+      .footer-lang-bar { flex-wrap: wrap; justify-content: center; }
+    }
+
     /* ─── HERO ─── */
     .hero {
       min-height: 100vh;
@@ -1186,15 +1264,12 @@
       <li><a href="tel:856615453" class="nav-cta">📞 Call</a></li>
     </ul>
 
-    <div class="lang-switcher">
-      <span class="lang-current">EN ▾</span>
-      <div class="lang-dropdown">
-        <a href="index.html">🇪🇸 Español</a>
-        <a href="en.html" class="lang-active">🇬🇧 English</a>
-        <a href="fr.html">🇫🇷 Français</a>
-        <a href="de.html">🇩🇪 Deutsch</a>
-        <a href="ar.html">🇸🇦 العربية</a>
-      </div>
+    <div class="lang-bar">
+      <a href="index.html" title="Español">🇪🇸</a>
+      <a href="en.html" class="lang-active" title="English">🇬🇧</a>
+      <a href="fr.html" title="Français">🇫🇷</a>
+      <a href="de.html" title="Deutsch">🇩🇪</a>
+      <a href="ar.html" title="العربية">🇸🇦</a>
     </div>
 
     <button type="button" class="hamburger" id="hamburger" aria-label="Menu">

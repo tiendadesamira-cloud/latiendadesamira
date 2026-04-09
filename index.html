@@ -184,46 +184,83 @@
     .mobile-menu ul a:hover { color: var(--pink); }
 
     /* ─── LANG SWITCHER ─── */
-    .lang-switcher {
-      position: relative;
-      cursor: pointer;
-      margin-left: 0.5rem;
+    .lang-bar {
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
-    .lang-current {
-      font-size: 0.82rem;
-      font-weight: 700;
-      color: rgba(255,255,255,0.85);
-      padding: 0.3rem 0.6rem;
-      border: 1px solid rgba(255,255,255,0.25);
-      border-radius: 6px;
-      transition: color var(--trans), border-color var(--trans);
-    }
-    nav.scrolled .lang-current { color: var(--text-dark); border-color: #ddd; }
-    .lang-dropdown {
-      display: none;
-      position: absolute;
-      top: 100%;
-      right: 0;
-      margin-top: 8px;
-      background: var(--white);
-      border-radius: var(--radius-sm);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      z-index: 1000;
-      min-width: 150px;
-    }
-    .lang-switcher:hover .lang-dropdown { display: block; }
-    .lang-dropdown a {
-      display: block;
-      padding: 0.55rem 1rem;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--text-dark);
+    .lang-bar a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
       text-decoration: none;
-      transition: background 0.2s;
+      font-size: 1.15rem;
+      background: rgba(255,255,255,0.1);
+      border: 2px solid rgba(255,255,255,0.2);
+      transition: all var(--trans);
+      line-height: 1;
     }
-    .lang-dropdown a:hover { background: var(--gray-bg); }
-    .lang-dropdown a.lang-active { color: var(--pink); background: var(--pink-light); }
+    .lang-bar a:hover {
+      background: rgba(255,255,255,0.25);
+      border-color: rgba(255,255,255,0.5);
+      transform: scale(1.15);
+    }
+    .lang-bar a.lang-active {
+      background: var(--pink);
+      border-color: var(--pink);
+      box-shadow: 0 2px 12px rgba(233,30,140,0.4);
+    }
+    nav.scrolled .lang-bar a {
+      background: var(--gray-bg);
+      border-color: #E0E0E0;
+    }
+    nav.scrolled .lang-bar a:hover {
+      background: var(--pink-light);
+      border-color: var(--pink);
+    }
+    nav.scrolled .lang-bar a.lang-active {
+      background: var(--pink);
+      border-color: var(--pink);
+    }
+    /* Footer lang bar */
+    .footer-lang-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 1rem;
+    }
+    .footer-lang-bar a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 0.4rem 0.85rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-mid);
+      background: var(--white);
+      border: 1px solid #E0E0E0;
+      transition: all var(--trans);
+    }
+    .footer-lang-bar a:hover {
+      border-color: var(--pink);
+      color: var(--pink);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+    .footer-lang-bar a.lang-active {
+      background: var(--pink);
+      color: var(--white);
+      border-color: var(--pink);
+    }
+    @media (max-width: 768px) {
+      .lang-bar a { width: 30px; height: 30px; font-size: 1rem; }
+      .footer-lang-bar { flex-wrap: wrap; justify-content: center; }
+    }
 
     /* ─── HERO ─── */
     .hero {
@@ -1218,15 +1255,12 @@
       <li><a href="tel:856615453" class="nav-cta">📞 Llamar</a></li>
     </ul>
 
-    <div class="lang-switcher">
-      <span class="lang-current">ES ▾</span>
-      <div class="lang-dropdown">
-        <a href="index.html" class="lang-active">🇪🇸 Español</a>
-        <a href="en.html">🇬🇧 English</a>
-        <a href="fr.html">🇫🇷 Français</a>
-        <a href="de.html">🇩🇪 Deutsch</a>
-        <a href="ar.html">🇸🇦 العربية</a>
-      </div>
+    <div class="lang-bar">
+      <a href="index.html" class="lang-active" title="Español">🇪🇸</a>
+      <a href="en.html" title="English">🇬🇧</a>
+      <a href="fr.html" title="Français">🇫🇷</a>
+      <a href="de.html" title="Deutsch">🇩🇪</a>
+      <a href="ar.html" title="العربية">🇸🇦</a>
     </div>
 
     <button type="button" class="hamburger" id="hamburger" aria-label="Menú">
@@ -1609,6 +1643,14 @@
       </div>
 
       <div class="footer-divider"></div>
+
+      <div class="footer-lang-bar">
+        <a href="index.html" class="lang-active">🇪🇸 Español</a>
+        <a href="en.html">🇬🇧 English</a>
+        <a href="fr.html">🇫🇷 Français</a>
+        <a href="de.html">🇩🇪 Deutsch</a>
+        <a href="ar.html">🇸🇦 العربية</a>
+      </div>
 
       <div class="footer-bottom">
         <p class="footer-copy">© 2026 <span>La Tienda de Samira</span>. Todos los derechos reservados.</p>
