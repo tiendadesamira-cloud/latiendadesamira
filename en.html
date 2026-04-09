@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>La Tienda de Samira — Tu tienda de confianza en Jerez</title>
-  <meta name="description" content="La Tienda de Samira en Jerez de la Frontera. Snacks, bebidas frías, chucherías, embutidos, dulces, panadería, congelados y hogar. Abierto hasta las 22:30. Pedidos en Glovo y Just Eat." />
+  <title>La Tienda de Samira — Your trusted store in Jerez</title>
+  <meta name="description" content="La Tienda de Samira in Jerez de la Frontera. Snacks, cold drinks, sweets, cold cuts, pastries, bakery, frozen foods and household items. Open until 10:30 PM. Orders on Glovo and Just Eat." />
   <meta name="keywords" content="tienda Jerez, tienda de barrio Jerez, snacks Jerez, bebidas Jerez, Glovo Jerez, alimentación Jerez de la Frontera" />
-  <meta property="og:title" content="La Tienda de Samira — Tu tienda de confianza en Jerez" />
-  <meta property="og:description" content="Snacks, bebidas frías, embutidos, dulces y mucho más. Abierto hasta las 22:30. Pedidos en Glovo y Just Eat." />
+  <meta property="og:title" content="La Tienda de Samira — Your trusted store in Jerez" />
+  <meta property="og:description" content="Snacks, cold drinks, cold cuts, sweets and much more. Open until 10:30 PM. Orders on Glovo and Just Eat." />
   <meta property="og:image" content="img/foto6.jpg" />
   <meta property="og:type" content="website" />
   <link rel="icon" href="img/logo.jpg" type="image/jpeg" />
@@ -184,44 +184,12 @@
     .mobile-menu ul a:hover { color: var(--pink); }
 
     /* ─── LANG SWITCHER ─── */
-    .lang-switcher {
-      position: relative;
-      cursor: pointer;
-      margin-left: 0.5rem;
-    }
-    .lang-current {
-      font-size: 0.82rem;
-      font-weight: 700;
-      color: rgba(255,255,255,0.85);
-      padding: 0.3rem 0.6rem;
-      border: 1px solid rgba(255,255,255,0.25);
-      border-radius: 6px;
-      transition: color var(--trans), border-color var(--trans);
-    }
+    .lang-switcher { position: relative; cursor: pointer; margin-left: 0.5rem; }
+    .lang-current { font-size: 0.82rem; font-weight: 700; color: rgba(255,255,255,0.85); padding: 0.3rem 0.6rem; border: 1px solid rgba(255,255,255,0.25); border-radius: 6px; transition: color var(--trans), border-color var(--trans); }
     nav.scrolled .lang-current { color: var(--text-dark); border-color: #ddd; }
-    .lang-dropdown {
-      display: none;
-      position: absolute;
-      top: 100%;
-      right: 0;
-      margin-top: 8px;
-      background: var(--white);
-      border-radius: var(--radius-sm);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      z-index: 1000;
-      min-width: 150px;
-    }
+    .lang-dropdown { display: none; position: absolute; top: 100%; right: 0; margin-top: 8px; background: var(--white); border-radius: var(--radius-sm); box-shadow: var(--shadow); overflow: hidden; z-index: 1000; min-width: 150px; }
     .lang-switcher:hover .lang-dropdown { display: block; }
-    .lang-dropdown a {
-      display: block;
-      padding: 0.55rem 1rem;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--text-dark);
-      text-decoration: none;
-      transition: background 0.2s;
-    }
+    .lang-dropdown a { display: block; padding: 0.55rem 1rem; font-size: 0.85rem; font-weight: 600; color: var(--text-dark); text-decoration: none; transition: background 0.2s; }
     .lang-dropdown a:hover { background: var(--gray-bg); }
     .lang-dropdown a.lang-active { color: var(--pink); background: var(--pink-light); }
 
@@ -1183,7 +1151,7 @@
     "@context": "https://schema.org",
     "@type": "GroceryStore",
     "name": "La Tienda de Samira",
-    "description": "Tienda de alimentación en Jerez de la Frontera. Snacks, bebidas, chucherías, embutidos, dulces, panadería, congelados y hogar. Abierto hasta las 22:30.",
+    "description": "Grocery store in Jerez de la Frontera. Snacks, drinks, sweets, cold cuts, pastries, bakery, frozen foods and household items. Open until 10:30 PM.",
     "url": "https://latiendadesamira.cloud",
     "telephone": "+34856615453",
     "address": {
@@ -1211,35 +1179,35 @@
     </a>
 
     <ul class="nav-links">
-      <li><a href="#productos">Productos</a></li>
-      <li><a href="#porque">Nosotros</a></li>
+      <li><a href="#productos">Products</a></li>
+      <li><a href="#porque">About us</a></li>
       <li><a href="#delivery">Delivery</a></li>
-      <li><a href="#ubicacion">Ubicación</a></li>
-      <li><a href="tel:856615453" class="nav-cta">📞 Llamar</a></li>
+      <li><a href="#ubicacion">Location</a></li>
+      <li><a href="tel:856615453" class="nav-cta">📞 Call</a></li>
     </ul>
 
     <div class="lang-switcher">
-      <span class="lang-current">ES ▾</span>
+      <span class="lang-current">EN ▾</span>
       <div class="lang-dropdown">
-        <a href="index.html" class="lang-active">🇪🇸 Español</a>
-        <a href="en.html">🇬🇧 English</a>
+        <a href="index.html">🇪🇸 Español</a>
+        <a href="en.html" class="lang-active">🇬🇧 English</a>
         <a href="fr.html">🇫🇷 Français</a>
         <a href="de.html">🇩🇪 Deutsch</a>
         <a href="ar.html">🇸🇦 العربية</a>
       </div>
     </div>
 
-    <button type="button" class="hamburger" id="hamburger" aria-label="Menú">
+    <button type="button" class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
   <div class="mobile-menu" id="mobileMenu">
     <ul>
-      <li><a href="#productos" onclick="closeMobileMenu()">Productos</a></li>
-      <li><a href="#porque" onclick="closeMobileMenu()">Nosotros</a></li>
+      <li><a href="#productos" onclick="closeMobileMenu()">Products</a></li>
+      <li><a href="#porque" onclick="closeMobileMenu()">About us</a></li>
       <li><a href="#delivery" onclick="closeMobileMenu()">Delivery</a></li>
-      <li><a href="#ubicacion" onclick="closeMobileMenu()">Ubicación</a></li>
+      <li><a href="#ubicacion" onclick="closeMobileMenu()">Location</a></li>
       <li><a href="tel:856615453">📞 856 61 54 53</a></li>
     </ul>
   </div>
@@ -1253,30 +1221,30 @@
     <div class="hero-inner">
       <div class="hero-text reveal">
         <div class="hero-badge">
-          <span>⭐</span> Jerez de la Frontera · Desde 2018
+          <span>⭐</span> Jerez de la Frontera · Since 2018
         </div>
         <h1 class="hero-title">
           LA TIENDA<br>DE <em>SAMIRA</em>
         </h1>
         <p class="hero-subtitle">
-          Tu tienda de confianza en el barrio. Más de 300 productos de alimentación, bebidas frías, chucherías y mucho más. Abierta hasta las 22:30.
+          Your trusted neighbourhood store. Over 300 food products, cold drinks, sweets and much more. Open until 10:30 PM.
         </p>
         <div class="hero-btns">
           <a href="https://glovoapp.com/es/es/jerez-de-la-frontera/" target="_blank" rel="noopener noreferrer" class="btn-primary">
-            🛵 Pedir en Glovo
+            🛵 Order on Glovo
           </a>
           <a href="#productos" class="btn-outline">
-            Ver productos →
+            See products →
           </a>
         </div>
         <div class="hero-stats">
           <div class="hero-stat">
             <div class="hero-stat-num">+300</div>
-            <div class="hero-stat-label">Productos</div>
+            <div class="hero-stat-label">Products</div>
           </div>
           <div class="hero-stat">
-            <div class="hero-stat-num">22:30</div>
-            <div class="hero-stat-label">Horario hasta</div>
+            <div class="hero-stat-num">10:30</div>
+            <div class="hero-stat-label">Open until</div>
           </div>
           <div class="hero-stat">
             <div class="hero-stat-num">⭐4.6</div>
@@ -1290,10 +1258,10 @@
           <img src="img/foto6.jpg" alt="Tienda de Samira interior" />
         </div>
         <div class="hero-img-card">
-          <img src="img/foto2.jpg" alt="Productos frescos" />
+          <img src="img/foto2.jpg" alt="Fresh products" />
         </div>
         <div class="hero-img-card">
-          <img src="img/foto3.jpg" alt="Bebidas frías" />
+          <img src="img/foto3.jpg" alt="Cold drinks" />
         </div>
       </div>
     </div>
@@ -1305,22 +1273,22 @@
       <div class="strip-track" id="stripTrack">
         <!-- Original items -->
         <div class="strip-item"><div class="strip-icon">🍿</div><div class="strip-label">Snacks</div></div>
-        <div class="strip-item"><div class="strip-icon">🥤</div><div class="strip-label">Bebidas</div></div>
-        <div class="strip-item"><div class="strip-icon">🍬</div><div class="strip-label">Chucherías</div></div>
-        <div class="strip-item"><div class="strip-icon">🥩</div><div class="strip-label">Embutidos</div></div>
-        <div class="strip-item"><div class="strip-icon">🍫</div><div class="strip-label">Dulces</div></div>
-        <div class="strip-item"><div class="strip-icon">🥐</div><div class="strip-label">Panadería</div></div>
-        <div class="strip-item"><div class="strip-icon">🧊</div><div class="strip-label">Congelados</div></div>
-        <div class="strip-item"><div class="strip-icon">🏠</div><div class="strip-label">Hogar</div></div>
+        <div class="strip-item"><div class="strip-icon">🥤</div><div class="strip-label">Drinks</div></div>
+        <div class="strip-item"><div class="strip-icon">🍬</div><div class="strip-label">Sweets</div></div>
+        <div class="strip-item"><div class="strip-icon">🥩</div><div class="strip-label">Cold Cuts</div></div>
+        <div class="strip-item"><div class="strip-icon">🍫</div><div class="strip-label">Chocolate</div></div>
+        <div class="strip-item"><div class="strip-icon">🥐</div><div class="strip-label">Bakery</div></div>
+        <div class="strip-item"><div class="strip-icon">🧊</div><div class="strip-label">Frozen</div></div>
+        <div class="strip-item"><div class="strip-icon">🏠</div><div class="strip-label">Household</div></div>
         <!-- Duplicated for seamless loop -->
         <div class="strip-item"><div class="strip-icon">🍿</div><div class="strip-label">Snacks</div></div>
-        <div class="strip-item"><div class="strip-icon">🥤</div><div class="strip-label">Bebidas</div></div>
-        <div class="strip-item"><div class="strip-icon">🍬</div><div class="strip-label">Chucherías</div></div>
-        <div class="strip-item"><div class="strip-icon">🥩</div><div class="strip-label">Embutidos</div></div>
-        <div class="strip-item"><div class="strip-icon">🍫</div><div class="strip-label">Dulces</div></div>
-        <div class="strip-item"><div class="strip-icon">🥐</div><div class="strip-label">Panadería</div></div>
-        <div class="strip-item"><div class="strip-icon">🧊</div><div class="strip-label">Congelados</div></div>
-        <div class="strip-item"><div class="strip-icon">🏠</div><div class="strip-label">Hogar</div></div>
+        <div class="strip-item"><div class="strip-icon">🥤</div><div class="strip-label">Drinks</div></div>
+        <div class="strip-item"><div class="strip-icon">🍬</div><div class="strip-label">Sweets</div></div>
+        <div class="strip-item"><div class="strip-icon">🥩</div><div class="strip-label">Cold Cuts</div></div>
+        <div class="strip-item"><div class="strip-icon">🍫</div><div class="strip-label">Chocolate</div></div>
+        <div class="strip-item"><div class="strip-icon">🥐</div><div class="strip-label">Bakery</div></div>
+        <div class="strip-item"><div class="strip-icon">🧊</div><div class="strip-label">Frozen</div></div>
+        <div class="strip-item"><div class="strip-icon">🏠</div><div class="strip-label">Household</div></div>
       </div>
     </div>
   </div>
@@ -1365,51 +1333,51 @@
       </div>
 
       <div class="featured-text reveal-right">
-        <span class="section-label">Lo que ofrecemos</span>
-        <h2 class="section-title">LOS FAVORITOS<br>DE <span>NUESTROS</span><br>CLIENTES</h2>
+        <span class="section-label">What we offer</span>
+        <h2 class="section-title">OUR CUSTOMERS'<br><span>FAVOURITE</span><br>PRODUCTS</h2>
 
         <div class="features-chips">
-          <div class="chip"><span class="chip-dot"></span>Snacks importados</div>
-          <div class="chip"><span class="chip-dot"></span>Bebidas frías siempre</div>
-          <div class="chip"><span class="chip-dot"></span>Embutidos frescos</div>
-          <div class="chip"><span class="chip-dot"></span>Dulces y chucherías</div>
-          <div class="chip"><span class="chip-dot"></span>Panadería diaria</div>
-          <div class="chip"><span class="chip-dot"></span>Productos hogar</div>
+          <div class="chip"><span class="chip-dot"></span>Imported snacks</div>
+          <div class="chip"><span class="chip-dot"></span>Always cold drinks</div>
+          <div class="chip"><span class="chip-dot"></span>Fresh cold cuts</div>
+          <div class="chip"><span class="chip-dot"></span>Sweets and candy</div>
+          <div class="chip"><span class="chip-dot"></span>Daily bakery</div>
+          <div class="chip"><span class="chip-dot"></span>Household products</div>
         </div>
 
         <p class="section-desc">
-          Desde snacks internacionales hasta los productos de siempre. Todo lo que necesitas lo encuentras en Samira, sin colas, sin agobios y con una sonrisa.
+          From international snacks to your everyday staples. Everything you need, you'll find at Samira — no queues, no hassle, and always with a smile.
         </p>
 
         <a href="https://glovoapp.com/es/es/jerez-de-la-frontera/" target="_blank" rel="noopener noreferrer" class="arrow-cta">
-          Ver catálogo completo en Glovo
+          See full catalogue on Glovo
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════ POR QUÉ SAMIRA — ANATOMY ═══════════ -->
+  <!-- ═══════════ WHY SAMIRA — ANATOMY ═══════════ -->
   <section class="anatomy" id="porque">
     <div class="anatomy-header reveal">
-      <span class="section-label">Por qué elegirnos</span>
-      <h2 class="section-title">SIEMPRE CERCA,<br><span>SIEMPRE ABIERTA</span></h2>
+      <span class="section-label">Why choose us</span>
+      <h2 class="section-title">ALWAYS CLOSE,<br><span>ALWAYS OPEN</span></h2>
     </div>
 
     <div class="anatomy-inner">
 
       <div class="anatomy-features-left">
         <div class="anatomy-feature reveal delay-1">
-          <div class="anatomy-feature-title">Horario hasta 22:30</div>
-          <div class="anatomy-feature-desc">Abiertos cuando los demás ya han cerrado. Todos los días sin excepción.</div>
+          <div class="anatomy-feature-title">Open until 10:30 PM</div>
+          <div class="anatomy-feature-desc">Open when everyone else has closed. Every single day, no exceptions.</div>
           <div class="anatomy-dot-line">
             <div class="dot-line-bar"></div>
             <div class="dot-line-circle"></div>
           </div>
         </div>
         <div class="anatomy-feature reveal delay-2">
-          <div class="anatomy-feature-title">Trato familiar</div>
-          <div class="anatomy-feature-desc">Te conocemos por tu nombre. Aquí siempre hay una sonrisa esperándote.</div>
+          <div class="anatomy-feature-title">Personal service</div>
+          <div class="anatomy-feature-desc">We know you by name. There's always a smile waiting for you here.</div>
           <div class="anatomy-dot-line">
             <div class="dot-line-bar"></div>
             <div class="dot-line-circle"></div>
@@ -1419,7 +1387,7 @@
 
       <div class="anatomy-center reveal delay-3">
         <div class="anatomy-center-img">
-          <img src="img/foto6.jpg" alt="Interior tienda de Samira" />
+          <img src="img/foto6.jpg" alt="La Tienda de Samira interior" />
         </div>
         <div class="anatomy-center-badge">La Tienda de Samira · Jerez</div>
       </div>
@@ -1430,16 +1398,16 @@
             <div class="dot-line-circle"></div>
             <div class="dot-line-bar"></div>
           </div>
-          <div class="anatomy-feature-title">Delivery en minutos</div>
-          <div class="anatomy-feature-desc">Disponibles en Glovo y Just Eat para que recibas tu pedido sin salir de casa.</div>
+          <div class="anatomy-feature-title">Delivery in minutes</div>
+          <div class="anatomy-feature-desc">Available on Glovo and Just Eat so you get your order without leaving home.</div>
         </div>
         <div class="anatomy-feature reveal delay-1">
           <div class="anatomy-dot-line">
             <div class="dot-line-circle"></div>
             <div class="dot-line-bar"></div>
           </div>
-          <div class="anatomy-feature-title">+300 Productos</div>
-          <div class="anatomy-feature-desc">Desde lo básico hasta lo que no encuentras en otros sitios. Gran variedad siempre.</div>
+          <div class="anatomy-feature-title">+300 Products</div>
+          <div class="anatomy-feature-desc">From the basics to what you can't find anywhere else. Great variety, always.</div>
         </div>
       </div>
 
@@ -1451,11 +1419,11 @@
 
     <a href="https://glovoapp.com/es/es/jerez-de-la-frontera/" target="_blank" rel="noopener noreferrer" class="delivery-banner glovo reveal">
       <div class="delivery-banner-text">
-        <div class="delivery-banner-eyebrow">Pide ahora · Entrega rápida</div>
-        <div class="delivery-banner-title">Disponibles<br>en Glovo</div>
+        <div class="delivery-banner-eyebrow">Order now · Fast delivery</div>
+        <div class="delivery-banner-title">Available<br>on Glovo</div>
       </div>
       <div class="delivery-banner-arrow">
-        <span class="delivery-banner-cta">Abrir app</span>
+        <span class="delivery-banner-cta">Open app</span>
         <div class="delivery-banner-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </div>
@@ -1464,11 +1432,11 @@
 
     <a href="https://www.just-eat.es/restaurants-tiendadesamira-jerez/" target="_blank" rel="noopener noreferrer" class="delivery-banner justeat reveal">
       <div class="delivery-banner-text">
-        <div class="delivery-banner-eyebrow">Pide ahora · Entrega rápida</div>
-        <div class="delivery-banner-title">Disponibles<br>en Just Eat</div>
+        <div class="delivery-banner-eyebrow">Order now · Fast delivery</div>
+        <div class="delivery-banner-title">Available<br>on Just Eat</div>
       </div>
       <div class="delivery-banner-arrow">
-        <span class="delivery-banner-cta">Abrir app</span>
+        <span class="delivery-banner-cta">Open app</span>
         <div class="delivery-banner-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </div>
@@ -1485,31 +1453,31 @@
           <div class="google-g">G</div>
           Google Reviews
         </div>
-        <span class="section-label">Lo que dicen nuestros clientes</span>
-        <h2 class="section-title section-title--reviews">OPINIONES <span>REALES</span></h2>
+        <span class="section-label">What our customers say</span>
+        <h2 class="section-title section-title--reviews">REAL <span>REVIEWS</span></h2>
       </div>
 
       <div class="reviews-grid">
         <div class="review-card reveal delay-1">
           <div class="review-stars">★★★★★</div>
-          <p class="review-text">"Una tienda increíble con todo lo que necesitas. Samira siempre tiene una sonrisa y el trato es excepcional. Los mejores snacks de Jerez, sin duda."</p>
+          <p class="review-text">"An amazing store with everything you need. Samira always has a smile and the service is exceptional. The best snacks in Jerez, without a doubt."</p>
           <div class="review-author">
             <div class="review-avatar">M</div>
             <div>
               <div class="review-name">María González</div>
-              <div class="review-sub">Cliente habitual · Google</div>
+              <div class="review-sub">Regular customer · Google</div>
             </div>
           </div>
         </div>
 
         <div class="review-card reveal delay-2">
           <div class="review-stars">★★★★★</div>
-          <p class="review-text">"La mejor tienda del barrio. Siempre encuentro lo que busco y hasta tarde. El delivery por Glovo es rapidísimo. 100% recomendada para todos."</p>
+          <p class="review-text">"The best store in the neighbourhood. I always find what I'm looking for, even late at night. Glovo delivery is super fast. 100% recommended for everyone."</p>
           <div class="review-author">
             <div class="review-avatar">A</div>
             <div>
               <div class="review-name">Antonio Ruiz</div>
-              <div class="review-sub">Cliente habitual · Google</div>
+              <div class="review-sub">Regular customer · Google</div>
             </div>
           </div>
         </div>
@@ -1525,19 +1493,19 @@
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3199.8!2d-6.1270!3d36.6780!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0dd5!2sCalle+Tablao+bloque+4+local+8+Jerez+de+la+Frontera!5e0!3m2!1ses!2ses!4v1700000000000!5m2!1ses!2ses"
           allowfullscreen=""
           loading="lazy"
-          title="Ubicación Tienda de Samira"
+          title="Location of La Tienda de Samira"
         ></iframe>
       </div>
 
       <div class="contact-card reveal-right">
-        <span class="section-label">Encuéntranos</span>
-        <h2 class="section-title section-title--contact">DÓNDE<br><span>ESTAMOS</span></h2>
+        <span class="section-label">Find us</span>
+        <h2 class="section-title section-title--contact">WHERE<br><span>WE ARE</span></h2>
 
         <ul class="contact-info-list">
           <li class="contact-info-item">
             <div class="contact-info-icon">📍</div>
             <div>
-              <div class="contact-info-label">Dirección</div>
+              <div class="contact-info-label">Address</div>
               <a href="https://www.google.com/maps/place/La+tienda+de+Samira/@36.678,-6.127,17z/" target="_blank" rel="noopener noreferrer" class="contact-info-value">
                 C. Tablao, bloque 4, local 8, Jerez de la Frontera
               </a>
@@ -1546,15 +1514,15 @@
           <li class="contact-info-item">
             <div class="contact-info-icon">📞</div>
             <div>
-              <div class="contact-info-label">Teléfono</div>
+              <div class="contact-info-label">Phone</div>
               <a href="tel:856615453" class="contact-info-value">856 61 54 53</a>
             </div>
           </li>
           <li class="contact-info-item">
             <div class="contact-info-icon">🕐</div>
             <div>
-              <div class="contact-info-label">Horario</div>
-              <span class="contact-info-value">Todos los días · 9:00 – 22:30</span>
+              <div class="contact-info-label">Hours</div>
+              <span class="contact-info-value">Every day · 9:00 AM – 10:30 PM</span>
             </div>
           </li>
         </ul>
@@ -1579,29 +1547,29 @@
             <div class="footer-brand-name">La Tienda de Samira</div>
           </div>
           <p class="footer-brand-desc">
-            Tu tienda de confianza en Jerez de la Frontera. Snacks, bebidas, chucherías, embutidos, dulces, panadería, congelados y productos de hogar.
+            Your trusted store in Jerez de la Frontera. Snacks, drinks, sweets, cold cuts, pastries, bakery, frozen foods and household products.
           </p>
-          <span class="footer-hours">🟢 Abierto hasta las 22:30</span>
+          <span class="footer-hours">🟢 Open until 10:30 PM</span>
         </div>
 
         <div>
-          <div class="footer-col-title">Accesos rápidos</div>
+          <div class="footer-col-title">Quick links</div>
           <ul class="footer-links">
-            <li><a href="#productos">Nuestros productos</a></li>
-            <li><a href="#porque">Por qué Samira</a></li>
+            <li><a href="#productos">Our products</a></li>
+            <li><a href="#porque">Why Samira</a></li>
             <li><a href="#delivery">Delivery</a></li>
-            <li><a href="#ubicacion">Ubicación</a></li>
-            <li><a href="https://www.google.com/maps/place/La+tienda+de+Samira/@36.678,-6.127,17z/" target="_blank" rel="noopener noreferrer">Ver en Google Maps</a></li>
+            <li><a href="#ubicacion">Location</a></li>
+            <li><a href="https://www.google.com/maps/place/La+tienda+de+Samira/@36.678,-6.127,17z/" target="_blank" rel="noopener noreferrer">View on Google Maps</a></li>
           </ul>
         </div>
 
         <div>
-          <div class="footer-col-title">Pedir online</div>
+          <div class="footer-col-title">Order online</div>
           <ul class="footer-links">
             <li><a href="https://glovoapp.com/es/es/jerez-de-la-frontera/" target="_blank" rel="noopener noreferrer">🛵 Glovo</a></li>
             <li><a href="https://www.just-eat.es/restaurants-tiendadesamira-jerez/" target="_blank" rel="noopener noreferrer">🍔 Just Eat</a></li>
-            <li><a href="tel:856615453">📞 Llamar directamente</a></li>
-            <li><a href="tel:856615453">📞 Llamar a la tienda</a></li>
+            <li><a href="tel:856615453">📞 Call us directly</a></li>
+            <li><a href="tel:856615453">📞 Call the store</a></li>
             <li><a href="https://www.www.facebook.com/La-tienda-de-Samira" target="_blank" rel="noopener noreferrer">📘 Facebook</a></li>
           </ul>
         </div>
@@ -1611,10 +1579,10 @@
       <div class="footer-divider"></div>
 
       <div class="footer-bottom">
-        <p class="footer-copy">© 2026 <span>La Tienda de Samira</span>. Todos los derechos reservados.</p>
+        <p class="footer-copy">© 2026 <span>La Tienda de Samira</span>. All rights reserved.</p>
         <div class="footer-legal">
-          <a href="#">Aviso legal</a>
-          <a href="#">Privacidad</a>
+          <a href="#">Legal notice</a>
+          <a href="#">Privacy</a>
           <a href="#">Cookies</a>
         </div>
       </div>
@@ -1622,7 +1590,7 @@
   </footer>
 
   <!-- ═══════════ FAB ═══════════ -->
-  <a href="tel:856615453" class="fab" aria-label="Llamar ahora">
+  <a href="tel:856615453" class="fab" aria-label="Call now">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
     </svg>
