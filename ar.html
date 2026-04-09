@@ -271,52 +271,60 @@
       .footer-lang-bar { flex-wrap: wrap; justify-content: center; }
     }
 
-    /* ─── HERO ─── */
+    /* ─── HERO SLIDESHOW ─── */
     .hero {
       min-height: 100vh;
       position: relative;
       display: flex;
       align-items: center;
       overflow: hidden;
-      background: linear-gradient(135deg, #0B0F1A 0%, #1a0a2e 30%, #C0106E 65%, #E91E8C 100%);
     }
 
-    .hero-bg-img {
+    .hero-slides {
       position: absolute;
       inset: 0;
       z-index: 0;
     }
-    .hero-bg-img img {
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 1.2s ease-in-out;
+    }
+    .hero-slide.active { opacity: 1; }
+    .hero-slide img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      opacity: 0.18;
+      opacity: 0.35;
       mix-blend-mode: luminosity;
     }
 
-    /* Decorative blobs */
-    .hero::before {
-      content: '';
+    .hero-dots {
       position: absolute;
-      top: -20%;
-      right: -10%;
-      width: 700px;
-      height: 700px;
-      background: radial-gradient(circle, rgba(233,30,140,0.35) 0%, transparent 70%);
-      border-radius: 50%;
-      z-index: 1;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      display: flex;
+      gap: 10px;
     }
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: -20%;
-      left: -10%;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(192,16,110,0.25) 0%, transparent 70%);
+    .hero-dot {
+      width: 12px;
+      height: 12px;
       border-radius: 50%;
-      z-index: 1;
+      background: rgba(255,255,255,0.35);
+      border: 2px solid rgba(255,255,255,0.5);
+      cursor: pointer;
+      transition: all 0.4s ease;
     }
+    .hero-dot.active {
+      background: var(--white);
+      border-color: var(--white);
+      transform: scale(1.3);
+      box-shadow: 0 0 12px rgba(255,255,255,0.6);
+    }
+    .hero-dot:hover { background: rgba(255,255,255,0.7); }
 
     .hero-inner {
       position: relative;
@@ -324,14 +332,13 @@
       width: 100%;
       max-width: 1300px;
       margin: 0 auto;
-      padding: 6rem clamp(1.5rem, 5vw, 4rem) 4rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
+      padding: 6rem clamp(1.5rem, 5vw, 4rem) 5rem;
+      display: flex;
       align-items: center;
+      justify-content: center;
     }
 
-    .hero-text { color: var(--white); }
+    .hero-text { color: var(--white); text-align: center; max-width: 720px; }
 
     .hero-badge {
       display: inline-flex;
@@ -379,6 +386,7 @@
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
+      justify-content: center;
     }
     .btn-primary {
       display: inline-flex;
@@ -416,6 +424,7 @@
       display: flex;
       gap: 2rem;
       margin-top: 3rem;
+      justify-content: center;
     }
     .hero-stat { color: var(--white); }
     .hero-stat-num {
@@ -432,30 +441,6 @@
       letter-spacing: 0.5px;
     }
 
-    .hero-images {
-      position: relative;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto auto;
-      gap: 12px;
-    }
-
-    .hero-img-card {
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
-    }
-    .hero-img-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.6s ease, filter 0.6s ease;
-    }
-    .hero-img-card:hover img { transform: scale(1.05); filter: hue-rotate(15deg) saturate(1.3) brightness(1.1); }
-    .hero-img-card:nth-child(1) { grid-row: span 2; height: 320px; }
-    .hero-img-card:nth-child(2) { height: 150px; }
-    .hero-img-card:nth-child(3) { height: 150px; }
 
     /* ─── CATEGORY STRIP ─── */
     .category-strip-section {
@@ -1189,8 +1174,7 @@
     }
 
     @media (max-width: 900px) {
-      .hero-inner { grid-template-columns: 1fr; }
-      .hero-images { display: none; }
+      .hero-inner { flex-direction: column; }
       .featured-inner { grid-template-columns: 1fr; }
       .location-inner { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -1297,22 +1281,36 @@
     </ul>
   </div>
 
-  <!-- ═══════════ HERO ═══════════ -->
-  <section class="hero">
-    <div class="hero-bg-img">
-      <img src="img/foto4.jpg" alt="متجر سميرة" />
+  <!-- ═══════════ HERO SLIDESHOW ═══════════ -->
+  <section class="hero" id="heroSlideshow">
+    <div class="hero-slides">
+      <div class="hero-slide active" style="background: linear-gradient(135deg, #E91E8C 0%, #C0106E 50%, #0B0F1A 100%);">
+        <img src="https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=1920&q=80" alt="Golosinas coloridas" />
+      </div>
+      <div class="hero-slide" style="background: linear-gradient(135deg, #F9A825 0%, #FF6F00 50%, #E65100 100%);">
+        <img src="https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=1920&q=80" alt="Dulces a granel" />
+      </div>
+      <div class="hero-slide" style="background: linear-gradient(135deg, #00BCD4 0%, #00838F 50%, #004D40 100%);">
+        <img src="https://images.unsplash.com/photo-1575224300306-1b8da36134ec?w=1920&q=80" alt="Chucherias variadas" />
+      </div>
+      <div class="hero-slide" style="background: linear-gradient(135deg, #AB47BC 0%, #7B1FA2 50%, #4A148C 100%);">
+        <img src="https://images.unsplash.com/photo-1563262924-641a8b3d397f?w=1920&q=80" alt="Caramelos de colores" />
+      </div>
+      <div class="hero-slide" style="background: linear-gradient(135deg, #E91E8C 0%, #FF6B9D 50%, #FFD700 100%);">
+        <img src="https://images.unsplash.com/photo-1499195333224-3ce974eecb47?w=1920&q=80" alt="Gominolas" />
+      </div>
     </div>
 
     <div class="hero-inner">
-      <div class="hero-text reveal">
+      <div class="hero-text">
         <div class="hero-badge">
-          <span>⭐</span> خيريز دي لا فرونتيرا · منذ 2018
+          <span>⭐</span> خيريث دي لا فرونتيرا · منذ 2018
         </div>
         <h1 class="hero-title">
           LA TIENDA<br>DE <em>SAMIRA</em>
         </h1>
         <p class="hero-subtitle">
-          متجرك الموثوق في الحي. أكثر من 300 منتج غذائي، مشروبات باردة، حلويات والمزيد. مفتوح حتى 22:30.
+          حلويات، وجبات خفيفة، مشروبات وأكثر. متجرك الموثوق في الحي، مفتوح حتى 22:30.
         </p>
         <div class="hero-btns">
           <a href="https://glovoapp.com/es/es/jerez-de-la-frontera/" target="_blank" rel="noopener noreferrer" class="btn-primary">
@@ -1325,7 +1323,7 @@
         <div class="hero-stats">
           <div class="hero-stat">
             <div class="hero-stat-num">+300</div>
-            <div class="hero-stat-label">منتج</div>
+            <div class="hero-stat-label">المنتجات</div>
           </div>
           <div class="hero-stat">
             <div class="hero-stat-num">22:30</div>
@@ -1337,18 +1335,14 @@
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="hero-images reveal delay-3">
-        <div class="hero-img-card">
-          <img src="img/foto6.jpg" alt="داخل متجر سميرة" />
-        </div>
-        <div class="hero-img-card">
-          <img src="img/foto2.jpg" alt="منتجات طازجة" />
-        </div>
-        <div class="hero-img-card">
-          <img src="img/foto3.jpg" alt="مشروبات باردة" />
-        </div>
-      </div>
+    <div class="hero-dots" id="heroDots">
+      <span class="hero-dot active"></span>
+      <span class="hero-dot"></span>
+      <span class="hero-dot"></span>
+      <span class="hero-dot"></span>
+      <span class="hero-dot"></span>
     </div>
   </section>
 
@@ -1796,6 +1790,30 @@
     setInterval(rotateProducts, 8000);
     // Also shuffle on first load after a short delay
     setTimeout(function() { rotateProducts(); }, 2000);
+
+    // ── Hero Slideshow ──
+    var heroSlides = document.querySelectorAll('.hero-slide');
+    var heroDots = document.querySelectorAll('.hero-dot');
+    var currentSlide = 0;
+    var slideInterval;
+
+    function goToSlide(index) {
+      heroSlides[currentSlide].classList.remove('active');
+      heroDots[currentSlide].classList.remove('active');
+      currentSlide = index % heroSlides.length;
+      heroSlides[currentSlide].classList.add('active');
+      heroDots[currentSlide].classList.add('active');
+    }
+
+    function nextSlide() {
+      goToSlide(currentSlide + 1);
+    }
+
+    heroDots.forEach(function(dot, i) {
+      dot.addEventListener('click', function() {
+        clearInterval(slideInterval);
+        goToSlide(i);
+        slideInterval = setInterval(nextSlide, 5000);
 
     // ── Active nav link on scroll ──
     var sections = document.querySelectorAll('section[id], div[id]');
