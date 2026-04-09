@@ -10,36 +10,35 @@
   <meta property="og:description" content="Snacks, bebidas frías, embutidos, dulces y mucho más. Abierto hasta las 22:30. Pedidos en Glovo y Just Eat." />
   <meta property="og:image" content="img/foto6.jpg" />
   <meta property="og:type" content="website" />
+  <link rel="icon" href="img/logo.jpg" type="image/jpeg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Barlow+Condensed:wght@700;800;900&display=swap" rel="stylesheet" />
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
       --pink:        #E91E8C;
-      --pink-soft:   #FF6B9D;
-      --pink-light:  rgba(233,30,140,0.12);
+      --pink-soft:   #FF6BAD;
       --pink-dark:   #C0106E;
-      --navy:        #0B0F1A;
-      --navy-mid:    #111827;
-      --navy-card:   #141B2D;
-      --navy-soft:   #1E2A42;
-      --glass:       rgba(11,15,26,0.35);
-      --glass-hover: rgba(11,15,26,0.80);
-      --border:      rgba(255,255,255,0.12);
-      --border-pink: rgba(233,30,140,0.4);
-      --text:        #E2E8F0;
-      --text-muted:  #CBD5E1;
+      --pink-light:  #FCE4F3;
+      --glovo:       #F9A825;
+      --glovo-dark:  #E65100;
+      --justeat:     #E5322D;
+      --justeat-dark:#9B0000;
+      --dark:        #0B0F1A;
+      --gray-bg:     #F8F9FA;
+      --gray-mid:    #F0F1F3;
+      --text-dark:   #1A1A2E;
+      --text-mid:    #4A4A6A;
       --white:       #FFFFFF;
-      --radius-sm:   10px;
-      --radius:      18px;
+      --radius-sm:   8px;
+      --radius:      16px;
       --radius-lg:   28px;
-      --shadow-sm:   0 2px 12px rgba(0,0,0,0.3);
-      --shadow:      0 6px 32px rgba(0,0,0,0.4);
-      --shadow-lg:   0 16px 60px rgba(0,0,0,0.5);
-      --glow:        0 0 40px rgba(233,30,140,0.15);
+      --shadow-sm:   0 2px 12px rgba(0,0,0,0.08);
+      --shadow:      0 8px 32px rgba(0,0,0,0.12);
+      --shadow-lg:   0 20px 60px rgba(0,0,0,0.18);
       --trans:       0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
@@ -47,45 +46,29 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background: var(--navy);
-      color: var(--text);
+      background: var(--white);
+      color: var(--text-dark);
       line-height: 1.6;
       overflow-x: hidden;
-    }
-
-    /* ─── FULL-PAGE FIXED BACKGROUND ─── */
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background-image: url('img/foto4.jpg');
-      background-size: cover;
-      background-position: center;
-      z-index: -2;
-    }
-    body::after {
-      content: '';
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(135deg, rgba(11,15,26,0.88) 0%, rgba(233,30,140,0.10) 50%, rgba(11,15,26,0.90) 100%);
-      z-index: -1;
     }
 
     /* ─── SCROLL REVEAL ─── */
     .reveal {
       opacity: 0;
-      transform: translateY(36px);
-      transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1);
+      transform: translateY(40px);
+      transition: opacity 0.75s cubic-bezier(0.4,0,0.2,1), transform 0.75s cubic-bezier(0.4,0,0.2,1);
     }
     .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-    .reveal-delay-4 { transition-delay: 0.4s; }
-    .reveal-delay-5 { transition-delay: 0.5s; }
-    .reveal-delay-6 { transition-delay: 0.6s; }
-    .reveal-delay-7 { transition-delay: 0.7s; }
-    .reveal-delay-8 { transition-delay: 0.8s; }
+    .reveal-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.75s cubic-bezier(0.4,0,0.2,1), transform 0.75s cubic-bezier(0.4,0,0.2,1); }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+    .reveal-right { opacity: 0; transform: translateX(40px); transition: opacity 0.75s cubic-bezier(0.4,0,0.2,1), transform 0.75s cubic-bezier(0.4,0,0.2,1); }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.3s; }
+    .delay-4 { transition-delay: 0.4s; }
+    .delay-5 { transition-delay: 0.5s; }
+    .delay-6 { transition-delay: 0.6s; }
 
     /* ─── NAVBAR ─── */
     nav {
@@ -93,1066 +76,1635 @@
       top: 0; left: 0; right: 0;
       z-index: 999;
       padding: 0 clamp(1rem, 5vw, 3rem);
-      height: 70px;
+      height: 72px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: rgba(11,15,26,0);
-      backdrop-filter: blur(0px);
-      transition: background var(--trans), backdrop-filter var(--trans), box-shadow var(--trans), height var(--trans);
+      background: rgba(255,255,255,0);
+      transition: background var(--trans), box-shadow var(--trans);
     }
     nav.scrolled {
-      background: rgba(11,15,26,0.95);
-      backdrop-filter: blur(20px);
-      box-shadow: 0 2px 24px rgba(0,0,0,0.4);
-      height: 62px;
+      background: rgba(255,255,255,0.97);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
     }
-    .nav-brand {
+
+    .nav-logo {
       display: flex;
       align-items: center;
       gap: 10px;
       text-decoration: none;
     }
-    .nav-logo-wrap {
-      width: 44px;
-      height: 44px;
+    .nav-logo img {
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
-      background: #FFFFFF;
+      object-fit: cover;
+      border: 2px solid var(--pink);
+    }
+    .nav-logo-text {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--white);
+      letter-spacing: 0.5px;
+      line-height: 1;
+      transition: color var(--trans);
+    }
+    nav.scrolled .nav-logo-text { color: var(--text-dark); }
+
+    .nav-links {
       display: flex;
       align-items: center;
-      justify-content: center;
-      border: none;
-      overflow: hidden;
-      flex-shrink: 0;
-      padding: 0;
-      transition: transform var(--trans), box-shadow var(--trans);
-    }
-    .nav-logo-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      display: block;
-    }
-    .nav-brand:hover .nav-logo-wrap { transform: scale(1.08) rotate(-3deg); box-shadow: 0 4px 16px rgba(233,30,140,0.35); }
-    .nav-brand-text { display: flex; flex-direction: column; line-height: 1.15; }
-    .nav-brand-name {
-      font-size: 0.95rem; font-weight: 700; color: var(--white);
-      transition: color var(--trans);
-    }
-    .nav-brand-sub {
-      font-size: 0.68rem; font-weight: 500; color: rgba(255,255,255,0.65);
-      transition: color var(--trans);
-    }
-    .nav-links {
-      display: flex; align-items: center; gap: 2rem; list-style: none;
+      gap: 2rem;
+      list-style: none;
     }
     .nav-links a {
-      text-decoration: none; font-size: 0.85rem; font-weight: 600;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
       color: rgba(255,255,255,0.85);
-      position: relative; transition: color var(--trans);
+      transition: color var(--trans);
+      letter-spacing: 0.3px;
     }
-    .nav-links a::after {
-      content: ''; position: absolute; bottom: -3px; left: 0;
-      width: 0; height: 2px; background: var(--pink);
-      border-radius: 2px; transition: width var(--trans);
-    }
-    .nav-links a:hover::after { width: 100%; }
+    nav.scrolled .nav-links a { color: var(--text-dark); }
     .nav-links a:hover { color: var(--pink); }
+
     .nav-cta {
-      background: var(--pink); color: var(--white) !important;
-      padding: 0.45rem 1.2rem; border-radius: 50px; font-weight: 700 !important;
-      box-shadow: 0 4px 16px rgba(233,30,140,0.35);
-      transition: transform var(--trans), box-shadow var(--trans), background var(--trans) !important;
+      background: var(--pink);
+      color: var(--white) !important;
+      padding: 0.45rem 1.2rem;
+      border-radius: 50px;
+      font-weight: 700 !important;
+      transition: background var(--trans), transform var(--trans) !important;
     }
-    .nav-cta:hover { background: var(--pink-dark) !important; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(233,30,140,0.45) !important; }
-    .nav-cta::after { display: none !important; }
-    @media (max-width: 640px) { .nav-links { display: none; } }
+    .nav-cta:hover { background: var(--pink-dark) !important; transform: scale(1.05); }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2.5px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: var(--trans);
+    }
+    nav.scrolled .hamburger span { background: var(--text-dark); }
+    .hamburger.open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+    .mobile-menu {
+      position: fixed;
+      top: 72px; left: 0; right: 0;
+      background: var(--white);
+      padding: 1.5rem 2rem 2rem;
+      box-shadow: var(--shadow);
+      z-index: 998;
+      transform: translateY(-120%);
+      transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
+    }
+    .mobile-menu.open { transform: translateY(0); }
+    .mobile-menu ul { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
+    .mobile-menu ul a {
+      text-decoration: none;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    .mobile-menu ul a:hover { color: var(--pink); }
 
     /* ─── HERO ─── */
     .hero {
-      position: relative; min-height: 100svh; z-index: 1;
-      display: flex; align-items: center; justify-content: center; overflow: hidden;
-    }
-    .hero-content {
-      position: relative; z-index: 2;
-      text-align: center; padding: 7rem 1.5rem 4rem;
-      max-width: 720px; margin: 0 auto;
-    }
-    .hero-logo-wrap {
-      display: inline-flex; align-items: center; justify-content: center;
-      width: 170px; height: 170px;
-      border-radius: 50%;
-      background: #FFFFFF;
-      border: none;
-      margin-bottom: 1.8rem;
-      box-shadow: 0 8px 40px rgba(233,30,140,0.3), 0 0 0 6px rgba(233,30,140,0.25);
-      animation: heroLogoIn 0.9s cubic-bezier(0.34,1.56,0.64,1) forwards;
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
       overflow: hidden;
-      padding: 0;
-    }
-    @keyframes heroLogoIn {
-      from { opacity: 0; transform: scale(0.6) rotate(-10deg); }
-      to   { opacity: 1; transform: scale(1) rotate(0deg); }
-    }
-    .hero-logo-wrap img {
-      width: 100%; height: 100%;
-      object-fit: contain; display: block;
-    }
-    .hero h1 {
-      font-size: clamp(2.4rem, 8vw, 4.2rem); font-weight: 800;
-      color: #FFFFFF; line-height: 1.1; letter-spacing: -0.02em;
-      margin-bottom: 0.75rem; animation: fadeUp 0.8s 0.2s both;
-      text-shadow: 0 2px 12px rgba(0,0,0,0.6);
-    }
-    .hero h1 span {
-      background: linear-gradient(135deg, #FF6B9D, #FFD700);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-    }
-    .hero-tagline {
-      font-size: clamp(1rem, 3vw, 1.3rem); font-weight: 500;
-      color: rgba(255,255,255,0.85); margin-bottom: 2rem;
-      animation: fadeUp 0.8s 0.35s both;
-    }
-    .hero-badges {
-      display: flex; flex-wrap: wrap; justify-content: center;
-      gap: 0.7rem; margin-bottom: 2.5rem;
-      animation: fadeUp 0.8s 0.5s both;
-    }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      background: rgba(255,255,255,0.12); backdrop-filter: blur(8px);
-      border: 1px solid rgba(255,255,255,0.22); border-radius: 50px;
-      padding: 0.4rem 1rem; font-size: 0.82rem; font-weight: 600; color: var(--white);
-    }
-    .hero-badge .b-icon { font-size: 1rem; }
-    .badge-stars { color: #FFD700; font-size: 0.85rem; letter-spacing: 1px; }
-    .hero-ctas {
-      display: flex; flex-wrap: wrap; justify-content: center;
-      gap: 1rem; animation: fadeUp 0.8s 0.65s both;
-    }
-    .btn {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      padding: 0.85rem 2rem; border-radius: 50px;
-      font-family: 'Poppins', sans-serif; font-size: 0.95rem; font-weight: 700;
-      text-decoration: none; cursor: pointer; border: none;
-      transition: transform var(--trans), box-shadow var(--trans), background var(--trans);
-    }
-    .btn:hover { transform: translateY(-3px); }
-    .btn-primary {
-      background: linear-gradient(135deg, var(--pink), var(--pink-soft));
-      color: var(--white); box-shadow: 0 6px 28px rgba(233,30,140,0.45);
-    }
-    .btn-primary:hover { box-shadow: 0 12px 36px rgba(233,30,140,0.55); }
-    .btn-secondary {
-      background: rgba(255,255,255,0.12); backdrop-filter: blur(8px);
-      color: var(--white); border: 2px solid rgba(255,255,255,0.28);
-    }
-    .btn-secondary:hover { background: rgba(255,255,255,0.20); }
-    .hero-scroll {
-      position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
-      z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
-      color: rgba(255,255,255,0.55); font-size: 0.72rem; font-weight: 500;
-      letter-spacing: 0.08em; text-transform: uppercase; animation: fadeUp 1s 1s both;
-    }
-    .scroll-dot {
-      width: 28px; height: 44px; border: 2px solid rgba(255,255,255,0.35);
-      border-radius: 14px; display: flex; justify-content: center; padding-top: 6px;
-    }
-    .scroll-dot::before {
-      content: ''; width: 4px; height: 10px; background: rgba(255,255,255,0.65);
-      border-radius: 2px; animation: scrollBounce 1.5s infinite;
-    }
-    @keyframes scrollBounce {
-      0%, 100% { transform: translateY(0); opacity: 1; }
-      50% { transform: translateY(8px); opacity: 0.4; }
-    }
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(28px); }
-      to   { opacity: 1; transform: translateY(0); }
+      background: linear-gradient(135deg, #0B0F1A 0%, #1a0a2e 30%, #C0106E 65%, #E91E8C 100%);
     }
 
-    /* ─── SECTION COMMON ─── */
-    section { padding: clamp(4rem, 8vw, 7rem) clamp(1.2rem, 5vw, 3rem); }
-    .section-label {
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      background: rgba(233,30,140,0.25); color: #FF6B9D;
-      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em;
-      text-transform: uppercase; padding: 0.35rem 0.9rem;
-      border-radius: 50px; margin-bottom: 1rem;
-      border: 1px solid rgba(233,30,140,0.45);
-      text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+    .hero-bg-img {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
     }
-    .section-title {
-      font-size: clamp(1.9rem, 4.5vw, 3rem); font-weight: 800;
-      color: #FFFFFF; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 0.8rem;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
-    }
-    .section-title span { color: var(--pink-soft); }
-    .section-sub {
-      font-size: clamp(0.95rem, 2vw, 1.1rem); color: var(--text-muted); font-weight: 500; max-width: 540px;
-    }
-    .section-header { margin-bottom: clamp(2.5rem, 5vw, 4rem); }
-    .container { max-width: 1100px; }
-
-    /* ─── AMBIENT GLOW BACKGROUNDS ─── */
-    .section-glow {
-      position: relative; overflow: hidden;
-    }
-    .section-glow::before {
-      content: ''; position: absolute; top: -150px; right: -150px;
-      width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(233,30,140,0.08) 0%, transparent 65%);
-      pointer-events: none;
-    }
-    .section-glow::after {
-      content: ''; position: absolute; bottom: -150px; left: -100px;
-      width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(100,50,200,0.07) 0%, transparent 65%);
-      pointer-events: none;
+    .hero-bg-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.18;
+      mix-blend-mode: luminosity;
     }
 
-    /* ─── SECTION BACKDROP (applies to all content sections) ─── */
-    #productos, #destacados, #fotos, #delivery, #resenas, #ubicacion {
-      position: relative; overflow: hidden; z-index: 1;
-    }
-    #productos > .container,
-    #destacados > .container,
-    #fotos > .container,
-    #delivery > .container,
-    #resenas > .container,
-    #ubicacion > .container {
-      position: relative; z-index: 2;
-    }
-    #productos::before, #destacados::before, #fotos::before,
-    #delivery::before, #resenas::before, #ubicacion::before {
-      content: '' !important;
-    }
-    /* Per-section backdrop panels */
-    #productos > .container::before,
-    #destacados > .container::before,
-    #fotos > .container::before,
-    #delivery > .container::before,
-    #resenas > .container::before,
-    #ubicacion > .container::before {
+    /* Decorative blobs */
+    .hero::before {
       content: '';
       position: absolute;
-      inset: -3rem -2rem;
-      background: rgba(11,15,26,0.40);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-radius: 28px;
-      z-index: -1;
-      pointer-events: none;
+      top: -20%;
+      right: -10%;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(233,30,140,0.35) 0%, transparent 70%);
+      border-radius: 50%;
+      z-index: 1;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -20%;
+      left: -10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(192,16,110,0.25) 0%, transparent 70%);
+      border-radius: 50%;
+      z-index: 1;
     }
 
-    /* ─── PRODUCTS CATEGORIES ─── */
-    #productos {
-      background: transparent;
-    }
-    /* glow removed — backdrop panel handles background */
-    .products-grid {
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 6rem clamp(1.5rem, 5vw, 4rem) 4rem;
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 1.2rem; max-width: 1000px;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
     }
-    .product-card {
-      background: var(--glass);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border-radius: var(--radius); padding: 1.8rem 1.4rem;
-      display: flex; align-items: flex-start; gap: 1.1rem;
-      border: 1.5px solid var(--border);
-      transition: transform var(--trans), box-shadow var(--trans), border-color var(--trans), background var(--trans);
-      cursor: default;
-    }
-    .product-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 32px rgba(233,30,140,0.20);
-      border-color: var(--border-pink);
-      background: var(--glass-hover);
-    }
-    .product-icon-wrap {
-      flex-shrink: 0; width: 50px; height: 50px;
-      border-radius: var(--radius-sm);
-      background: rgba(233,30,140,0.12);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.5rem;
-      transition: background var(--trans), transform var(--trans);
-    }
-    .product-card:hover .product-icon-wrap {
-      background: linear-gradient(135deg, var(--pink), var(--pink-soft));
-      transform: scale(1.08) rotate(-4deg);
-    }
-    .product-name { font-size: 0.95rem; font-weight: 700; color: var(--white); margin-bottom: 0.2rem; }
-    .product-desc { font-size: 0.78rem; color: #CBD5E1; line-height: 1.4; }
 
-    /* ─── PRODUCT HIGHLIGHTS ─── */
-    #destacados {
+    .hero-text { color: var(--white); }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 50px;
+      padding: 0.35rem 1rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .hero-badge span { color: #FFD700; }
+
+    .hero-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      font-weight: 900;
+      line-height: 0.92;
+      text-transform: uppercase;
+      letter-spacing: -1px;
+      margin-bottom: 1rem;
+    }
+    .hero-title em {
+      font-style: normal;
+      color: transparent;
+      -webkit-text-stroke: 2px rgba(255,255,255,0.5);
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      font-weight: 400;
+      color: rgba(255,255,255,0.82);
+      margin-bottom: 2rem;
+      line-height: 1.6;
+      max-width: 480px;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--white);
+      color: var(--pink);
+      font-weight: 800;
+      font-size: 0.95rem;
+      padding: 0.85rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: transform var(--trans), box-shadow var(--trans);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.3); }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       background: transparent;
+      color: var(--white);
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.85rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      border: 2px solid rgba(255,255,255,0.5);
+      transition: all var(--trans);
     }
-    .highlights-grid {
+    .btn-outline:hover { background: rgba(255,255,255,0.15); border-color: var(--white); }
+
+    .hero-stats {
+      display: flex;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .hero-stat { color: var(--white); }
+    .hero-stat-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 900;
+      line-height: 1;
+      color: var(--white);
+    }
+    .hero-stat-label {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.65);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-images {
+      position: relative;
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-      gap: 1.2rem;
-      max-width: 1100px;
-      position: relative; z-index: 1;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 12px;
     }
-    .highlight-card {
-      background: var(--glass);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 1.5px solid var(--border);
+
+    .hero-img-card {
       border-radius: var(--radius);
       overflow: hidden;
-      transition: transform var(--trans), box-shadow var(--trans), border-color var(--trans);
-      cursor: default;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
     }
-    .highlight-card:hover {
-      transform: translateY(-7px);
-      box-shadow: 0 12px 40px rgba(233,30,140,0.22);
-      border-color: var(--border-pink);
-    }
-    .highlight-img-wrap {
+    .hero-img-card img {
       width: 100%;
-      aspect-ratio: 1 / 1;
-      overflow: hidden;
-      background: rgba(255,255,255,0.04);
-    }
-    .highlight-img-wrap img {
-      width: 100%; height: 100%;
+      height: 100%;
       object-fit: cover;
-      transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
+      display: block;
+      transition: transform 0.6s ease, filter 0.6s ease;
+    }
+    .hero-img-card:hover img { transform: scale(1.05); filter: hue-rotate(15deg) saturate(1.3) brightness(1.1); }
+    .hero-img-card:nth-child(1) { grid-row: span 2; height: 320px; }
+    .hero-img-card:nth-child(2) { height: 150px; }
+    .hero-img-card:nth-child(3) { height: 150px; }
+
+    /* ─── CATEGORY STRIP ─── */
+    .category-strip-section {
+      background: var(--white);
+      padding: 0;
+      overflow: hidden;
+      border-bottom: 1px solid #EEEEEE;
+    }
+
+    .strip-track-wrapper {
+      overflow: hidden;
+      position: relative;
+    }
+    .strip-track-wrapper::before,
+    .strip-track-wrapper::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 80px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .strip-track-wrapper::before { left: 0; background: linear-gradient(to right, white, transparent); }
+    .strip-track-wrapper::after { right: 0; background: linear-gradient(to left, white, transparent); }
+
+    .strip-track {
+      display: flex;
+      width: max-content;
+      animation: stripScroll 28s linear infinite;
+    }
+    .strip-track:hover { animation-play-state: paused; }
+
+    @keyframes stripScroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    .strip-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 1.2rem 2rem;
+      min-width: 140px;
+      cursor: default;
+      transition: transform 0.2s ease;
+      border-right: 1px solid rgba(0,0,0,0.06);
+    }
+    .strip-item:hover { transform: scale(1.08); filter: brightness(0.92) saturate(1.5); }
+
+    .strip-icon {
+      font-size: 2.2rem;
+      line-height: 1;
+    }
+    .strip-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      white-space: nowrap;
+    }
+
+    .strip-item:nth-child(8n+1) { background: #FFF0F8; }
+    .strip-item:nth-child(8n+2) { background: #FFF9E6; }
+    .strip-item:nth-child(8n+3) { background: #E8F5E9; }
+    .strip-item:nth-child(8n+4) { background: #FFF3E0; }
+    .strip-item:nth-child(8n+5) { background: #E8EAF6; }
+    .strip-item:nth-child(8n+6) { background: #FCE4EC; }
+    .strip-item:nth-child(8n+7) { background: #E0F7FA; }
+    .strip-item:nth-child(8n+0) { background: #F3E5F5; }
+
+    /* ─── FEATURED PRODUCTS ─── */
+    .featured {
+      background: var(--white);
+      padding: 6rem clamp(1.5rem, 5vw, 4rem);
+    }
+    .featured-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 160px);
+      gap: 10px;
+    }
+    .product-grid-item {
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+      cursor: pointer;
+    }
+    .product-grid-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(100%) brightness(0.85);
+      transition: transform 0.6s ease, filter 0.6s ease, opacity 0.6s ease;
+    }
+    .product-grid-item:hover img { transform: scale(1.1); filter: grayscale(0%) brightness(1.05); }
+    .product-grid-item:nth-child(1) {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+    .product-grid-item:nth-child(1) { border-radius: var(--radius); }
+
+    .product-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(233,30,140,0.6) 0%, transparent 50%);
+      opacity: 0;
+      transition: opacity var(--trans);
+    }
+    .product-grid-item:hover .product-overlay { opacity: 1; }
+
+    .featured-text { }
+    .section-label {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--pink);
+      margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2.5rem, 4vw, 4rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 0.95;
+      color: var(--text-dark);
+      margin-bottom: 1.25rem;
+    }
+    .section-title span { color: var(--pink); }
+    .section-desc {
+      font-size: 1rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      max-width: 440px;
+    }
+
+    .arrow-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 0.95rem;
+      color: var(--pink);
+      border-bottom: 2px solid var(--pink);
+      padding-bottom: 4px;
+      transition: gap var(--trans), color var(--trans);
+    }
+    .arrow-cta:hover { gap: 16px; color: var(--pink-dark); }
+    .arrow-cta svg { transition: transform var(--trans); }
+    .arrow-cta:hover svg { transform: translateX(4px); }
+
+    .features-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 2rem;
+    }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--gray-bg);
+      border-radius: 50px;
+      padding: 0.4rem 0.9rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      border: 1px solid #E5E7EB;
+    }
+    .chip-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--pink);
+      flex-shrink: 0;
+    }
+
+    /* ─── WHY SAMIRA — ANATOMY ─── */
+    .anatomy {
+      background: var(--dark);
+      padding: 6rem clamp(1.5rem, 5vw, 4rem);
+      position: relative;
+      overflow: hidden;
+    }
+    .anatomy::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(233,30,140,0.12) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .anatomy-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .anatomy-header {
+      text-align: center;
+      margin-bottom: 4rem;
+      max-width: 1300px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .anatomy-header .section-label { color: rgba(255,255,255,0.5); }
+    .anatomy-header .section-title { color: var(--white); }
+    .anatomy-header .section-title span { color: var(--pink); }
+
+    .anatomy-features-left,
+    .anatomy-features-right {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+    .anatomy-features-left .anatomy-feature { align-items: flex-end; text-align: right; }
+    .anatomy-features-right .anatomy-feature { align-items: flex-start; text-align: left; }
+
+    .anatomy-feature {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      position: relative;
+    }
+    .anatomy-feature-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--white);
+    }
+    .anatomy-feature-desc {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.5;
+      max-width: 220px;
+    }
+    .anatomy-features-left .anatomy-feature-desc { margin-left: auto; }
+
+    .anatomy-dot-line {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .anatomy-features-left .anatomy-dot-line { justify-content: flex-end; }
+
+    .dot-line-bar {
+      height: 1px;
+      width: 60px;
+      background: repeating-linear-gradient(to right, rgba(233,30,140,0.6) 0, rgba(233,30,140,0.6) 4px, transparent 4px, transparent 8px);
+    }
+    .dot-line-circle {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--pink);
+      box-shadow: 0 0 0 3px rgba(233,30,140,0.25);
+      flex-shrink: 0;
+    }
+
+    .anatomy-center {
+      position: relative;
+      width: 340px;
+      flex-shrink: 0;
+    }
+    .anatomy-center-img {
+      width: 100%;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(233,30,140,0.2);
+    }
+    .anatomy-center-img img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
       display: block;
     }
-    .highlight-card:hover .highlight-img-wrap img { transform: scale(1.08); }
-    .highlight-info {
-      padding: 0.85rem 1rem;
-      display: flex; flex-direction: column; gap: 0.25rem;
-    }
-    .highlight-name {
-      font-size: 0.83rem; font-weight: 700; color: var(--white); line-height: 1.25;
-    }
-    .highlight-price {
-      font-size: 1rem; font-weight: 800; color: var(--pink-soft);
-    }
-    .highlights-footer {
-      margin-top: 2.5rem;
-      display: flex; justify-content: flex-start;
-      position: relative; z-index: 1;
-    }
-    .btn-glovo {
-      display: inline-flex; align-items: center; gap: 0.55rem;
-      background: #00A082;
-      color: var(--white); padding: 0.85rem 2rem;
-      border-radius: 50px; font-size: 0.95rem; font-weight: 700;
-      text-decoration: none; border: none; cursor: pointer;
-      box-shadow: 0 6px 28px rgba(0,160,130,0.35);
-      transition: transform var(--trans), box-shadow var(--trans);
-    }
-    .btn-glovo:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(0,160,130,0.5); }
-
-    /* ─── GALLERY ─── */
-    #fotos {
-      background: transparent;
-    }
-    .gallery-bento {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      grid-template-rows: repeat(2, 260px);
-      gap: 0.9rem; max-width: 1100px;
-      position: relative; z-index: 1;
-    }
-    .g-item {
-      border-radius: var(--radius); overflow: hidden; position: relative;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-      border: 1.5px solid var(--border);
-      transition: border-color var(--trans), box-shadow var(--trans);
-    }
-    .g-item:hover {
-      border-color: var(--border-pink);
-      box-shadow: 0 8px 32px rgba(233,30,140,0.18);
-    }
-    .g-item:nth-child(1) { grid-column: span 5; }
-    .g-item:nth-child(2) { grid-column: span 4; }
-    .g-item:nth-child(3) { grid-column: span 3; }
-    .g-item:nth-child(4) { grid-column: span 3; }
-    .g-item:nth-child(5) { grid-column: span 5; }
-    .g-item:nth-child(6) { grid-column: span 4; }
-    .g-item img {
-      width: 100%; height: 100%; object-fit: cover;
-      transition: transform 0.5s cubic-bezier(0.4,0,0.2,1); display: block;
-    }
-    .g-item:hover img { transform: scale(1.08); }
-    .g-item-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(180deg, transparent 50%, rgba(11,15,26,0.75) 100%);
-      opacity: 0; transition: opacity var(--trans);
-    }
-    .g-item:hover .g-item-overlay { opacity: 1; }
-    @media (max-width: 700px) {
-      .gallery-bento { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
-      .g-item { grid-column: span 1 !important; height: 180px; }
-      .g-item:nth-child(1) { grid-column: span 2 !important; height: 210px; }
+    .anatomy-center-badge {
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--pink);
+      color: var(--white);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 0.88rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding: 0.5rem 1.5rem;
+      border-radius: 50px;
+      white-space: nowrap;
+      box-shadow: 0 4px 20px rgba(233,30,140,0.4);
     }
 
-    /* ─── DELIVERY ─── */
-    #delivery {
-      background: transparent;
+    /* ─── DELIVERY BANNERS ─── */
+    .delivery-banners { }
+
+    .delivery-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2.5rem clamp(1.5rem, 5vw, 5rem);
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      transition: filter var(--trans);
     }
-    .delivery-cards {
-      display: flex; flex-wrap: wrap; gap: 1.5rem;
-      max-width: 640px; position: relative; z-index: 1;
+    .delivery-banner:hover { filter: brightness(1.08) saturate(1.2); }
+
+    .delivery-banner.glovo {
+      background: linear-gradient(135deg, #F9A825 0%, #FF6F00 50%, #E65100 100%);
     }
-    .delivery-card {
-      flex: 1; min-width: 240px; border-radius: var(--radius);
-      padding: 2rem 1.8rem; text-decoration: none;
-      display: flex; align-items: center; gap: 1.2rem;
-      transition: transform var(--trans), box-shadow var(--trans);
-      position: relative; overflow: hidden;
+    .delivery-banner.justeat {
+      background: linear-gradient(135deg, #E5322D 0%, #C62828 50%, #9B0000 100%);
     }
-    .delivery-card:hover { transform: translateY(-6px); }
-    .dc-glovo { background: #00A082; box-shadow: 0 8px 32px rgba(0,160,130,0.40); }
-    .dc-glovo:hover { box-shadow: 0 16px 48px rgba(0,160,130,0.55); }
-    .dc-justeat { background: #FF8000; box-shadow: 0 8px 32px rgba(255,128,0,0.40); }
-    .dc-justeat:hover { box-shadow: 0 16px 48px rgba(255,128,0,0.55); }
-    .dc-logo {
-      width: 56px; height: 56px; border-radius: 14px;
-      background: rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center;
-      font-size: 1.8rem; flex-shrink: 0;
+
+    .delivery-banner::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: 10%;
+      width: 300px;
+      height: 300px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 50%;
     }
-    .dc-name { font-size: 1.1rem; font-weight: 700; color: var(--white); margin-bottom: 0.15rem; }
-    .dc-sub { font-size: 0.8rem; color: rgba(255,255,255,0.8); font-weight: 500; }
-    .dc-arrow { margin-left: auto; color: rgba(255,255,255,0.6); font-size: 1.3rem; transition: transform var(--trans); }
-    .delivery-card:hover .dc-arrow { transform: translateX(5px); }
-    .delivery-note {
-      margin-top: 1.8rem; font-size: 0.85rem; color: #CBD5E1;
-      font-weight: 600; position: relative; z-index: 1;
+    .delivery-banner::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      right: 30%;
+      width: 200px;
+      height: 200px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 50%;
     }
+
+    .delivery-banner-text {
+      position: relative;
+      z-index: 1;
+    }
+    .delivery-banner-eyebrow {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 0.3rem;
+    }
+    .delivery-banner-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--white);
+      line-height: 0.95;
+      letter-spacing: -0.5px;
+    }
+
+    .delivery-banner-arrow {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .delivery-banner-cta {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--white);
+      opacity: 0.85;
+    }
+    .delivery-banner-icon {
+      width: 52px;
+      height: 52px;
+      background: rgba(255,255,255,0.18);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid rgba(255,255,255,0.3);
+      transition: background var(--trans), transform var(--trans);
+    }
+    .delivery-banner:hover .delivery-banner-icon {
+      background: rgba(255,255,255,0.3);
+      transform: translateX(6px);
+    }
+    .delivery-banner-icon svg { color: white; }
 
     /* ─── REVIEWS ─── */
-    #resenas {
-      background: transparent;
+    .reviews {
+      background: var(--gray-bg);
+      padding: 6rem clamp(1.5rem, 5vw, 4rem);
     }
-    .reviews-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.5rem; max-width: 800px; position: relative; z-index: 1;
+    .reviews-inner {
+      max-width: 1100px;
+      margin: 0 auto;
     }
-    .review-card {
-      background: var(--glass);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border-radius: var(--radius); padding: 2rem 1.8rem;
-      border: 1.5px solid var(--border); position: relative;
-      transition: transform var(--trans), box-shadow var(--trans), border-color var(--trans);
+    .reviews-header {
+      text-align: center;
+      margin-bottom: 3rem;
     }
-    .review-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 32px rgba(233,30,140,0.15);
-      border-color: var(--border-pink);
-    }
-    .review-quote {
-      font-size: 3rem; line-height: 1; font-weight: 800;
-      color: var(--pink); opacity: 0.2;
-      position: absolute; top: 1.2rem; right: 1.5rem;
-    }
-    .review-stars { color: #FFB300; font-size: 1rem; letter-spacing: 1px; margin-bottom: 0.8rem; }
-    .review-text {
-      font-size: 0.95rem; color: #E2E8F0; line-height: 1.65; margin-bottom: 1.2rem; font-weight: 400;
-    }
-    .review-author { display: flex; align-items: center; gap: 0.7rem; }
-    .review-avatar {
-      width: 40px; height: 40px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1rem; font-weight: 700; color: var(--white); flex-shrink: 0;
-    }
-    .avatar-pink { background: linear-gradient(135deg, var(--pink), var(--pink-soft)); }
-    .avatar-violet { background: linear-gradient(135deg, #7C3AED, #A855F7); }
-    .review-name { font-size: 0.9rem; font-weight: 700; color: var(--white); }
-    .review-platform { font-size: 0.75rem; color: #CBD5E1; }
     .google-badge {
-      display: inline-flex; align-items: center; gap: 0.35rem;
-      background: var(--glass); border: 1.5px solid var(--border);
-      border-radius: 50px; padding: 0.3rem 0.8rem;
-      font-size: 0.75rem; font-weight: 600; color: #CBD5E1;
-      margin-top: 1.5rem; position: relative; z-index: 1;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--white);
+      border-radius: 50px;
+      padding: 0.4rem 1rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #4285F4;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 1rem;
     }
     .google-g {
-      font-size: 0.85rem; font-weight: 800;
-      background: linear-gradient(135deg, #4285F4, #EA4335, #FBBC05, #34A853);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      width: 20px;
+      height: 20px;
+      background: linear-gradient(135deg, #4285F4 0%, #34A853 35%, #FBBC04 65%, #EA4335 100%);
+      border-radius: 50%;
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .review-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #F0F0F0;
+      transition: transform var(--trans), box-shadow var(--trans);
+    }
+    .review-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+    .review-stars { color: #FFC107; font-size: 1.2rem; margin-bottom: 0.75rem; letter-spacing: 2px; }
+    .review-text { font-size: 0.95rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 1.25rem; font-style: italic; }
+    .review-author { display: flex; align-items: center; gap: 10px; }
+    .review-avatar {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: var(--pink);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 1rem; color: white;
+      flex-shrink: 0;
+    }
+    .review-name { font-weight: 700; font-size: 0.9rem; color: var(--text-dark); }
+    .review-sub { font-size: 0.78rem; color: var(--text-mid); }
 
     /* ─── LOCATION ─── */
-    #ubicacion {
-      background: transparent;
+    .location {
+      background: var(--white);
+      padding: 6rem clamp(1.5rem, 5vw, 4rem);
     }
-    .location-wrap {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 2rem; max-width: 1000px; align-items: start;
-      position: relative; z-index: 1;
+    .location-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
     }
-    @media (max-width: 680px) { .location-wrap { grid-template-columns: 1fr; } }
-    .map-wrap {
-      border-radius: var(--radius-lg); overflow: hidden;
-      box-shadow: var(--shadow); height: 360px;
-      border: 1.5px solid var(--border);
-    }
-    .map-wrap iframe { width: 100%; height: 100%; border: none; display: block; }
-    .contact-card {
-      background: var(--glass);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+    .map-wrapper {
       border-radius: var(--radius-lg);
-      border: 1.5px solid var(--border);
-      padding: 2.5rem 2rem; height: 360px;
-      display: flex; flex-direction: column; gap: 1.4rem; justify-content: center;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      height: 380px;
     }
-    .contact-card-title { font-size: 1.25rem; font-weight: 800; color: var(--white); margin-bottom: 0.2rem; }
-    .contact-row { display: flex; align-items: flex-start; gap: 0.9rem; }
-    .c-icon-wrap {
-      width: 38px; height: 38px; border-radius: 10px;
-      background: rgba(233,30,140,0.12); border: 1px solid var(--border-pink);
+    .map-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+    .contact-card {
+      padding: 2.5rem;
+      background: var(--gray-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid #EEEEEE;
+    }
+    .contact-info-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .contact-info-icon {
+      width: 42px; height: 42px;
+      background: var(--pink-light);
+      border-radius: var(--radius-sm);
       display: flex; align-items: center; justify-content: center;
-      font-size: 1rem; flex-shrink: 0;
+      flex-shrink: 0;
+      color: var(--pink);
+      font-size: 1.1rem;
     }
-    .c-text { display: flex; flex-direction: column; gap: 0.1rem; }
-    .c-label { font-size: 0.72rem; font-weight: 600; color: #CBD5E1; text-transform: uppercase; letter-spacing: 0.06em; }
-    .c-value { font-size: 0.92rem; font-weight: 600; color: #E2E8F0; }
-    .c-value a { color: var(--pink-soft); text-decoration: none; }
-    .c-value a:hover { text-decoration: underline; }
-    .btn-directions {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      background: linear-gradient(135deg, var(--pink), var(--pink-soft));
-      color: var(--white); border-radius: 50px; padding: 0.75rem 1.6rem;
-      font-size: 0.88rem; font-weight: 700; text-decoration: none;
-      box-shadow: 0 4px 18px rgba(233,30,140,0.35);
-      transition: transform var(--trans), box-shadow var(--trans); align-self: flex-start;
+    .contact-info-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-mid);
+      margin-bottom: 0.2rem;
     }
-    .btn-directions:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(233,30,140,0.45); }
+    .contact-info-value {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      text-decoration: none;
+    }
+    .contact-info-value:hover { color: var(--pink); }
+
+    .contact-socials {
+      display: flex;
+      gap: 0.75rem;
+    }
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0.6rem 1.2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.82rem;
+      transition: transform var(--trans), box-shadow var(--trans);
+    }
+    .social-btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+    .social-btn.fb { background: #1877F2; color: white; }
 
     /* ─── FOOTER ─── */
     footer {
-      position: relative; z-index: 1;
-      background: rgba(6,8,16,0.97);
-      color: rgba(255,255,255,0.65);
-      padding: clamp(3rem, 6vw, 5rem) clamp(1.2rem, 5vw, 3rem) 2rem;
-      border-top: 1px solid rgba(255,255,255,0.05);
+      background: var(--gray-bg);
+      border-top: 1px solid #E8E8E8;
+      padding: 4rem clamp(1.5rem, 5vw, 4rem) 2rem;
     }
     .footer-inner {
-      max-width: 1100px; margin: 0 auto;
-      display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 3rem;
+      max-width: 1300px;
+      margin: 0 auto;
     }
-    @media (max-width: 680px) { .footer-inner { grid-template-columns: 1fr; gap: 2rem; } }
-    .footer-logo {
-      display: flex; align-items: center; gap: 10px; margin-bottom: 1rem; text-decoration: none;
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
     }
-    .footer-logo-img {
-      width: 44px; height: 44px; border-radius: 10px;
-      background: rgba(255,255,255,0.9);
-      display: flex; align-items: center; justify-content: center;
-      border: 2px solid var(--pink); overflow: hidden; flex-shrink: 0;
+    .footer-brand {}
+    .footer-logo-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 0.75rem;
     }
-    .footer-logo-img img { width: 40px; height: 40px; object-fit: contain; display: block; }
-    .footer-logo-text { font-size: 1.05rem; font-weight: 800; color: var(--white); }
-    .footer-brand p { font-size: 0.85rem; line-height: 1.7; color: rgba(255,255,255,0.70); }
+    .footer-logo-row img {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .footer-brand-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 1.4rem;
+      color: var(--text-dark);
+    }
+    .footer-brand-desc {
+      font-size: 0.88rem;
+      color: var(--text-mid);
+      line-height: 1.65;
+      max-width: 280px;
+      margin-bottom: 1.2rem;
+    }
+    .footer-hours {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #FFF0F8;
+      border-radius: 50px;
+      padding: 0.35rem 0.9rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--pink);
+    }
     .footer-col-title {
-      font-size: 0.78rem; font-weight: 700; color: rgba(255,255,255,0.60);
-      text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1.2rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-dark);
+      margin-bottom: 1rem;
     }
-    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
-    .footer-col a { font-size: 0.88rem; color: rgba(255,255,255,0.75); text-decoration: none; transition: color var(--trans); }
-    .footer-col a:hover { color: var(--pink-soft); }
-    .footer-divider { border: none; border-top: 1px solid rgba(255,255,255,0.06); margin: 2.5rem auto 1.5rem; max-width: 1100px; }
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .footer-links a {
+      text-decoration: none;
+      font-size: 0.88rem;
+      color: var(--text-mid);
+      transition: color var(--trans);
+    }
+    .footer-links a:hover { color: var(--pink); }
+    .footer-divider {
+      height: 1px;
+      background: #E0E0E0;
+      margin-bottom: 1.5rem;
+    }
     .footer-bottom {
-      max-width: 1100px; margin: 0 auto;
-      display: flex; align-items: center; justify-content: space-between;
-      flex-wrap: wrap; gap: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
     }
-    .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.55); }
-    .footer-social { display: flex; gap: 0.7rem; }
-    .social-btn {
-      width: 34px; height: 34px; border-radius: 8px;
-      background: rgba(255,255,255,0.10); border: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: center;
-      text-decoration: none; font-size: 0.9rem; color: rgba(255,255,255,0.70);
-      transition: background var(--trans), color var(--trans), border-color var(--trans);
+    .footer-copy {
+      font-size: 0.82rem;
+      color: var(--text-mid);
     }
-    .social-btn:hover { background: var(--pink); color: var(--white); border-color: var(--pink); }
+    .footer-copy span { color: var(--pink); font-weight: 600; }
+    .footer-legal {
+      display: flex;
+      gap: 1.5rem;
+    }
+    .footer-legal a {
+      font-size: 0.82rem;
+      color: var(--text-mid);
+      text-decoration: none;
+    }
+    .footer-legal a:hover { color: var(--pink); }
 
-    /* ─── FLOATING CALL BUTTON ─── */
+    /* ─── UTILITY OVERRIDES (replaces inline styles) ─── */
+    .section-title--reviews { font-size: clamp(2rem, 4vw, 3rem); }
+    .section-title--contact { font-size: 2.2rem; margin-bottom: 1.5rem; }
+
+    /* ─── FAB ─── */
     .fab {
-      position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 900;
-      display: flex; align-items: center; gap: 0.6rem;
-      background: linear-gradient(135deg, var(--pink), var(--pink-soft));
-      color: var(--white); padding: 0.78rem 1.4rem;
-      border-radius: 50px; text-decoration: none; font-size: 0.88rem; font-weight: 700;
-      box-shadow: 0 6px 24px rgba(233,30,140,0.45);
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 998;
+      background: var(--pink);
+      color: var(--white);
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 6px 24px rgba(233,30,140,0.5);
       transition: transform var(--trans), box-shadow var(--trans);
+      animation: fab-pulse 3s ease-in-out infinite;
     }
-    .fab:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(233,30,140,0.55); }
-    .fab-pulse {
-      width: 10px; height: 10px; border-radius: 50%; background: #fff; animation: pulse 1.8s infinite;
+    .fab:hover {
+      transform: scale(1.12);
+      box-shadow: 0 10px 36px rgba(233,30,140,0.7);
     }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.5; transform: scale(0.7); }
+    @keyframes fab-pulse {
+      0%, 100% { box-shadow: 0 6px 24px rgba(233,30,140,0.5); }
+      50% { box-shadow: 0 6px 36px rgba(233,30,140,0.8), 0 0 0 12px rgba(233,30,140,0.08); }
+    }
+    .fab svg { width: 26px; height: 26px; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1024px) {
+      .anatomy-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .anatomy-center {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+      .anatomy-features-left,
+      .anatomy-features-right {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+      }
+      .anatomy-features-left .anatomy-feature,
+      .anatomy-features-right .anatomy-feature {
+        align-items: center;
+        text-align: center;
+        max-width: 200px;
+      }
+      .anatomy-features-left .anatomy-feature-desc {
+        margin-left: 0;
+      }
+      .dot-line-bar { display: none; }
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-images { display: none; }
+      .featured-inner { grid-template-columns: 1fr; }
+      .location-inner { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .hero-stats { gap: 1.5rem; }
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 120px);
+      }
+      .product-grid-item:nth-child(1) {
+        grid-column: span 2;
+        grid-row: span 1;
+      }
+      .delivery-banner {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-btns { flex-direction: column; }
+      .btn-primary, .btn-outline { justify-content: center; }
     }
   </style>
+
+  <!-- JSON-LD LocalBusiness Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "GroceryStore",
+    "name": "La Tienda de Samira",
+    "description": "Tienda de alimentación en Jerez de la Frontera. Snacks, bebidas, chucherías, embutidos, dulces, panadería, congelados y hogar. Abierto hasta las 22:30.",
+    "url": "https://latiendadesamira.cloud",
+    "telephone": "+34856615453",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "C. Tablao, bloque 4, local 8",
+      "addressLocality": "Jerez de la Frontera",
+      "addressRegion": "Cádiz",
+      "postalCode": "11404",
+      "addressCountry": "ES"
+    },
+    "openingHours": "Mo-Su 09:00-22:30",
+    "hasMap": "https://www.google.com/maps/place/La+tienda+de+Samira/@36.678,-6.127,17z/",
+    "image": "img/foto6.jpg",
+    "priceRange": "€"
+  }
+  </script>
 </head>
 <body>
 
-  <!-- ─── NAVBAR ─── -->
+  <!-- ═══════════ NAV ═══════════ -->
   <nav id="navbar">
-    <a href="#inicio" class="nav-brand">
-      <div class="nav-logo-wrap">
-        <img src="img/logo.jpg" alt="La Tienda de Samira" />
-      </div>
-      <div class="nav-brand-text">
-        <span class="nav-brand-name">La Tienda de Samira</span>
-        <span class="nav-brand-sub">Jerez de la Frontera</span>
-      </div>
+    <a class="nav-logo" href="#">
+      <img src="img/logo.jpg" alt="La Tienda de Samira" />
+      <span class="nav-logo-text">Tienda de Samira</span>
     </a>
+
     <ul class="nav-links">
       <li><a href="#productos">Productos</a></li>
-      <li><a href="#fotos">La tienda</a></li>
+      <li><a href="#porque">Nosotros</a></li>
       <li><a href="#delivery">Delivery</a></li>
-      <li><a href="#ubicacion">Contacto</a></li>
-      <li><a href="tel:856615453" class="nav-cta">&#128222; Llamar</a></li>
+      <li><a href="#ubicacion">Ubicación</a></li>
+      <li><a href="tel:856615453" class="nav-cta">📞 Llamar</a></li>
     </ul>
+
+    <button type="button" class="hamburger" id="hamburger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
-  <!-- ─── HERO ─── -->
-  <section class="hero" id="inicio">
-    <div class="hero-content">
-      <div class="hero-logo-wrap">
-        <img src="img/logo.jpg" alt="Logo La Tienda de Samira" />
-      </div>
-      <h1>La Tienda de <span>Samira</span></h1>
-      <p class="hero-tagline">Tu tienda de confianza en Jerez &#x2014; siempre cerca, siempre abierta</p>
-      <div class="hero-badges">
-        <span class="hero-badge">
-          <span class="badge-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-          4,6 en Google
-        </span>
-        <span class="hero-badge">
-          <span class="b-icon">&#128336;</span>
-          Abierto hasta las 22:30
-        </span>
-        <span class="hero-badge">
-          <span class="b-icon">&#128666;</span>
-          Glovo &amp; Just Eat
-        </span>
-      </div>
-      <div class="hero-ctas">
-        <a href="#productos" class="btn btn-primary">&#128717; Ver productos</a>
-        <a href="#delivery" class="btn btn-secondary">&#128666; Pedir a domicilio</a>
-      </div>
-    </div>
-    <div class="hero-scroll">
-      <div class="scroll-dot"></div>
-      Descubre la tienda
-    </div>
-  </section>
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#productos" onclick="closeMobileMenu()">Productos</a></li>
+      <li><a href="#porque" onclick="closeMobileMenu()">Nosotros</a></li>
+      <li><a href="#delivery" onclick="closeMobileMenu()">Delivery</a></li>
+      <li><a href="#ubicacion" onclick="closeMobileMenu()">Ubicación</a></li>
+      <li><a href="tel:856615453">📞 856 61 54 53</a></li>
+    </ul>
+  </div>
 
-  <!-- ─── CATEGORIAS PRODUCTOS ─── -->
-  <section id="productos">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="section-label">&#127752; Lo que encontraras</div>
-        <h2 class="section-title">De todo lo que necesitas,<br /><span>a un paso de casa</span></h2>
-        <p class="section-sub">Surtidos cada dia para que siempre encuentres lo que buscas</p>
+  <!-- ═══════════ HERO ═══════════ -->
+  <section class="hero">
+    <div class="hero-bg-img">
+      <img src="img/foto4.jpg" alt="Tienda de Samira" />
+    </div>
+
+    <div class="hero-inner">
+      <div class="hero-text reveal">
+        <div class="hero-badge">
+          <span>⭐</span> Jerez de la Frontera · Desde 2018
+        </div>
+        <h1 class="hero-title">
+          LA TIENDA<br>DE <em>SAMIRA</em>
+        </h1>
+        <p class="hero-subtitle">
+          Tu tienda de confianza en el barrio. Más de 300 productos de alimentación, bebidas frías, chucherías y mucho más. Abierta hasta las 22:30.
+        </p>
+        <div class="hero-btns">
+          <a href="https://glovoapp.com/es/es/jerez-de-la-frontera/" target="_blank" rel="noopener noreferrer" class="btn-primary">
+            🛵 Pedir en Glovo
+          </a>
+          <a href="#productos" class="btn-outline">
+            Ver productos →
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-num">+300</div>
+            <div class="hero-stat-label">Productos</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">22:30</div>
+            <div class="hero-stat-label">Horario hasta</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">⭐4.6</div>
+            <div class="hero-stat-label">Google</div>
+          </div>
+        </div>
       </div>
-      <div class="products-grid">
-        <div class="product-card reveal reveal-delay-1">
-          <div class="product-icon-wrap">&#129364;</div>
-          <div class="product-text">
-            <div class="product-name">Snacks y patatas</div>
-            <div class="product-desc">Las mejores marcas: Lay's, Ruffles, Doritos y mas</div>
-          </div>
+
+      <div class="hero-images reveal delay-3">
+        <div class="hero-img-card">
+          <img src="img/foto6.jpg" alt="Tienda de Samira interior" />
         </div>
-        <div class="product-card reveal reveal-delay-2">
-          <div class="product-icon-wrap">&#129380;</div>
-          <div class="product-text">
-            <div class="product-name">Bebidas frias</div>
-            <div class="product-desc">Refrescos, zumos, agua, energia y cervezas</div>
-          </div>
+        <div class="hero-img-card">
+          <img src="img/foto2.jpg" alt="Productos frescos" />
         </div>
-        <div class="product-card reveal reveal-delay-3">
-          <div class="product-icon-wrap">&#127852;</div>
-          <div class="product-text">
-            <div class="product-name">Chucherias</div>
-            <div class="product-desc">Gominolas, regaliz, pica-pica y mucho mas</div>
-          </div>
-        </div>
-        <div class="product-card reveal reveal-delay-4">
-          <div class="product-icon-wrap">&#129385;</div>
-          <div class="product-text">
-            <div class="product-name">Embutidos y fiambres</div>
-            <div class="product-desc">Jamon, chorizo, salchichon y quesos</div>
-          </div>
-        </div>
-        <div class="product-card reveal reveal-delay-5">
-          <div class="product-icon-wrap">&#127851;</div>
-          <div class="product-text">
-            <div class="product-name">Dulces y chocolate</div>
-            <div class="product-desc">Chocolatinas, galletas, barritas y bolleria</div>
-          </div>
-        </div>
-        <div class="product-card reveal reveal-delay-6">
-          <div class="product-icon-wrap">&#129360;</div>
-          <div class="product-text">
-            <div class="product-name">Panaderia</div>
-            <div class="product-desc">Pan, tostadas, magdalenas y bolleria fresca</div>
-          </div>
-        </div>
-        <div class="product-card reveal reveal-delay-7">
-          <div class="product-icon-wrap">&#10052;</div>
-          <div class="product-text">
-            <div class="product-name">Congelados</div>
-            <div class="product-desc">Pizzas, helados, croquetas y mas opciones</div>
-          </div>
-        </div>
-        <div class="product-card reveal reveal-delay-8">
-          <div class="product-icon-wrap">&#129498;</div>
-          <div class="product-text">
-            <div class="product-name">Hogar</div>
-            <div class="product-desc">Limpieza, higiene y articulos de primera necesidad</div>
-          </div>
+        <div class="hero-img-card">
+          <img src="img/foto3.jpg" alt="Bebidas frías" />
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ─── DESTACADOS GLOVO ─── -->
-  <section id="destacados">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="section-label">&#11088; Mas pedidos en Glovo</div>
-        <h2 class="section-title">Los favoritos de <span>nuestros clientes</span></h2>
-        <p class="section-sub">Productos que no pueden faltar &#x2014; disponibles en Glovo para pedirlos desde casa</p>
+  <!-- ═══════════ CATEGORY STRIP ═══════════ -->
+  <div class="category-strip-section">
+    <div class="strip-track-wrapper">
+      <div class="strip-track" id="stripTrack">
+        <!-- Original items -->
+        <div class="strip-item"><div class="strip-icon">🍿</div><div class="strip-label">Snacks</div></div>
+        <div class="strip-item"><div class="strip-icon">🥤</div><div class="strip-label">Bebidas</div></div>
+        <div class="strip-item"><div class="strip-icon">🍬</div><div class="strip-label">Chucherías</div></div>
+        <div class="strip-item"><div class="strip-icon">🥩</div><div class="strip-label">Embutidos</div></div>
+        <div class="strip-item"><div class="strip-icon">🍫</div><div class="strip-label">Dulces</div></div>
+        <div class="strip-item"><div class="strip-icon">🥐</div><div class="strip-label">Panadería</div></div>
+        <div class="strip-item"><div class="strip-icon">🧊</div><div class="strip-label">Congelados</div></div>
+        <div class="strip-item"><div class="strip-icon">🏠</div><div class="strip-label">Hogar</div></div>
+        <!-- Duplicated for seamless loop -->
+        <div class="strip-item"><div class="strip-icon">🍿</div><div class="strip-label">Snacks</div></div>
+        <div class="strip-item"><div class="strip-icon">🥤</div><div class="strip-label">Bebidas</div></div>
+        <div class="strip-item"><div class="strip-icon">🍬</div><div class="strip-label">Chucherías</div></div>
+        <div class="strip-item"><div class="strip-icon">🥩</div><div class="strip-label">Embutidos</div></div>
+        <div class="strip-item"><div class="strip-icon">🍫</div><div class="strip-label">Dulces</div></div>
+        <div class="strip-item"><div class="strip-icon">🥐</div><div class="strip-label">Panadería</div></div>
+        <div class="strip-item"><div class="strip-icon">🧊</div><div class="strip-label">Congelados</div></div>
+        <div class="strip-item"><div class="strip-icon">🏠</div><div class="strip-label">Hogar</div></div>
       </div>
-      <div class="highlights-grid">
-        <div class="highlight-card reveal reveal-delay-1">
-          <div class="highlight-img-wrap">
-            <img src="https://i.postimg.cc/PfcsVYK5/Mollete-mechada-847x435.jpg" alt="Bocadillo Carne Mechada" loading="lazy" />
-          </div>
-          <div class="highlight-info">
-            <div class="highlight-name">Bocadillo Carne Mechada</div>
-          </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ FEATURED PRODUCTS ═══════════ -->
+  <section class="featured" id="productos">
+    <div class="featured-inner">
+
+      <div class="product-grid reveal-left">
+        <div class="product-grid-item">
+          <img src="https://i.postimg.cc/PfcsVYK5/Mollete-mechada-847x435.jpg" alt="Bocadillo Carne Mechada" loading="lazy" />
+          <div class="product-overlay"></div>
         </div>
-        <div class="highlight-card reveal reveal-delay-2">
-          <div class="highlight-img-wrap">
-            <img src="https://i.postimg.cc/pVBkpH5b/3329-r1-6.jpg" alt="Bocadillo Jamon Serrano" loading="lazy" />
-          </div>
-          <div class="highlight-info">
-            <div class="highlight-name">Bocadillo Jamon Serrano</div>
-          </div>
+        <div class="product-grid-item">
+          <img src="https://i.postimg.cc/pVBkpH5b/3329-r1-6.jpg" alt="Bocadillo Jamon Serrano" loading="lazy" />
+          <div class="product-overlay"></div>
         </div>
-        <div class="highlight-card reveal reveal-delay-3">
-          <div class="highlight-img-wrap">
-            <img src="https://i.postimg.cc/ZnM9PJhY/141190-ISO-0-ES.avif" alt="Monster Verde 500ml" loading="lazy" />
-          </div>
-          <div class="highlight-info">
-            <div class="highlight-name">Monster Verde 500ml</div>
-          </div>
+        <div class="product-grid-item">
+          <img src="https://i.postimg.cc/ZnM9PJhY/141190-ISO-0-ES.avif" alt="Monster Verde 500ml" loading="lazy" />
+          <div class="product-overlay"></div>
         </div>
-        <div class="highlight-card reveal reveal-delay-4">
-          <div class="highlight-img-wrap">
-            <img src="https://i.postimg.cc/2yKsCKnX/Artboard1copy22.webp" alt="Takis Fuego" loading="lazy" />
-          </div>
-          <div class="highlight-info">
-            <div class="highlight-name">Takis Fuego</div>
-          </div>
+        <div class="product-grid-item">
+          <img src="https://i.postimg.cc/2yKsCKnX/Artboard1copy22.webp" alt="Takis Fuego" loading="lazy" />
+          <div class="product-overlay"></div>
         </div>
-        <div class="highlight-card reveal reveal-delay-5">
-          <div class="highlight-img-wrap">
-            <img src="https://i.postimg.cc/LX3tHh4b/kinder-bueno-classic-caja-de-15-ud.jpg" alt="Kinder Bueno Choco" loading="lazy" />
-          </div>
-          <div class="highlight-info">
-            <div class="highlight-name">Kinder Bueno Choco</div>
-          </div>
+        <div class="product-grid-item">
+          <img src="https://i.postimg.cc/LX3tHh4b/kinder-bueno-classic-caja-de-15-ud.jpg" alt="Kinder Bueno Choco" loading="lazy" />
+          <div class="product-overlay"></div>
         </div>
-        <div class="highlight-card reveal reveal-delay-6">
-          <div class="highlight-img-wrap">
-            <img src="https://i.postimg.cc/TPfgtHgm/import-aecoc-images-08410199272393-8410199272393-doritos-tex-mex-aperitivo-de-maz-frito-con-sabor-a.jpg" alt="Doritos Tex Mex" loading="lazy" />
-          </div>
-          <div class="highlight-info">
-            <div class="highlight-name">Doritos Tex Mex</div>
-          </div>
+        <div class="product-grid-item">
+          <img src="https://i.postimg.cc/TPfgtHgm/import-aecoc-images-08410199272393-8410199272393-doritos-tex-mex-aperitivo-de-maz-frito-con-sabor-a.jpg" alt="Doritos Tex Mex" loading="lazy" />
+          <div class="product-overlay"></div>
         </div>
-        <div class="highlight-card reveal reveal-delay-7">
-          <div class="highlight-img-wrap">
-            <img src="https://i.postimg.cc/gj02jQQV/cocacola-lata.jpg" alt="Coca-Cola 330ml" loading="lazy" />
-          </div>
-          <div class="highlight-info">
-            <div class="highlight-name">Coca-Cola 330ml</div>
-          </div>
+        <div class="product-grid-item">
+          <img src="https://i.postimg.cc/gj02jQQV/cocacola-lata.jpg" alt="Coca-Cola 330ml" loading="lazy" />
+          <div class="product-overlay"></div>
         </div>
-        <div class="highlight-card reveal reveal-delay-8">
-          <div class="highlight-img-wrap">
-            <img src="https://i.postimg.cc/hGM0RpDd/07025-325x325.jpg" alt="Nutella 200g" loading="lazy" />
-          </div>
-          <div class="highlight-info">
-            <div class="highlight-name">Nutella 200g</div>
-          </div>
+        <div class="product-grid-item">
+          <img src="https://i.postimg.cc/hGM0RpDd/07025-325x325.jpg" alt="Nutella 200g" loading="lazy" />
+          <div class="product-overlay"></div>
         </div>
       </div>
-      <div class="highlights-footer reveal">
-        <a href="https://glovoapp.com/es/es/jerez-de-la-frontera/" target="_blank" rel="noopener" class="btn-glovo">
-          &#128666; Ver todo en Glovo
+
+      <div class="featured-text reveal-right">
+        <span class="section-label">Lo que ofrecemos</span>
+        <h2 class="section-title">LOS FAVORITOS<br>DE <span>NUESTROS</span><br>CLIENTES</h2>
+
+        <div class="features-chips">
+          <div class="chip"><span class="chip-dot"></span>Snacks importados</div>
+          <div class="chip"><span class="chip-dot"></span>Bebidas frías siempre</div>
+          <div class="chip"><span class="chip-dot"></span>Embutidos frescos</div>
+          <div class="chip"><span class="chip-dot"></span>Dulces y chucherías</div>
+          <div class="chip"><span class="chip-dot"></span>Panadería diaria</div>
+          <div class="chip"><span class="chip-dot"></span>Productos hogar</div>
+        </div>
+
+        <p class="section-desc">
+          Desde snacks internacionales hasta los productos de siempre. Todo lo que necesitas lo encuentras en Samira, sin colas, sin agobios y con una sonrisa.
+        </p>
+
+        <a href="https://glovoapp.com/es/es/jerez-de-la-frontera/" target="_blank" rel="noopener noreferrer" class="arrow-cta">
+          Ver catálogo completo en Glovo
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- ─── GALERIA ─── -->
-  <section id="fotos">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="section-label">&#128247; Nuestro local</div>
-        <h2 class="section-title">Siempre bien <span>surtidos</span></h2>
-        <p class="section-sub">Ven a vernos &#x2014; encontraras todo lo que necesitas en un ambiente comodo y cercano</p>
-      </div>
-      <div class="gallery-bento reveal">
-        <div class="g-item">
-          <img src="img/foto6.jpg" alt="Entrada de La Tienda de Samira" loading="lazy" />
-          <div class="g-item-overlay"></div>
+  <!-- ═══════════ POR QUÉ SAMIRA — ANATOMY ═══════════ -->
+  <section class="anatomy" id="porque">
+    <div class="anatomy-header reveal">
+      <span class="section-label">Por qué elegirnos</span>
+      <h2 class="section-title">SIEMPRE CERCA,<br><span>SIEMPRE ABIERTA</span></h2>
+    </div>
+
+    <div class="anatomy-inner">
+
+      <div class="anatomy-features-left">
+        <div class="anatomy-feature reveal delay-1">
+          <div class="anatomy-feature-title">Horario hasta 22:30</div>
+          <div class="anatomy-feature-desc">Abiertos cuando los demás ya han cerrado. Todos los días sin excepción.</div>
+          <div class="anatomy-dot-line">
+            <div class="dot-line-bar"></div>
+            <div class="dot-line-circle"></div>
+          </div>
         </div>
-        <div class="g-item">
-          <img src="img/foto2.jpg" alt="Expositor de snacks y chucherias" loading="lazy" />
-          <div class="g-item-overlay"></div>
-        </div>
-        <div class="g-item">
-          <img src="img/foto3.jpg" alt="Exterior de la tienda" loading="lazy" />
-          <div class="g-item-overlay"></div>
-        </div>
-        <div class="g-item">
-          <img src="img/foto7.jpg" alt="Mostrador de embutidos" loading="lazy" />
-          <div class="g-item-overlay"></div>
-        </div>
-        <div class="g-item">
-          <img src="img/foto4.jpg" alt="Interior amplio con estanterias" loading="lazy" />
-          <div class="g-item-overlay"></div>
-        </div>
-        <div class="g-item">
-          <img src="img/foto5.jpg" alt="Neveras con bebidas frias" loading="lazy" />
-          <div class="g-item-overlay"></div>
+        <div class="anatomy-feature reveal delay-2">
+          <div class="anatomy-feature-title">Trato familiar</div>
+          <div class="anatomy-feature-desc">Te conocemos por tu nombre. Aquí siempre hay una sonrisa esperándote.</div>
+          <div class="anatomy-dot-line">
+            <div class="dot-line-bar"></div>
+            <div class="dot-line-circle"></div>
+          </div>
         </div>
       </div>
+
+      <div class="anatomy-center reveal delay-3">
+        <div class="anatomy-center-img">
+          <img src="img/foto6.jpg" alt="Interior tienda de Samira" />
+        </div>
+        <div class="anatomy-center-badge">La Tienda de Samira · Jerez</div>
+      </div>
+
+      <div class="anatomy-features-right">
+        <div class="anatomy-feature reveal delay-2">
+          <div class="anatomy-dot-line">
+            <div class="dot-line-circle"></div>
+            <div class="dot-line-bar"></div>
+          </div>
+          <div class="anatomy-feature-title">Delivery en minutos</div>
+          <div class="anatomy-feature-desc">Disponibles en Glovo y Just Eat para que recibas tu pedido sin salir de casa.</div>
+        </div>
+        <div class="anatomy-feature reveal delay-1">
+          <div class="anatomy-dot-line">
+            <div class="dot-line-circle"></div>
+            <div class="dot-line-bar"></div>
+          </div>
+          <div class="anatomy-feature-title">+300 Productos</div>
+          <div class="anatomy-feature-desc">Desde lo básico hasta lo que no encuentras en otros sitios. Gran variedad siempre.</div>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- ─── DELIVERY ─── -->
-  <section id="delivery">
-    <div class="container" style="position:relative;z-index:1;">
-      <div class="section-header reveal">
-        <div class="section-label">&#128666; A domicilio</div>
-        <h2 class="section-title">Te lo llevamos <span>a casa</span></h2>
-        <p class="section-sub">Sin salir de casa, en minutos. Disponible en las apps de reparto que ya usas</p>
-      </div>
-      <div class="delivery-cards reveal">
-        <a href="https://glovoapp.com/es/es/jerez-de-la-frontera/" target="_blank" rel="noopener" class="delivery-card dc-glovo">
-          <div class="dc-logo">&#128666;</div>
-          <div class="dc-text">
-            <div class="dc-name">Pedir en Glovo</div>
-            <div class="dc-sub">Entrega rapida en tu zona</div>
-          </div>
-          <span class="dc-arrow">&#8594;</span>
-        </a>
-        <a href="https://www.just-eat.es/restaurants-tiendadesamira-jerez/" target="_blank" rel="noopener" class="delivery-card dc-justeat">
-          <div class="dc-logo">&#127828;</div>
-          <div class="dc-text">
-            <div class="dc-name">Pedir en Just Eat</div>
-            <div class="dc-sub">Tu pedido favorito al momento</div>
-          </div>
-          <span class="dc-arrow">&#8594;</span>
-        </a>
-      </div>
-      <p class="delivery-note">&#10003; Disponible en tu barrio &nbsp;&#183;&nbsp; Entrega en minutos &nbsp;&#183;&nbsp; Sin minimo de pedido</p>
-    </div>
-  </section>
+  <!-- ═══════════ DELIVERY BANNERS ═══════════ -->
+  <div class="delivery-banners" id="delivery">
 
-  <!-- ─── RESENAS ─── -->
-  <section id="resenas">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="section-label">&#11088; Valoraciones</div>
-        <h2 class="section-title">Lo que dicen <span>nuestros clientes</span></h2>
-        <p class="section-sub">4,6 sobre 5 en Google Maps &#x2014; gracias a todos los que confian en nosotros cada dia</p>
+    <a href="https://glovoapp.com/es/es/jerez-de-la-frontera/" target="_blank" rel="noopener noreferrer" class="delivery-banner glovo reveal">
+      <div class="delivery-banner-text">
+        <div class="delivery-banner-eyebrow">Pide ahora · Entrega rápida</div>
+        <div class="delivery-banner-title">Disponibles<br>en Glovo</div>
       </div>
+      <div class="delivery-banner-arrow">
+        <span class="delivery-banner-cta">Abrir app</span>
+        <div class="delivery-banner-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://www.just-eat.es/restaurants-tiendadesamira-jerez/" target="_blank" rel="noopener noreferrer" class="delivery-banner justeat reveal">
+      <div class="delivery-banner-text">
+        <div class="delivery-banner-eyebrow">Pide ahora · Entrega rápida</div>
+        <div class="delivery-banner-title">Disponibles<br>en Just Eat</div>
+      </div>
+      <div class="delivery-banner-arrow">
+        <span class="delivery-banner-cta">Abrir app</span>
+        <div class="delivery-banner-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- ═══════════ REVIEWS ═══════════ -->
+  <section class="reviews">
+    <div class="reviews-inner">
+      <div class="reviews-header reveal">
+        <div class="google-badge">
+          <div class="google-g">G</div>
+          Google Reviews
+        </div>
+        <span class="section-label">Lo que dicen nuestros clientes</span>
+        <h2 class="section-title section-title--reviews">OPINIONES <span>REALES</span></h2>
+      </div>
+
       <div class="reviews-grid">
-        <div class="review-card reveal reveal-delay-1">
-          <div class="review-quote">"</div>
-          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="review-text">Muy buena tienda, tiene de todo y siempre esta muy bien surtida. El trato es muy amable y cercano. Se nota que cuidan a sus clientes. Muy recomendable para el barrio.</p>
+        <div class="review-card reveal delay-1">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Una tienda increíble con todo lo que necesitas. Samira siempre tiene una sonrisa y el trato es excepcional. Los mejores snacks de Jerez, sin duda."</p>
           <div class="review-author">
-            <div class="review-avatar avatar-pink">M</div>
+            <div class="review-avatar">M</div>
             <div>
-              <div class="review-name">Minna L.</div>
-              <div class="review-platform">Resena de Google</div>
+              <div class="review-name">María González</div>
+              <div class="review-sub">Cliente habitual · Google</div>
             </div>
           </div>
         </div>
-        <div class="review-card reveal reveal-delay-2">
-          <div class="review-quote">"</div>
-          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="review-text">Una tienda de barrio como las de antes. Siempre encuentras lo que necesitas y el horario es genial, poder comprar hasta las diez y media de la noche es un lujo. 100% recomendada.</p>
+
+        <div class="review-card reveal delay-2">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"La mejor tienda del barrio. Siempre encuentro lo que busco y hasta tarde. El delivery por Glovo es rapidísimo. 100% recomendada para todos."</p>
           <div class="review-author">
-            <div class="review-avatar avatar-violet">D</div>
+            <div class="review-avatar">A</div>
             <div>
-              <div class="review-name">Dolores M.</div>
-              <div class="review-platform">Resena de Google</div>
+              <div class="review-name">Antonio Ruiz</div>
+              <div class="review-sub">Cliente habitual · Google</div>
             </div>
           </div>
         </div>
-      </div>
-      <div style="margin-top:2rem; display:flex; flex-direction:column; align-items:center; gap:1rem;" class="reveal">
-        <span class="google-badge">
-          <span class="google-g">G</span>
-          4,6 &#9733; en Google Maps
-        </span>
-        <a href="https://www.google.com/maps/place/La+tienda+de+Samira/@36.678,-6.127,17z/" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.5rem; background:var(--pink); color:white; padding:0.75rem 1.8rem; border-radius:50px; text-decoration:none; font-size:0.9rem; font-weight:700; box-shadow:0 4px 18px rgba(233,30,140,0.35); transition:all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 28px rgba(233,30,140,0.5)'" onmouseout="this.style.transform='';this.style.boxShadow='0 4px 18px rgba(233,30,140,0.35)'">&#11088; Dejanos tu resena en Google</a>
       </div>
     </div>
   </section>
 
-  <!-- ─── UBICACION ─── -->
-  <section id="ubicacion">
-    <div class="container">
-      <div class="section-header reveal">
-        <div class="section-label">&#128205; Donde estamos</div>
-        <h2 class="section-title">Facil de encontrar <span>en el barrio</span></h2>
-        <p class="section-sub">C. Tablao, bloque 4, local 8 &#x2014; Jerez de la Frontera, Cadiz</p>
+  <!-- ═══════════ LOCATION ═══════════ -->
+  <section class="location" id="ubicacion">
+    <div class="location-inner">
+      <div class="map-wrapper reveal-left">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3199.8!2d-6.1270!3d36.6780!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0dd5!2sCalle+Tablao+bloque+4+local+8+Jerez+de+la+Frontera!5e0!3m2!1ses!2ses!4v1700000000000!5m2!1ses!2ses"
+          allowfullscreen=""
+          loading="lazy"
+          title="Ubicación Tienda de Samira"
+        ></iframe>
       </div>
-      <div class="location-wrap reveal">
-        <div class="map-wrap">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3199.8!2d-6.1270!3d36.6780!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0dd5!2sCalle+Tablao+bloque+4+local+8+Jerez+de+la+Frontera!5e0!3m2!1ses!2ses!4v1700000000000!5m2!1ses!2ses"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Mapa La Tienda de Samira">
-          </iframe>
-        </div>
-        <div class="contact-card">
-          <div class="contact-card-title">La Tienda de Samira</div>
-          <div class="contact-row">
-            <div class="c-icon-wrap">&#128205;</div>
-            <div class="c-text">
-              <span class="c-label">Direccion</span>
-              <span class="c-value">C. Tablao, bloque 4, local 8<br />11404 Jerez de la Frontera, Cadiz</span>
+
+      <div class="contact-card reveal-right">
+        <span class="section-label">Encuéntranos</span>
+        <h2 class="section-title section-title--contact">DÓNDE<br><span>ESTAMOS</span></h2>
+
+        <ul class="contact-info-list">
+          <li class="contact-info-item">
+            <div class="contact-info-icon">📍</div>
+            <div>
+              <div class="contact-info-label">Dirección</div>
+              <a href="https://www.google.com/maps/place/La+tienda+de+Samira/@36.678,-6.127,17z/" target="_blank" rel="noopener noreferrer" class="contact-info-value">
+                C. Tablao, bloque 4, local 8, Jerez de la Frontera
+              </a>
             </div>
-          </div>
-          <div class="contact-row">
-            <div class="c-icon-wrap">&#128222;</div>
-            <div class="c-text">
-              <span class="c-label">Telefono</span>
-              <span class="c-value"><a href="tel:856615453">856 61 54 53</a></span>
+          </li>
+          <li class="contact-info-item">
+            <div class="contact-info-icon">📞</div>
+            <div>
+              <div class="contact-info-label">Teléfono</div>
+              <a href="tel:856615453" class="contact-info-value">856 61 54 53</a>
             </div>
-          </div>
-          <div class="contact-row">
-            <div class="c-icon-wrap">&#128336;</div>
-            <div class="c-text">
-              <span class="c-label">Horario</span>
-              <span class="c-value">Lunes a Domingo &mdash; hasta las 22:30 h</span>
+          </li>
+          <li class="contact-info-item">
+            <div class="contact-info-icon">🕐</div>
+            <div>
+              <div class="contact-info-label">Horario</div>
+              <span class="contact-info-value">Todos los días · 9:00 – 22:30</span>
             </div>
-          </div>
-          <div class="contact-row">
-            <div class="c-icon-wrap">&#128077;</div>
-            <div class="c-text">
-              <span class="c-label">Redes sociales</span>
-              <span class="c-value"><a href="https://www.facebook.com/La-tienda-de-Samira" target="_blank" rel="noopener">Facebook &#x2014; La tienda de Samira</a></span>
-            </div>
-          </div>
-          <a href="https://www.google.com/maps/search/La+Tienda+de+Samira+Jerez+de+la+Frontera" target="_blank" rel="noopener" class="btn-directions">
-            &#128205; Como llegar
+          </li>
+        </ul>
+
+        <div class="contact-socials">
+          <a href="https://www.www.facebook.com/La-tienda-de-Samira" target="_blank" rel="noopener noreferrer" class="social-btn fb">
+            📘 Facebook
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ─── FOOTER ─── -->
+  <!-- ═══════════ FOOTER ═══════════ -->
   <footer>
     <div class="footer-inner">
-      <div class="footer-brand">
-        <a href="#inicio" class="footer-logo">
-          <div class="footer-logo-img">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <div class="footer-logo-row">
             <img src="img/logo.jpg" alt="La Tienda de Samira" />
+            <div class="footer-brand-name">La Tienda de Samira</div>
           </div>
-          <span class="footer-logo-text">La Tienda de Samira</span>
-        </a>
-        <p>Tu tienda de confianza en Jerez de la Frontera. Snacks, bebidas, embutidos, dulces y todo lo que necesitas cada dia.</p>
+          <p class="footer-brand-desc">
+            Tu tienda de confianza en Jerez de la Frontera. Snacks, bebidas, chucherías, embutidos, dulces, panadería, congelados y productos de hogar.
+          </p>
+          <span class="footer-hours">🟢 Abierto hasta las 22:30</span>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Accesos rápidos</div>
+          <ul class="footer-links">
+            <li><a href="#productos">Nuestros productos</a></li>
+            <li><a href="#porque">Por qué Samira</a></li>
+            <li><a href="#delivery">Delivery</a></li>
+            <li><a href="#ubicacion">Ubicación</a></li>
+            <li><a href="https://www.google.com/maps/place/La+tienda+de+Samira/@36.678,-6.127,17z/" target="_blank" rel="noopener noreferrer">Ver en Google Maps</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Pedir online</div>
+          <ul class="footer-links">
+            <li><a href="https://glovoapp.com/es/es/jerez-de-la-frontera/" target="_blank" rel="noopener noreferrer">🛵 Glovo</a></li>
+            <li><a href="https://www.just-eat.es/restaurants-tiendadesamira-jerez/" target="_blank" rel="noopener noreferrer">🍔 Just Eat</a></li>
+            <li><a href="tel:856615453">📞 Llamar directamente</a></li>
+            <li><a href="tel:856615453">📞 Llamar a la tienda</a></li>
+            <li><a href="https://www.www.facebook.com/La-tienda-de-Samira" target="_blank" rel="noopener noreferrer">📘 Facebook</a></li>
+          </ul>
+        </div>
+
       </div>
-      <div class="footer-col">
-        <div class="footer-col-title">Navegacion</div>
-        <ul>
-          <li><a href="#productos">Productos</a></li>
-          <li><a href="#destacados">Destacados Glovo</a></li>
-          <li><a href="#fotos">La tienda</a></li>
-          <li><a href="#delivery">Pedir a domicilio</a></li>
-          <li><a href="#resenas">Valoraciones</a></li>
-          <li><a href="#ubicacion">Contacto</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <div class="footer-col-title">Contacto</div>
-        <ul>
-          <li><a href="tel:856615453">856 61 54 53</a></li>
-          <li><a href="#ubicacion">C. Tablao, bloque 4, local 8</a></li>
-          <li><a>Abierto hasta las 22:30</a></li>
-          <li><a href="https://glovoapp.com/es/es/jerez-de-la-frontera/" target="_blank" rel="noopener">Pedir en Glovo</a></li>
-          <li><a href="https://www.just-eat.es/restaurants-tiendadesamira-jerez/" target="_blank" rel="noopener">Pedir en Just Eat</a></li>
-        </ul>
-      </div>
-    </div>
-    <hr class="footer-divider" />
-    <div class="footer-bottom">
-      <span class="footer-copy">&copy; 2025 La Tienda de Samira &mdash; Jerez de la Frontera</span>
-      <div class="footer-social">
-        <a href="https://www.facebook.com/La-tienda-de-Samira" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook">f</a>
+
+      <div class="footer-divider"></div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 <span>La Tienda de Samira</span>. Todos los derechos reservados.</p>
+        <div class="footer-legal">
+          <a href="#">Aviso legal</a>
+          <a href="#">Privacidad</a>
+          <a href="#">Cookies</a>
+        </div>
       </div>
     </div>
   </footer>
 
-  <!-- ─── FAB CALL BUTTON ─── -->
-  <a href="tel:856615453" class="fab" aria-label="Llamar a La Tienda de Samira">
-    <span class="fab-pulse"></span>
-    &#128222; Llamar ahora
+  <!-- ═══════════ FAB ═══════════ -->
+  <a href="tel:856615453" class="fab" aria-label="Llamar ahora">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+    </svg>
   </a>
 
-  <!-- ─── SCRIPTS ─── -->
   <script>
-    // Navbar scroll behavior
-    var nav = document.getElementById('navbar');
+    // ── NAV scroll effect ──
+    var navbar = document.getElementById('navbar');
     window.addEventListener('scroll', function() {
-      if (window.scrollY > 60) { nav.classList.add('scrolled'); }
-      else { nav.classList.remove('scrolled'); }
-    }, { passive: true });
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
 
-    // Scroll reveal with IntersectionObserver
-    var reveals = document.querySelectorAll('.reveal');
-    if ('IntersectionObserver' in window) {
-      var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.10 });
-      reveals.forEach(function(el) { observer.observe(el); });
-    } else {
-      reveals.forEach(function(el) { el.classList.add('visible'); });
+    // ── Hamburger menu ──
+    var hamburger = document.getElementById('hamburger');
+    var mobileMenu = document.getElementById('mobileMenu');
+
+    hamburger.addEventListener('click', function() {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+
+    function closeMobileMenu() {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
     }
 
-    // Smooth anchor scroll for nav links
-    document.querySelectorAll('a[href^="#"]').forEach(function(a) {
-      a.addEventListener('click', function(e) {
-        var target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // Close menu on outside click
+    document.addEventListener('click', function(e) {
+      if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+        closeMobileMenu();
+      }
+    });
+
+    // ── Scroll Reveal ──
+    var revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    var revealObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    revealEls.forEach(function(el) {
+      revealObserver.observe(el);
+    });
+
+    // ── Product image rotation ──
+    var productPool = [
+      { src: 'https://i.postimg.cc/PfcsVYK5/Mollete-mechada-847x435.jpg', alt: 'Bocadillo Carne Mechada' },
+      { src: 'https://i.postimg.cc/pVBkpH5b/3329-r1-6.jpg', alt: 'Bocadillo Jamon Serrano' },
+      { src: 'https://i.postimg.cc/gj02jQQV/cocacola-lata.jpg', alt: 'Coca-Cola 330ml' },
+      { src: 'https://i.postimg.cc/5N1ZB82r/images.png', alt: 'Coca-Cola Zero Lata' },
+      { src: 'https://i.postimg.cc/2ScWFpnK/00118610200372-33-600x600.jpg', alt: 'Coca-Cola 2L' },
+      { src: 'https://i.postimg.cc/2jcCSHww/lata-fanta-naranja.jpg', alt: 'Fanta Naranja Lata' },
+      { src: 'https://i.postimg.cc/bvxzYpCD/lata-fanta-limon.jpg', alt: 'Fanta Limon Lata' },
+      { src: 'https://i.postimg.cc/ZnM9PJhY/141190-ISO-0-ES.avif', alt: 'Monster Verde 500ml' },
+      { src: 'https://i.postimg.cc/TwQ5wr7D/monster-lewis-hamilton.jpg', alt: 'Monster Lewis Hamilton' },
+      { src: 'https://i.postimg.cc/g2RwR9td/41q533-KXs3-L-SR600-315-PIWhite-Strip-Bottom-Left-0-35-SCLZZZZZZZ-FMpng-BG255-255-255.png', alt: 'Monster Mango Loco' },
+      { src: 'https://i.postimg.cc/vB8Dp4YH/monster-azul-lo-carb-500-ml.webp', alt: 'Monster Azul' },
+      { src: 'https://i.postimg.cc/5yT0Ypw6/bebida-energetica-white-zero-monster-500-ml.jpg', alt: 'Monster Blanco' },
+      { src: 'https://i.postimg.cc/g2PzCx4F/41-K50dh-V-x-L.jpg', alt: 'Monster Pacific Punch' },
+      { src: 'https://i.postimg.cc/L8rbCPVL/00118622300236-10-600x600.jpg', alt: 'Pepsi Lata' },
+      { src: 'https://i.postimg.cc/2yKsCKnX/Artboard1copy22.webp', alt: 'Takis Fuego' },
+      { src: 'https://i.postimg.cc/zXYwcjmJ/takis-queso-volcano-100g-8412600019689-50900761280843.webp', alt: 'Takis Queso Volcano' },
+      { src: 'https://i.postimg.cc/4d4qVg5S/takis-ninja-teriyaki-90gr-x-18u.png', alt: 'Takis Ninja Teriyaki' },
+      { src: 'https://i.postimg.cc/1zBY9dQc/61z83yrrd8l.jpg', alt: 'Takis Sweet Chili' },
+      { src: 'https://i.postimg.cc/TPfgtHgm/import-aecoc-images-08410199272393-8410199272393-doritos-tex-mex-aperitivo-de-maz-frito-con-sabor-a.jpg', alt: 'Doritos Tex Mex' },
+      { src: 'https://i.postimg.cc/ZKXLxcwF/doritos-chilli-44g.jpg', alt: 'Doritos Chili' },
+      { src: 'https://i.postimg.cc/Ss5XbZ2g/lays-campesinas.jpg', alt: 'Lays Campesinas' },
+      { src: 'https://i.postimg.cc/c4330Ncw/ruffles-sabor-a-jamon-bolsita-45gr.jpg', alt: 'Ruffles Jamon' },
+      { src: 'https://i.postimg.cc/zfdZdvVr/61-Kj3-XEko9-L.jpg', alt: 'Cheetos Gustosines' },
+      { src: 'https://i.postimg.cc/W3DKX7BG/cheetos-pelotazos-bolsita-40gr.jpg', alt: 'Cheetos Pelotazos' },
+      { src: 'https://i.postimg.cc/LX3tHh4b/kinder-bueno-classic-caja-de-15-ud.jpg', alt: 'Kinder Bueno' },
+      { src: 'https://i.postimg.cc/fy5fvy69/images-9.jpg', alt: 'Kinder Bueno White' },
+      { src: 'https://i.postimg.cc/X7y8TNS9/s-l1600.jpg', alt: 'Kinder Cards' },
+      { src: 'https://i.postimg.cc/hGM0RpDd/07025-325x325.jpg', alt: 'Nutella 200g' },
+      { src: 'https://i.postimg.cc/K8CfNy5Y/cruzcampo-lata.jpg', alt: 'Cruzcampo Lata' },
+      { src: 'https://i.postimg.cc/GtzzJ8M0/00118600300034-14-600x600.jpg', alt: 'Estrella Galicia Lata' },
+      { src: 'https://i.postimg.cc/5250y4Td/botellitas-coca-cola.jpg', alt: 'Pack Coca-Colas' },
+      { src: 'https://i.postimg.cc/15jpRkPs/580913-00-1.jpg', alt: 'Nesquik' }
+    ];
+
+    function shuffleArray(arr) {
+      for (var i = arr.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = arr[i]; arr[i] = arr[j]; arr[j] = temp;
+      }
+      return arr;
+    }
+
+    var productItems = document.querySelectorAll('.product-grid-item img');
+    var rotationIndex = 0;
+
+    function rotateProducts() {
+      var shuffled = shuffleArray(productPool.slice());
+      var count = productItems.length;
+      for (var i = 0; i < count; i++) {
+        var item = productItems[i];
+        var product = shuffled[i % shuffled.length];
+        item.style.transition = 'opacity 0.6s ease';
+        item.style.opacity = '0';
+        (function(el, p) {
+          setTimeout(function() {
+            el.src = p.src;
+            el.alt = p.alt;
+            el.style.opacity = '1';
+          }, 600);
+        })(item, product);
+      }
+    }
+
+    // Rotate every 8 seconds
+    setInterval(rotateProducts, 8000);
+    // Also shuffle on first load after a short delay
+    setTimeout(function() { rotateProducts(); }, 2000);
+
+    // ── Active nav link on scroll ──
+    var sections = document.querySelectorAll('section[id], div[id]');
+    var navLinkEls = document.querySelectorAll('.nav-links a');
+
+    window.addEventListener('scroll', function() {
+      var scrollPos = window.scrollY + 120;
+      sections.forEach(function(section) {
+        if (section.offsetTop <= scrollPos && (section.offsetTop + section.offsetHeight) > scrollPos) {
+          navLinkEls.forEach(function(link) {
+            link.style.color = '';
+            if (link.getAttribute('href') === '#' + section.id) {
+              link.style.color = '#E91E8C';
+            }
+          });
         }
       });
     });
