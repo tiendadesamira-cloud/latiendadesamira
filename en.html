@@ -3,13 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>La Tienda de Samira — Your trusted store in Jerez</title>
-  <meta name="description" content="La Tienda de Samira in Jerez de la Frontera. Snacks, cold drinks, sweets, cold cuts, pastries, bakery, frozen foods and household items. Open until 10:30 PM. Orders on Glovo and Just Eat." />
+  <title>La Tienda de Samira — Grocery store open until 10:30 PM in Jerez</title>
+  <meta name="description" content="Neighborhood grocery store in Jerez, Spain, open every day until 10:30 PM. Sweets, snacks, cold drinks, hot sandwiches and more. Delivery via Glovo and Just Eat." />
   <meta name="keywords" content="tienda Jerez, tienda de barrio Jerez, snacks Jerez, bebidas Jerez, Glovo Jerez, alimentación Jerez de la Frontera" />
   <meta property="og:title" content="La Tienda de Samira — Your trusted store in Jerez" />
   <meta property="og:description" content="Snacks, cold drinks, cold cuts, sweets and much more. Open until 10:30 PM. Orders on Glovo and Just Eat." />
   <meta property="og:image" content="img/foto6.jpg" />
   <meta property="og:type" content="website" />
+    <link rel="canonical" href="https://latiendadesamira.cloud/en.html" />
+  <link rel="alternate" hreflang="es" href="https://latiendadesamira.cloud/" />
+  <link rel="alternate" hreflang="en" href="https://latiendadesamira.cloud/en.html" />
+  <link rel="alternate" hreflang="fr" href="https://latiendadesamira.cloud/fr.html" />
+  <link rel="alternate" hreflang="de" href="https://latiendadesamira.cloud/de.html" />
+  <link rel="alternate" hreflang="ar" href="https://latiendadesamira.cloud/ar.html" />
+  <link rel="alternate" hreflang="x-default" href="https://latiendadesamira.cloud/" />
+  <meta name="geo.region" content="ES-CA" />
+  <meta name="geo.placename" content="Jerez de la Frontera" />
+  <meta name="geo.position" content="36.678;-6.127" />
+  <meta name="ICBM" content="36.678, -6.127" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
   <link rel="icon" href="img/logo.jpg" type="image/jpeg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -130,6 +142,8 @@
     }
     nav.scrolled .nav-links a { color: var(--text-dark); }
     .nav-links a:hover { color: var(--pink); }
+    .nav-links a.active:not(.nav-cta) { color: var(--pink); }
+    .nav-links a.active:not(.nav-cta)::after { width: 100%; }
 
     .nav-cta {
       background: var(--pink);
@@ -1804,21 +1818,27 @@
         clearInterval(slideInterval);
         goToSlide(i);
         slideInterval = setInterval(nextSlide, 5000);
+      });
+    });
 
-    // ── Active nav link on scroll ──
+    slideInterval = setInterval(nextSlide, 5000);
+
+    // ── Active nav link on scroll (excluye el CTA Llamar) ──
     var sections = document.querySelectorAll('section[id], div[id]');
-    var navLinkEls = document.querySelectorAll('.nav-links a');
+    var navLinkEls = document.querySelectorAll('.nav-links a:not(.nav-cta)');
 
     window.addEventListener('scroll', function() {
       var scrollPos = window.scrollY + 120;
+      var matched = null;
       sections.forEach(function(section) {
         if (section.offsetTop <= scrollPos && (section.offsetTop + section.offsetHeight) > scrollPos) {
-          navLinkEls.forEach(function(link) {
-            link.style.color = '';
-            if (link.getAttribute('href') === '#' + section.id) {
-              link.style.color = '#E91E8C';
-            }
-          });
+          matched = section.id;
+        }
+      });
+      navLinkEls.forEach(function(link) {
+        link.classList.remove('active');
+        if (matched && link.getAttribute('href') === '#' + matched) {
+          link.classList.add('active');
         }
       });
     });
