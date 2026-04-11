@@ -146,14 +146,28 @@
     .nav-links a.active:not(.nav-cta)::after { width: 100%; }
 
     .nav-cta {
-      background: var(--pink);
+      background: transparent;
       color: var(--white) !important;
-      padding: 0.45rem 1.2rem;
+      padding: 0.4rem 1.1rem;
       border-radius: 50px;
+      border: 1.5px solid rgba(255,255,255,0.6);
       font-weight: 700 !important;
-      transition: background var(--trans), transform var(--trans) !important;
+      transition: background var(--trans), border-color var(--trans), color var(--trans), transform var(--trans) !important;
     }
-    .nav-cta:hover { background: var(--pink-dark) !important; transform: scale(1.05); }
+    nav.scrolled .nav-cta {
+      color: var(--pink) !important;
+      border-color: var(--pink);
+    }
+    .nav-cta:hover {
+      background: var(--pink) !important;
+      color: var(--white) !important;
+      border-color: var(--pink);
+      transform: scale(1.05);
+    }
+    nav.scrolled .nav-cta:hover {
+      background: var(--pink) !important;
+      color: var(--white) !important;
+    }
 
     .hamburger {
       display: none;
