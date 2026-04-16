@@ -190,7 +190,11 @@
       flex-direction: column;
       gap: 5px;
       cursor: pointer;
-      padding: 4px;
+      padding: 10px;
+      min-width: 44px;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
       background: none;
       border: none;
     }
@@ -311,7 +315,7 @@
       border-color: #E91E8C;
     }
     @media (max-width: 768px) {
-      .lang-bar a { width: 30px; height: 30px; font-size: 1rem; }
+      .lang-bar a { width: 40px; height: 40px; font-size: 1rem; }
       .footer-lang-bar { flex-wrap: wrap; justify-content: center; }
     }
 
@@ -357,6 +361,9 @@
       width: 12px;
       height: 12px;
       border-radius: 50%;
+      padding: 8px;
+      margin: -8px;
+      background-clip: content-box;
       background: rgba(255,255,255,0.35);
       border: 2px solid rgba(255,255,255,0.5);
       cursor: pointer;
@@ -391,8 +398,8 @@
       background: rgba(255,255,255,0.12);
       border: 1px solid rgba(255,255,255,0.25);
       border-radius: 50px;
-      padding: 0.35rem 1rem;
-      font-size: 0.82rem;
+      padding: 0.4rem 1rem;
+      font-size: clamp(0.78rem, 3vw, 0.9rem);
       font-weight: 600;
       letter-spacing: 0.5px;
       text-transform: uppercase;
@@ -740,7 +747,7 @@
       color: var(--white);
     }
     .anatomy-feature-desc {
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       color: rgba(255,255,255,0.5);
       line-height: 1.5;
       max-width: 220px;
@@ -953,7 +960,7 @@
     }
     .review-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
     .review-stars { color: #FFC107; font-size: 1.2rem; margin-bottom: 0.75rem; letter-spacing: 2px; }
-    .review-text { font-size: 0.95rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 1.25rem; font-style: italic; }
+    .review-text { font-size: 1rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 1.25rem; font-style: italic; }
     .review-author { display: flex; align-items: center; gap: 10px; }
     .review-avatar {
       width: 40px; height: 40px;
@@ -1197,6 +1204,7 @@
         width: 100%;
         max-width: 400px;
         margin: 0 auto;
+        padding-bottom: 30px;
       }
       .anatomy-features-left,
       .anatomy-features-right {
@@ -1229,7 +1237,10 @@
       .hamburger { display: flex; }
       .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
       .footer-bottom { flex-direction: column; text-align: center; }
-      .hero-stats { gap: 1.5rem; }
+      .hero-stats { gap: 1rem; }
+      .hero-stat-num { font-size: 1.8rem; }
+      .hero-stat-label { font-size: 0.72rem; }
+      .featured, .anatomy, .reviews, .location { padding-top: 3.5rem !important; padding-bottom: 3.5rem !important; }
       .product-grid {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(4, 120px);
@@ -1358,19 +1369,19 @@
   <section class="hero" id="heroSlideshow">
     <div class="hero-slides">
       <div class="hero-slide active" style="background: linear-gradient(135deg, #E91E8C 0%, #C0106E 50%, #0B0F1A 100%);">
-        <img src="https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=1920&q=80" alt="Golosinas coloridas" />
+        <img src="https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=1920&q=80" alt="Golosinas coloridas" fetchpriority="high" />
       </div>
       <div class="hero-slide" style="background: linear-gradient(135deg, #F9A825 0%, #FF6F00 50%, #E65100 100%);">
-        <img src="https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=1920&q=80" alt="Dulces a granel" />
+        <img src="https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=1920&q=80" alt="Dulces a granel" loading="lazy" />
       </div>
       <div class="hero-slide" style="background: linear-gradient(135deg, #00BCD4 0%, #00838F 50%, #004D40 100%);">
-        <img src="https://images.unsplash.com/photo-1575224300306-1b8da36134ec?w=1920&q=80" alt="Chucherias variadas" />
+        <img src="https://images.unsplash.com/photo-1575224300306-1b8da36134ec?w=1920&q=80" alt="Chucherias variadas" loading="lazy" />
       </div>
       <div class="hero-slide" style="background: linear-gradient(135deg, #AB47BC 0%, #7B1FA2 50%, #4A148C 100%);">
-        <img src="https://images.unsplash.com/photo-1563262924-641a8b3d397f?w=1920&q=80" alt="Caramelos de colores" />
+        <img src="https://images.unsplash.com/photo-1563262924-641a8b3d397f?w=1920&q=80" alt="Caramelos de colores" loading="lazy" />
       </div>
       <div class="hero-slide" style="background: linear-gradient(135deg, #E91E8C 0%, #FF6B9D 50%, #FFD700 100%);">
-        <img src="https://images.unsplash.com/photo-1499195333224-3ce974eecb47?w=1920&q=80" alt="Gominolas" />
+        <img src="https://images.unsplash.com/photo-1499195333224-3ce974eecb47?w=1920&q=80" alt="Gominolas" loading="lazy" />
       </div>
     </div>
 
@@ -1884,6 +1895,22 @@
 
     slideInterval = setInterval(nextSlide, 5000);
 
+    // ── Hero swipe touch ──
+    var heroSection = document.getElementById('heroSlideshow');
+    if (heroSection) {
+      var touchStartX = 0;
+      heroSection.addEventListener('touchstart', function(e) { touchStartX = e.touches[0].clientX; }, { passive: true });
+      heroSection.addEventListener('touchend', function(e) {
+        var diff = touchStartX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 40) {
+          clearInterval(slideInterval);
+          var next = diff > 0 ? currentSlide + 1 : currentSlide - 1 + heroSlides.length;
+          goToSlide(next);
+          slideInterval = setInterval(nextSlide, 5000);
+        }
+      }, { passive: true });
+    }
+
     // ── Tracking de eventos GA4 ──
     function trackClick(label) {
       if (typeof gtag === 'function') {
@@ -1928,13 +1955,6 @@
 
   <!-- ═══════════ BOUTONS FLOTTANTS ═══════════ -->
   <div class="cta-stack" role="complementary" aria-label="Actions rapides">
-    <a class="cta-fab cta-fab-wa"
-       href="https://wa.me/34856615453?text=Bonjour%20Samira%2C%20je%20voudrais%20passer%20commande"
-       target="_blank" rel="noopener noreferrer"
-       aria-label="Commander sur WhatsApp">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0 0 20.464 3.488"/></svg>
-      <span class="cta-fab-label">Commander sur WhatsApp</span>
-    </a>
     <a class="cta-fab cta-fab-review"
        href="https://search.google.com/local/writereview?placeid=ChIJu8VH4RfHDQ0RdTsLLI1CUJk"
        target="_blank" rel="noopener noreferrer"
