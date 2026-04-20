@@ -1302,6 +1302,58 @@
       .cta-fab { padding: 0; border-radius: 50%; width: 56px; height: 56px; justify-content: center; gap: 0; }
       .cta-fab svg { width: 26px; height: 26px; }
     }
+
+    /* ─── SECCIÓN CHUCHES A GRANEL ─── */
+    .granel {
+      background: var(--white);
+      padding: 5rem clamp(1.5rem, 5vw, 4rem);
+      border-top: 1px solid #EEE;
+      border-bottom: 1px solid #EEE;
+    }
+    .granel-inner { max-width: 860px; margin: 0 auto; }
+    .granel-body { margin-top: 2rem; }
+    .granel-body p {
+      font-size: 1.02rem;
+      color: var(--text-mid);
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+    }
+    .granel-body p strong { color: var(--text-dark); font-weight: 700; }
+    .granel-body h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 1.4rem;
+      color: var(--pink);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 2rem 0 1rem;
+    }
+    .granel-list { list-style: none; padding: 0; margin: 0 0 1.5rem; }
+    .granel-list li {
+      padding: 0.75rem 0 0.75rem 2rem;
+      font-size: 1rem;
+      color: var(--text-dark);
+      border-bottom: 1px solid #F0F0F0;
+      position: relative;
+    }
+    .granel-list li:last-child { border-bottom: none; }
+    .granel-list li::before {
+      content: "🍬";
+      position: absolute;
+      left: 0; top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.15rem;
+    }
+    .granel-body a { color: var(--pink); text-decoration: underline; font-weight: 600; }
+    .granel-cta {
+      margin-top: 2rem !important;
+      padding: 1.5rem 1.75rem !important;
+      background: var(--pink-light) !important;
+      border-left: 4px solid var(--pink);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font-size: 1.02rem !important;
+      color: var(--text-dark) !important;
+    }
   </style>
 
   <!-- JSON-LD LocalBusiness Schema -->
@@ -1353,7 +1405,7 @@
     "hasMap": "https://www.google.com/maps/place/La+tienda+de+Samira/@36.678,-6.127,17z/",
     "sameAs": [
       "https://www.facebook.com/La-tienda-de-Samira",
-      "https://glovoapp.com/es/es/jerez-de-la-frontera/",
+      "https://glovoapp.com/es/es/jerez-de-la-frontera/stores/la-tienda-de-samira-jerez-de-la-frontera",
       "https://www.just-eat.es/restaurants-tiendadesamira-jerez/"
     ],
     "aggregateRating": {
@@ -1465,10 +1517,10 @@
           Chuches y Golosinas en Jerez<br><em>La Tienda de Samira</em>
         </h1>
         <p class="hero-subtitle">
-          Golosinas, snacks, bebidas y mucho más. Tu tienda de confianza en el barrio, abierta hasta las 23:30.
+          Más de 300 chuches, golosinas, snacks y bebidas frías. Mañanas y tardes, hasta las 23:30 en el sur de Jerez.
         </p>
         <div class="hero-btns">
-          <a href="https://glovoapp.com/es/es/jerez-de-la-frontera/" target="_blank" rel="noopener noreferrer" class="btn-primary">
+          <a href="https://glovoapp.com/es/es/jerez-de-la-frontera/stores/la-tienda-de-samira-jerez-de-la-frontera" target="_blank" rel="noopener noreferrer" class="btn-primary">
             🛵 Pedir en Glovo
           </a>
           <a href="#productos" class="btn-outline">
@@ -1580,13 +1632,45 @@
         </div>
 
         <p class="section-desc">
-          Desde snacks internacionales hasta los productos de siempre. Todo lo que necesitas lo encuentras en Samira, sin colas, sin agobios y con una sonrisa.
+          Más de 300 productos — chuches a granel, snacks importados, bebidas frías y bocadillos calientes — a 5 minutos del Luz Shopping.
         </p>
 
-        <a href="https://glovoapp.com/es/es/jerez-de-la-frontera/" target="_blank" rel="noopener noreferrer" class="arrow-cta">
-          Ver catálogo completo en Glovo
+        <a href="https://glovoapp.com/es/es/jerez-de-la-frontera/stores/la-tienda-de-samira-jerez-de-la-frontera" target="_blank" rel="noopener noreferrer" class="arrow-cta">
+          Pedir ahora — entrega en 30 min
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ CHUCHES A GRANEL EN JEREZ ═══════════ -->
+  <section class="granel" id="granel">
+    <div class="granel-inner">
+      <div class="reveal">
+        <span class="section-label">Nuestras chuches</span>
+        <h2 class="section-title">CHUCHES<br>A <span>GRANEL</span><br>EN JEREZ</h2>
+      </div>
+
+      <div class="granel-body reveal delay-1">
+        <p>En La Tienda de Samira encontrarás una de las mayores selecciones de <strong>chuches a granel en Jerez de la Frontera</strong>. Gominolas, regaliz, pica-pica, nubes, chocolates, caramelos duros y novedades cada semana — tenemos de todo lo que encontrarás en el mercado.</p>
+
+        <p>A diferencia de otras tiendas, aquí compras <strong>al detalle</strong>: cada chuche tiene su precio según tamaño y modelo, así que te llevas exactamente lo que quieres sin mínimos ni sorpresas. Perfecto para montar una bolsa personalizada, sorprender en una fiesta o llevarte solo ese caramelo que tanto te gusta.</p>
+
+        <p>Si pasas por el <strong>Luz Shopping</strong>, estamos a 5 minutos. Abrimos <strong>mañanas y tardes, hasta las 23:30</strong>, también fines de semana, para que puedas venir a por tus chuches cuando los supermercados ya han cerrado.</p>
+
+        <h3>Nuestra selección incluye</h3>
+        <ul class="granel-list">
+          <li>Gominolas y ositos clásicos</li>
+          <li>Regaliz rojo y negro, fresas ácidas y pica-pica</li>
+          <li>Nubes, malvaviscos y algodón de azúcar</li>
+          <li>Chocolates, chocolatinas y caramelos duros</li>
+          <li>Patatas fritas, gusanitos y snacks salados</li>
+          <li>Novedades cada semana</li>
+        </ul>
+
+        <p>Además encontrarás <strong>pan, dulces, refrescos y hielo</strong> para completar cualquier urgencia del día a día.</p>
+
+        <p class="granel-cta">Pásate por <strong>C. Tablao, bloque 4, local 8</strong> y elige las tuyas — o pídelas por <a href="https://glovoapp.com/es/es/jerez-de-la-frontera/stores/la-tienda-de-samira-jerez-de-la-frontera" target="_blank" rel="noopener noreferrer">Glovo</a> o <a href="https://www.just-eat.es/restaurants-tiendadesamira-jerez/" target="_blank" rel="noopener noreferrer">Just Eat</a> con entrega en 30 minutos.</p>
       </div>
     </div>
   </section>
@@ -1595,7 +1679,7 @@
   <section class="anatomy" id="porque">
     <div class="anatomy-header reveal">
       <span class="section-label">Por qué elegirnos</span>
-      <h2 class="section-title">SIEMPRE CERCA,<br><span>SIEMPRE ABIERTA</span></h2>
+      <h2 class="section-title">TU CAPRICHO,<br><span>A 5 MIN DE LUZ SHOPPING</span></h2>
     </div>
 
     <div class="anatomy-inner">
@@ -1603,7 +1687,7 @@
       <div class="anatomy-features-left">
         <div class="anatomy-feature reveal delay-1">
           <div class="anatomy-feature-title">Horario hasta 23:30</div>
-          <div class="anatomy-feature-desc">Abiertos cuando los demás ya han cerrado. Todos los días sin excepción.</div>
+          <div class="anatomy-feature-desc">Abiertos hasta las 23:30 cuando los supermercados ya han cerrado.</div>
           <div class="anatomy-dot-line">
             <div class="dot-line-bar"></div>
             <div class="dot-line-circle"></div>
@@ -1651,7 +1735,7 @@
   <!-- ═══════════ DELIVERY BANNERS ═══════════ -->
   <div class="delivery-banners" id="delivery">
 
-    <a href="https://glovoapp.com/es/es/jerez-de-la-frontera/" target="_blank" rel="noopener noreferrer" class="delivery-banner glovo reveal">
+    <a href="https://glovoapp.com/es/es/jerez-de-la-frontera/stores/la-tienda-de-samira-jerez-de-la-frontera" target="_blank" rel="noopener noreferrer" class="delivery-banner glovo reveal">
       <div class="delivery-banner-text">
         <div class="delivery-banner-eyebrow">Pide ahora · Entrega rápida</div>
         <div class="delivery-banner-title">Disponibles<br>en Glovo</div>
@@ -1800,7 +1884,7 @@
         <div>
           <div class="footer-col-title">Pedir online</div>
           <ul class="footer-links">
-            <li><a href="https://glovoapp.com/es/es/jerez-de-la-frontera/" target="_blank" rel="noopener noreferrer">🛵 Glovo</a></li>
+            <li><a href="https://glovoapp.com/es/es/jerez-de-la-frontera/stores/la-tienda-de-samira-jerez-de-la-frontera" target="_blank" rel="noopener noreferrer">🛵 Glovo</a></li>
             <li><a href="https://www.just-eat.es/restaurants-tiendadesamira-jerez/" target="_blank" rel="noopener noreferrer">🍔 Just Eat</a></li>
             <li><a href="tel:856615453">📞 Llamar directamente</a></li>
             <li><a href="tel:856615453">📞 Llamar a la tienda</a></li>
