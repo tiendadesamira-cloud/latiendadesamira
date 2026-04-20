@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>La Tienda de Samira — Tienda abierta hasta las 23:30 en Jerez | Chuches, snacks y bebidas</title>
-  <meta name="description" content="Tienda de alimentación en Jerez abierta todos los días hasta las 23:30. Chuches a granel, snacks, bebidas frías, bocadillos, dulces y más. Pedidos en Glovo y Just Eat. C. Tablao, Jerez de la Frontera." />
+  <meta name="description" content="Tienda de alimentación en Jerez abierta mañanas y tardes, hasta las 23:30. Chuches a granel, snacks, bebidas frías, bocadillos, dulces y más. Pedidos en Glovo y Just Eat. C. Tablao, Jerez de la Frontera." />
   <meta name="keywords" content="tienda abierta Jerez, tienda hasta tarde Jerez, chuches Jerez, chuches a granel Jerez, tienda 23:30 Jerez, Glovo Jerez, Just Eat Jerez, tienda barrio El Calvario, San Juan de Dios, supermercado domingo Jerez, tienda alimentación Jerez" />
   <meta name="author" content="La Tienda de Samira" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -20,7 +20,7 @@
   <link rel="alternate" hreflang="ar" href="https://latiendadesamira.cloud/ar.html" />
   <link rel="alternate" hreflang="x-default" href="https://latiendadesamira.cloud/" />
   <meta property="og:title" content="La Tienda de Samira — Abierta hasta las 23:30 en Jerez" />
-  <meta property="og:description" content="Chuches, snacks, bebidas frías, bocadillos y más. Abiertos todos los días hasta las 23:30. Pedidos en Glovo y Just Eat." />
+  <meta property="og:description" content="Chuches, snacks, bebidas frías, bocadillos y más. Abiertos mañanas y tardes, hasta las 23:30. Pedidos en Glovo y Just Eat." />
   <meta property="og:image" content="https://latiendadesamira.cloud/img/foto6.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -34,7 +34,7 @@
   <meta property="og:locale:alternate" content="ar_AR" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="La Tienda de Samira — Abierta hasta las 23:30" />
-  <meta name="twitter:description" content="Tienda de alimentación en Jerez con chuches a granel, snacks, bebidas y bocadillos. Abierta todos los días hasta las 23:30." />
+  <meta name="twitter:description" content="Tienda de alimentación en Jerez con chuches a granel, snacks, bebidas y bocadillos. Abierta mañanas y tardes, hasta las 23:30." />
   <meta name="twitter:image" content="https://latiendadesamira.cloud/img/foto6.jpg" />
   <link rel="icon" href="img/logo.jpg" type="image/jpeg" />
 
@@ -1354,6 +1354,25 @@
       font-size: 1.02rem !important;
       color: var(--text-dark) !important;
     }
+
+    /* ─── SKIP LINK (accesibilidad WCAG 2.4.1) ─── */
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 10px;
+      background: var(--pink);
+      color: var(--white);
+      padding: 0.75rem 1.25rem;
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 8px;
+      z-index: 10000;
+    }
+    .skip-link:focus {
+      left: 10px;
+      outline: 3px solid var(--white);
+      outline-offset: 2px;
+    }
   </style>
 
   <!-- JSON-LD LocalBusiness Schema -->
@@ -1364,7 +1383,7 @@
     "@id": "https://latiendadesamira.cloud/#store",
     "name": "La Tienda de Samira",
     "alternateName": "Tienda de Samira Jerez",
-    "description": "Tienda de alimentación familiar en Jerez de la Frontera abierta todos los días hasta las 23:30. Chuches a granel, snacks, bebidas frías, bocadillos calientes, dulces, panadería, congelados y productos de hogar. Delivery con Glovo y Just Eat.",
+    "description": "Tienda de alimentación familiar en Jerez de la Frontera abierta mañanas y tardes, hasta las 23:30. Chuches a granel, snacks, bebidas frías, bocadillos calientes, dulces, panadería, congelados y productos de hogar. Delivery con Glovo y Just Eat.",
     "url": "https://latiendadesamira.cloud/",
     "telephone": "+34856615453",
     "image": [
@@ -1449,6 +1468,7 @@
   </script>
 </head>
 <body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
   <!-- ═══════════ NAV ═══════════ -->
   <nav id="navbar">
@@ -1489,6 +1509,7 @@
   </div>
 
   <!-- ═══════════ HERO SLIDESHOW ═══════════ -->
+  <main id="contenido">
   <section class="hero" id="heroSlideshow">
     <div class="hero-slides">
       <div class="hero-slide active" style="background: linear-gradient(135deg, #E91E8C 0%, #C0106E 50%, #0B0F1A 100%);">
@@ -1517,7 +1538,7 @@
           Chuches y Golosinas en Jerez<br><em>La Tienda de Samira</em>
         </h1>
         <p class="hero-subtitle">
-          Más de 300 chuches, golosinas, snacks y bebidas frías. Mañanas y tardes, hasta las 23:30 en el sur de Jerez.
+          Más de 300 chuches, golosinas, snacks y bebidas frías. Mañanas y tardes, hasta las 23:30, a 5 minutos del Luz Shopping.
         </p>
         <div class="hero-btns">
           <a href="https://glovoapp.com/es/es/jerez-de-la-frontera/stores/la-tienda-de-samira-jerez-de-la-frontera" target="_blank" rel="noopener noreferrer" class="btn-primary">
@@ -1623,7 +1644,7 @@
         <h2 class="section-title">LOS FAVORITOS<br>DE <span>NUESTROS</span><br>CLIENTES</h2>
 
         <div class="features-chips">
-          <div class="chip"><span class="chip-dot"></span>Snacks importados</div>
+          <div class="chip"><span class="chip-dot"></span>Novedades semanales</div>
           <div class="chip"><span class="chip-dot"></span>Bebidas frías siempre</div>
           <div class="chip"><span class="chip-dot"></span>Embutidos frescos</div>
           <div class="chip"><span class="chip-dot"></span>Dulces y chucherías</div>
@@ -1632,7 +1653,7 @@
         </div>
 
         <p class="section-desc">
-          Más de 300 productos — chuches a granel, snacks importados, bebidas frías y bocadillos calientes — a 5 minutos del Luz Shopping.
+          Más de 300 productos — chuches a granel, snacks variados, bebidas frías y bocadillos calientes — a 5 minutos del Luz Shopping.
         </p>
 
         <a href="https://glovoapp.com/es/es/jerez-de-la-frontera/stores/la-tienda-de-samira-jerez-de-la-frontera" target="_blank" rel="noopener noreferrer" class="arrow-cta">
@@ -1855,6 +1876,8 @@
   </section>
 
   <!-- ═══════════ FOOTER ═══════════ -->
+  </main>
+
   <footer>
     <div class="footer-inner">
       <div class="footer-grid">
@@ -1886,7 +1909,6 @@
           <ul class="footer-links">
             <li><a href="https://glovoapp.com/es/es/jerez-de-la-frontera/stores/la-tienda-de-samira-jerez-de-la-frontera" target="_blank" rel="noopener noreferrer">🛵 Glovo</a></li>
             <li><a href="https://www.just-eat.es/restaurants-tiendadesamira-jerez/" target="_blank" rel="noopener noreferrer">🍔 Just Eat</a></li>
-            <li><a href="tel:856615453">📞 Llamar directamente</a></li>
             <li><a href="tel:856615453">📞 Llamar a la tienda</a></li>
             <li><a href="https://www.facebook.com/La-tienda-de-Samira" target="_blank" rel="noopener noreferrer">📘 Facebook</a></li>
           </ul>

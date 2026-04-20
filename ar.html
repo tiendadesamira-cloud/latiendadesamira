@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>متجر سميرة — متجر مفتوح حتى 23:30 في خيريث</title>
-  <meta name="description" content="متجر الحي في خيريث، إسبانيا، مفتوح يوميا حتى الساعة 23:30. حلويات، وجبات خفيفة، مشروبات باردة، ساندويتشات ساخنة والمزيد. التوصيل عبر Glovo و Just Eat." />
+  <meta name="description" content="متجر الحي في خيريث، إسبانيا، مفتوح صباحاً ومساءً حتى 23:30. حلويات، وجبات خفيفة، مشروبات باردة، ساندويتشات ساخنة والمزيد. التوصيل عبر Glovo و Just Eat." />
   <meta name="keywords" content="متجر خيريز، سوبرماركت خيريز، سناكس خيريز، مشروبات خيريز، Glovo خيريز، مواد غذائية خيريز دي لا فرونتيرا" />
   <meta property="og:title" content="La Tienda de Samira — متجرك الموثوق في خيريز" />
   <meta property="og:description" content="سناكس، مشروبات باردة، لحوم مدخنة، حلويات والمزيد. مفتوح حتى 23:30. الطلبات عبر Glovo وJust Eat." />
@@ -1307,6 +1307,25 @@
       .cta-fab { padding: 0; border-radius: 50%; width: 56px; height: 56px; justify-content: center; gap: 0; }
       .cta-fab svg { width: 26px; height: 26px; }
     }
+
+    /* ─── SKIP LINK (accesibilidad WCAG 2.4.1) ─── */
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 10px;
+      background: var(--pink);
+      color: var(--white);
+      padding: 0.75rem 1.25rem;
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 8px;
+      z-index: 10000;
+    }
+    .skip-link:focus {
+      left: 10px;
+      outline: 3px solid var(--white);
+      outline-offset: 2px;
+    }
   </style>
 
   <!-- JSON-LD LocalBusiness Schema -->
@@ -1330,10 +1349,19 @@
     "hasMap": "https://www.google.com/maps/place/La+tienda+de+Samira/@36.678,-6.127,17z/",
     "image": "img/foto6.jpg",
     "priceRange": "€"
+  ,
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.7",
+      "reviewCount": "12",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
   }
   </script>
 </head>
 <body>
+  <a class="skip-link" href="#contenido">تخطى إلى المحتوى</a>
 
   <!-- ═══════════ NAV ═══════════ -->
   <nav id="navbar">
@@ -1374,13 +1402,14 @@
   </div>
 
   <!-- ═══════════ HERO SLIDESHOW ═══════════ -->
+  <main id="contenido">
   <section class="hero" id="heroSlideshow">
     <div class="hero-slides">
       <div class="hero-slide active" style="background: linear-gradient(135deg, #E91E8C 0%, #C0106E 50%, #0B0F1A 100%);">
         <img src="https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=1920&q=80" alt="Golosinas coloridas" fetchpriority="high" />
       </div>
       <div class="hero-slide" style="background: linear-gradient(135deg, #F9A825 0%, #FF6F00 50%, #E65100 100%);">
-        <img src="https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=1920&q=80" alt="Dulces a granel" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=1920&q=80" alt="حلويات بالوزن" loading="lazy" />
       </div>
       <div class="hero-slide" style="background: linear-gradient(135deg, #00BCD4 0%, #00838F 50%, #004D40 100%);">
         <img src="https://images.unsplash.com/photo-1575224300306-1b8da36134ec?w=1920&q=80" alt="Chucherias variadas" loading="lazy" />
@@ -1402,7 +1431,7 @@
           حلويات وسكاكر في خيريث<br><em>La Tienda de Samira</em>
         </h1>
         <p class="hero-subtitle">
-          أكثر من 300 منتج من الحلويات والسكاكر والوجبات الخفيفة والمشروبات الباردة. صباحاً ومساءً، حتى 23:30 في جنوب خيريث.
+          أكثر من 300 منتج من الحلويات والسكاكر والوجبات الخفيفة والمشروبات الباردة. صباحاً ومساءً، حتى 23:30 على بعد 5 دقائق من لوز شوبينغ.
         </p>
         <div class="hero-btns">
           <a href="https://glovoapp.com/es/es/jerez-de-la-frontera/stores/la-tienda-de-samira-jerez-de-la-frontera" target="_blank" rel="noopener noreferrer" class="btn-primary">
@@ -1708,6 +1737,8 @@
   </section>
 
   <!-- ═══════════ FOOTER ═══════════ -->
+  </main>
+
   <footer>
     <div class="footer-inner">
       <div class="footer-grid">

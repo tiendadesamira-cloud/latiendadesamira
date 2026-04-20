@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>La Tienda de Samira — Épicerie ouverte jusqu'à 23h30 à Jerez</title>
-  <meta name="description" content="Épicerie de quartier à Jerez, Espagne, ouverte tous les jours jusqu'à 23h30. Bonbons, snacks, boissons fraîches, sandwichs chauds et plus. Livraison avec Glovo et Just Eat." />
+  <meta name="description" content="Épicerie de quartier à Jerez, Espagne, ouverte matins et soirs, jusqu'à 23h30. Bonbons, snacks, boissons fraîches, sandwichs chauds et plus. Livraison avec Glovo et Just Eat." />
   <meta name="keywords" content="épicerie Jerez, épicerie de quartier Jerez, snacks Jerez, boissons Jerez, Glovo Jerez, alimentation Jerez de la Frontera" />
   <meta property="og:title" content="La Tienda de Samira — Votre épicerie de confiance à Jerez" />
   <meta property="og:description" content="Snacks, boissons fraîches, charcuterie, douceurs et bien plus. Ouvert jusqu'à 23h30. Commandes sur Glovo et Just Eat." />
@@ -1297,6 +1297,25 @@
       .cta-fab { padding: 0; border-radius: 50%; width: 56px; height: 56px; justify-content: center; gap: 0; }
       .cta-fab svg { width: 26px; height: 26px; }
     }
+
+    /* ─── SKIP LINK (accesibilidad WCAG 2.4.1) ─── */
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 10px;
+      background: var(--pink);
+      color: var(--white);
+      padding: 0.75rem 1.25rem;
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 8px;
+      z-index: 10000;
+    }
+    .skip-link:focus {
+      left: 10px;
+      outline: 3px solid var(--white);
+      outline-offset: 2px;
+    }
   </style>
 
   <!-- JSON-LD LocalBusiness Schema -->
@@ -1320,10 +1339,19 @@
     "hasMap": "https://www.google.com/maps/place/La+tienda+de+Samira/@36.678,-6.127,17z/",
     "image": "img/foto6.jpg",
     "priceRange": "€"
+  ,
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.7",
+      "reviewCount": "12",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
   }
   </script>
 </head>
 <body>
+  <a class="skip-link" href="#contenido">Passer au contenu</a>
 
   <!-- ═══════════ NAV ═══════════ -->
   <nav id="navbar">
@@ -1364,13 +1392,14 @@
   </div>
 
   <!-- ═══════════ HERO SLIDESHOW ═══════════ -->
+  <main id="contenido">
   <section class="hero" id="heroSlideshow">
     <div class="hero-slides">
       <div class="hero-slide active" style="background: linear-gradient(135deg, #E91E8C 0%, #C0106E 50%, #0B0F1A 100%);">
         <img src="https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=1920&q=80" alt="Golosinas coloridas" fetchpriority="high" />
       </div>
       <div class="hero-slide" style="background: linear-gradient(135deg, #F9A825 0%, #FF6F00 50%, #E65100 100%);">
-        <img src="https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=1920&q=80" alt="Dulces a granel" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=1920&q=80" alt="Bonbons en vrac" loading="lazy" />
       </div>
       <div class="hero-slide" style="background: linear-gradient(135deg, #00BCD4 0%, #00838F 50%, #004D40 100%);">
         <img src="https://images.unsplash.com/photo-1575224300306-1b8da36134ec?w=1920&q=80" alt="Chucherias variadas" loading="lazy" />
@@ -1392,7 +1421,7 @@
           Bonbons et Friandises à Jerez<br><em>La Tienda de Samira</em>
         </h1>
         <p class="hero-subtitle">
-          Plus de 300 bonbons, friandises, snacks et boissons fraîches. Matins et soirs, jusqu'à 23h30 au sud de Jerez.
+          Plus de 300 bonbons, friandises, snacks et boissons fraîches. Matins et soirs, jusqu'à 23h30, à 5 minutes de Luz Shopping.
         </p>
         <div class="hero-btns">
           <a href="https://glovoapp.com/es/es/jerez-de-la-frontera/stores/la-tienda-de-samira-jerez-de-la-frontera" target="_blank" rel="noopener noreferrer" class="btn-primary">
@@ -1698,6 +1727,8 @@
   </section>
 
   <!-- ═══════════ FOOTER ═══════════ -->
+  </main>
+
   <footer>
     <div class="footer-inner">
       <div class="footer-grid">
