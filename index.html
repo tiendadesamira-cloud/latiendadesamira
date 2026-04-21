@@ -2165,6 +2165,22 @@
       else if (href.indexOf('maps') !== -1) trackClick('google_maps');
     });
 
+    // ── Scroll depth (50/75/100) ──
+    (function() {
+      var scrollFired = { 50: false, 75: false, 100: false };
+      window.addEventListener('scroll', function() {
+        if (typeof gtag !== 'function') return;
+        var h = document.documentElement;
+        var reached = ((window.scrollY + window.innerHeight) / h.scrollHeight) * 100;
+        [50, 75, 100].forEach(function(pct) {
+          if (!scrollFired[pct] && reached >= pct) {
+            scrollFired[pct] = true;
+            gtag('event', 'scroll_depth', { 'depth': pct, 'page': location.pathname });
+          }
+        });
+      }, { passive: true });
+    })();
+
     // ── Active nav link on scroll (excluye el CTA Llamar) ──
     var sections = document.querySelectorAll('section[id], div[id]');
     var navLinkEls = document.querySelectorAll('.nav-links a:not(.nav-cta)');
