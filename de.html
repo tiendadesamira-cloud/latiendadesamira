@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>La Tienda de Samira — Lebensmittelgeschäft bis 23:30 Uhr in Jerez</title>
-  <meta name="description" content="Nachbarschaftsgeschäft in Jerez, Spanien, vormittags und abends bis 23:30 Uhr geöffnet. Süßigkeiten, Snacks, kalte Getränke, warme Sandwiches und mehr. Lieferung über Glovo und Just Eat." />
+  <meta name="description" content="Nachbarschaftsgeschäft in Jerez, Spanien, vormittags und abends bis 23:30 Uhr geöffnet. Süßigkeiten, Snacks, kalte Getränke, warme Sandwiches und mehr. Lieferung über Glovo." />
   <meta name="keywords" content="Laden Jerez, Nachbarschaftsladen Jerez, Snacks Jerez, Getränke Jerez, Glovo Jerez, Lebensmittel Jerez de la Frontera" />
   <meta property="og:title" content="La Tienda de Samira — Ihr Vertrauensgeschäft in Jerez" />
-  <meta property="og:description" content="Snacks, kalte Getränke, Wurstwaren, Süßigkeiten und vieles mehr. Geöffnet bis 23:30 Uhr. Bestellungen über Glovo und Just Eat." />
+  <meta property="og:description" content="Snacks, kalte Getränke, Wurstwaren, Süßigkeiten und vieles mehr. Geöffnet bis 23:30 Uhr. Bestellungen über Glovo." />
   <meta property="og:image" content="https://latiendadesamira.cloud/img/foto6.jpg" />
   <meta property="og:type" content="website" />
     <link rel="canonical" href="https://latiendadesamira.cloud/de.html" />
@@ -57,8 +57,6 @@
       --pink-light:  #FCE4F3;
       --glovo:       #F9A825;
       --glovo-dark:  #E65100;
-      --justeat:     #E5322D;
-      --justeat-dark:#9B0000;
       --dark:        #0B0F1A;
       --gray-bg:     #F8F9FA;
       --gray-mid:    #F0F1F3;
@@ -837,10 +835,6 @@
     .delivery-banner.glovo {
       background: linear-gradient(135deg, #F9A825 0%, #FF6F00 50%, #E65100 100%);
     }
-    .delivery-banner.justeat {
-      background: linear-gradient(135deg, #E5322D 0%, #C62828 50%, #9B0000 100%);
-    }
-
     .delivery-banner::before {
       content: '';
       position: absolute;
@@ -1425,7 +1419,7 @@
     <div class="hero-inner">
       <div class="hero-text">
         <div class="hero-badge">
-          <span>⭐</span> Jerez de la Frontera · Seit 2018
+          <span>⭐</span> Jerez de la Frontera · Seit 2024
         </div>
         <h1 class="hero-title">
           Süßigkeiten und Bonbons in Jerez<br><em>La Tienda de Samira</em>
@@ -1599,7 +1593,7 @@
             <div class="dot-line-bar"></div>
           </div>
           <div class="anatomy-feature-title">Lieferung in Minuten</div>
-          <div class="anatomy-feature-desc">Verfügbar auf Glovo und Just Eat, damit Sie Ihre Bestellung erhalten, ohne das Haus zu verlassen.</div>
+          <div class="anatomy-feature-desc">Verfügbar auf Glovo, damit Sie Ihre Bestellung erhalten, ohne das Haus zu verlassen.</div>
         </div>
         <div class="anatomy-feature reveal delay-1">
           <div class="anatomy-dot-line">
@@ -1630,18 +1624,6 @@
       </div>
     </a>
 
-    <a href="https://www.just-eat.es/restaurants-tiendadesamira-jerez/" target="_blank" rel="noopener noreferrer" class="delivery-banner justeat reveal">
-      <div class="delivery-banner-text">
-        <div class="delivery-banner-eyebrow">Jetzt bestellen · Schnelle Lieferung</div>
-        <div class="delivery-banner-title">Verfügbar<br>auf Just Eat</div>
-      </div>
-      <div class="delivery-banner-arrow">
-        <span class="delivery-banner-cta">App öffnen</span>
-        <div class="delivery-banner-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </div>
-      </div>
-    </a>
 
   </div>
 
@@ -1792,7 +1774,6 @@
           <div class="footer-col-title">Online bestellen</div>
           <ul class="footer-links">
             <li><a href="https://glovoapp.com/es/es/jerez-de-la-frontera/stores/la-tienda-de-samira-jerez-de-la-frontera" target="_blank" rel="noopener noreferrer">🛵 Glovo</a></li>
-            <li><a href="https://www.just-eat.es/restaurants-tiendadesamira-jerez/" target="_blank" rel="noopener noreferrer">🍔 Just Eat</a></li>
             <li><a href="tel:856615453">📞 Direkt anrufen</a></li>
             <li><a href="tel:856615453">📞 Geschäft anrufen</a></li>
             <li><a href="https://www.facebook.com/La-tienda-de-Samira" target="_blank" rel="noopener noreferrer">📘 Facebook</a></li>
@@ -1989,7 +1970,6 @@
       if (href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp') !== -1) trackClick('whatsapp');
       else if (href.indexOf('tel:') === 0) trackClick('telefono');
       else if (href.indexOf('glovo') !== -1) trackClick('glovo');
-      else if (href.indexOf('just-eat') !== -1) trackClick('just_eat');
       else if (href.indexOf('writereview') !== -1) trackClick('resena_google');
       else if (href.indexOf('maps') !== -1) trackClick('google_maps');
     });
