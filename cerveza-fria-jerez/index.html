@@ -59,7 +59,11 @@
   {
     "@context": "https://schema.org",
     "@type": "GroceryStore",
-    "@id": "https://latiendadesamira.cloud/#store",
+    "@id": "https://latiendadesamira.cloud/cerveza-fria-jerez/#store",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://latiendadesamira.cloud/cerveza-fria-jerez/"
+    },
     "name": "La Tienda de Samira",
     "description": "Tienda de alimentación en Jerez de la Frontera con amplia selección de bebidas frías: Cruzcampo litro, lata, 500ml y sin alcohol, Estrella Sur, Monster y más. Abierta hasta las 23:30.",
     "url": "https://latiendadesamira.cloud/",
@@ -360,6 +364,17 @@
     if (!ok) {
       gate.style.display = 'flex';
       document.body.style.overflow = 'hidden';
+      var focusables = gate.querySelectorAll('button, a');
+      var first = focusables[0], last = focusables[focusables.length - 1];
+      setTimeout(function(){ first.focus(); }, 100);
+      gate.addEventListener('keydown', function(e){
+        if (e.key !== 'Tab') return;
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault(); last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault(); first.focus();
+        }
+      });
       document.getElementById('ageYes').addEventListener('click', function(){
         try { localStorage.setItem('samira_age_verified','1'); } catch(e){}
         gate.style.display = 'none';
