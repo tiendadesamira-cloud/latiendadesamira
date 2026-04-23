@@ -112,7 +112,24 @@
       "price": "0.70",
       "priceCurrency": "EUR",
       "availability": "https://schema.org/InStock",
-      "url": "https://latiendadesamira.cloud/pan-fresco-jerez/"
+      "url": "https://latiendadesamira.cloud/pan-fresco-jerez/",
+      "itemCondition": "https://schema.org/NewCondition",
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {"@type": "MonetaryAmount", "value": "0", "currency": "EUR"},
+        "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "ES", "addressRegion": "Andalucía"},
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {"@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY"},
+          "transitTime": {"@type": "QuantitativeValue", "minValue": 0, "maxValue": 1, "unitCode": "HUR"}
+        }
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "ES",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted",
+        "merchantReturnLink": "https://latiendadesamira.cloud/legal.html"
+      }
     },
     "image": "https://latiendadesamira.cloud/img/tienda_pasillo.jpg"
   }
