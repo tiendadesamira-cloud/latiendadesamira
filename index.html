@@ -578,58 +578,87 @@
     .strip-item:nth-child(8n+7) { background: #E0F7FA; }
     .strip-item:nth-child(8n+0) { background: #F3E5F5; }
 
-    /* ─── FEATURED PRODUCTS ─── */
-    .featured {
-      background: var(--white);
-      padding: 6rem clamp(1.5rem, 5vw, 4rem);
+    /* ── LO MAS PEDIDO ── */
+    .mas-pedido-section {
+      background: #fdf6fb;
+      padding: 5rem clamp(1.5rem, 5vw, 4rem);
     }
-    .featured-inner {
-      max-width: 1300px;
+    .mas-pedido-inner {
+      max-width: 1200px;
       margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
     }
-
-    .product-grid {
+    .mas-pedido-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .mas-pedido-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: repeat(2, 160px);
-      gap: 10px;
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
     }
-    .product-grid-item {
-      border-radius: var(--radius-sm);
+    .mas-pedido-card {
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 2px 12px rgba(233,30,140,0.08);
       overflow: hidden;
-      position: relative;
-      box-shadow: var(--shadow-sm);
-      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s, box-shadow 0.25s;
     }
-    .product-grid-item img {
+    .mas-pedido-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(233,30,140,0.18);
+    }
+    .mas-pedido-img-wrap {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      background: #f5f5f5;
+    }
+    .mas-pedido-img-wrap img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
-      filter: grayscale(100%) brightness(0.85);
-      transition: transform 0.6s ease, filter 0.6s ease, opacity 0.6s ease;
+      transition: transform 0.35s;
     }
-    .product-grid-item:hover img { transform: scale(1.1); filter: grayscale(0%) brightness(1.05); }
-    .product-grid-item:nth-child(1) {
-      grid-column: span 2;
-      grid-row: span 2;
+    .mas-pedido-card:hover .mas-pedido-img-wrap img {
+      transform: scale(1.07);
     }
-    .product-grid-item:nth-child(1) { border-radius: var(--radius); }
-
-    .product-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(233,30,140,0.6) 0%, transparent 50%);
-      opacity: 0;
-      transition: opacity var(--trans);
+    .mas-pedido-info {
+      padding: 0.75rem 0.85rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
     }
-    .product-grid-item:hover .product-overlay { opacity: 1; }
-
-    .featured-text { }
+    .mas-pedido-name {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #1a1a2e;
+      line-height: 1.3;
+    }
+    .mas-pedido-micro {
+      font-size: 0.78rem;
+      color: #666;
+      font-style: italic;
+      text-align: center;
+      padding-top: 4px;
+      line-height: 1.4;
+    }
+    .mas-pedido-cta {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    @media (max-width: 900px) {
+      .mas-pedido-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .mas-pedido-grid { grid-template-columns: repeat(2, 1fr); gap: 0.85rem; }
+      .mas-pedido-name { font-size: 0.75rem; }
+      .mas-pedido-micro { font-size: 0.7rem; }
+    }
+    /* ── /LO MAS PEDIDO ── */
     .section-label {
       display: inline-block;
       font-size: 0.78rem;
@@ -1236,7 +1265,6 @@
 
     @media (max-width: 900px) {
       .hero-inner { flex-direction: column; }
-      .featured-inner { grid-template-columns: 1fr; }
       .location-inner { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
@@ -1249,15 +1277,7 @@
       .hero-stats { gap: 1rem; }
       .hero-stat-num { font-size: 1.8rem; }
       .hero-stat-label { font-size: 0.72rem; }
-      .featured, .anatomy, .reviews, .location { padding-top: 3.5rem !important; padding-bottom: 3.5rem !important; }
-      .product-grid {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(4, 120px);
-      }
-      .product-grid-item:nth-child(1) {
-        grid-column: span 2;
-        grid-row: span 1;
-      }
+      .anatomy, .reviews, .location { padding-top: 3.5rem !important; padding-bottom: 3.5rem !important; }
       .delivery-banner {
         flex-direction: column;
         text-align: center;
@@ -1526,23 +1546,23 @@
   {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    "name": "Chuches a granel disponibles en La Tienda de Samira",
-    "description": "Selección de chuches a granel disponibles en La Tienda de Samira, Jerez de la Frontera.",
-    "itemListOrder": "https://schema.org/ItemListUnordered",
+    "name": "Lo más pedido en La Tienda de Samira",
+    "description": "Selección de los productos más populares de La Tienda de Samira, Jerez de la Frontera.",
+    "itemListOrder": "https://schema.org/ItemListOrderDescending",
     "numberOfItems": 12,
     "itemListElement": [
-      {"@type":"ListItem","position":1,"item":{"@type":"Product","name":"Kojak Sandía","image":"https://i.postimg.cc/htVrGmKD/kojak-sandia-pepitas.webp"}},
-      {"@type":"ListItem","position":2,"item":{"@type":"Product","name":"Huevos Fritos","image":"https://i.postimg.cc/QtdVv26L/gominolas-de-az-car-huevos-fritos-1-kg-fini.jpg"}},
-      {"@type":"ListItem","position":3,"item":{"@type":"Product","name":"Piñas","image":"https://i.postimg.cc/ncHSg0x4/1002353-1002353-rodajas-pi-a-bolsa-1-5kg-2.jpg"}},
-      {"@type":"ListItem","position":4,"item":{"@type":"Product","name":"Fresitas Silvestres","image":"https://i.postimg.cc/D0mJ49sQ/fresas-silvestres-bolsa-1kg-2-24.jpg"}},
-      {"@type":"ListItem","position":5,"item":{"@type":"Product","name":"Botellitas Coca-Cola","image":"https://i.postimg.cc/5250y4Td/botellitas-coca-cola.jpg"}},
-      {"@type":"ListItem","position":6,"item":{"@type":"Product","name":"Moritas","image":"https://i.postimg.cc/N0pj8NQd/gominolas-de-az-car-moras-rojas-y-negras-1-kg-fini.jpg"}},
-      {"@type":"ListItem","position":7,"item":{"@type":"Product","name":"Corazones de Melocotón","image":"https://i.postimg.cc/nrd46KK2/corazones-melocoton-250u-haribo.jpg"}},
-      {"@type":"ListItem","position":8,"item":{"@type":"Product","name":"Diablos Pica-Pica","image":"https://i.postimg.cc/Hn3zT1mQ/IMG-20211007-213239.jpg"}},
-      {"@type":"ListItem","position":9,"item":{"@type":"Product","name":"Plátanos","image":"https://i.postimg.cc/YjKr2ZxC/gominolas-de-az-car-pl-tanos-1-kg-fini.jpg"}},
-      {"@type":"ListItem","position":10,"item":{"@type":"Product","name":"Melones de Chicle","image":"https://i.postimg.cc/j5cP761T/melones-chicle.png"}},
-      {"@type":"ListItem","position":11,"item":{"@type":"Product","name":"Piruleta Cereza","image":"https://i.postimg.cc/GmMktxZ1/piruletas-cereza.jpg"}},
-      {"@type":"ListItem","position":12,"item":{"@type":"Product","name":"Ladrillos Pica-Pica","image":"https://i.postimg.cc/QtFKFLcQ/IMG-20210224-220000-scaled.jpg"}}
+      {"@type":"ListItem","position":1,"item":{"@type":"Product","name":"Barra de Pan","image":"https://i.postimg.cc/15wFf0jg/Barra-larga.png"}},
+      {"@type":"ListItem","position":2,"item":{"@type":"Product","name":"Oferta Pan 2 Barras","image":"https://i.postimg.cc/1zJ584SV/Bnx-Zc-X2-IUAEn9bn.jpg"}},
+      {"@type":"ListItem","position":3,"item":{"@type":"Product","name":"Coca-Cola Lata","image":"https://i.postimg.cc/gj02jQQV/cocacola-lata.jpg"}},
+      {"@type":"ListItem","position":4,"item":{"@type":"Product","name":"Agua Chica 0,5L","image":"https://i.postimg.cc/mD47hZT0/ifa-eliges-agua-mineral-botella-50-cl.jpg"}},
+      {"@type":"ListItem","position":5,"item":{"@type":"Product","name":"Cruzcampo 1L","image":"https://i.postimg.cc/26PFdpND/61c-UDOQ05j-L-AC-UF894-1000-QL80.jpg"}},
+      {"@type":"ListItem","position":6,"item":{"@type":"Product","name":"Cruzcampo Lata","image":"https://i.postimg.cc/K8CfNy5Y/cruzcampo-lata.jpg"}},
+      {"@type":"ListItem","position":7,"item":{"@type":"Product","name":"Estrella Sur Lata","image":"https://i.postimg.cc/GtzzJ8M0/00118600300034-14-600x600.jpg"}},
+      {"@type":"ListItem","position":8,"item":{"@type":"Product","name":"Coca-Cola 2L","image":"https://i.postimg.cc/2ScWFpnK/00118610200372-33-600x600.jpg"}},
+      {"@type":"ListItem","position":9,"item":{"@type":"Product","name":"Chuches a Granel","image":"https://i.postimg.cc/D0mJ49sQ/fresas-silvestres-bolsa-1kg-2-24.jpg"}},
+      {"@type":"ListItem","position":10,"item":{"@type":"Product","name":"Coca-Cola Zero Lata","image":"https://i.postimg.cc/5N1ZB82r/images.png"}},
+      {"@type":"ListItem","position":11,"item":{"@type":"Product","name":"Nestea Maracuyá Lata","image":"https://i.postimg.cc/9MXjWTwK/003919-00-1.jpg"}},
+      {"@type":"ListItem","position":12,"item":{"@type":"Product","name":"Pipas Reyes Grande","image":"https://i.postimg.cc/dVVXknSs/images-1.jpg"}}
     ]
   }
   </script>
@@ -1680,69 +1700,157 @@
     </div>
   </div>
 
-  <!-- ═══════════ FEATURED PRODUCTS ═══════════ -->
-  <section class="featured" id="productos">
-    <div class="featured-inner">
-
-      <div class="product-grid reveal-left">
-        <div class="product-grid-item">
-          <img src="https://i.postimg.cc/PfcsVYK5/Mollete-mechada-847x435.jpg" alt="Bocadillo Carne Mechada" loading="lazy" />
-          <div class="product-overlay"></div>
-        </div>
-        <div class="product-grid-item">
-          <img src="https://i.postimg.cc/pVBkpH5b/3329-r1-6.jpg" alt="Bocadillo Jamon Serrano" loading="lazy" />
-          <div class="product-overlay"></div>
-        </div>
-        <div class="product-grid-item">
-          <img src="https://i.postimg.cc/ZnM9PJhY/141190-ISO-0-ES.avif" alt="Monster Verde 500ml" loading="lazy" />
-          <div class="product-overlay"></div>
-        </div>
-        <div class="product-grid-item">
-          <img src="https://i.postimg.cc/2yKsCKnX/Artboard1copy22.webp" alt="Takis Fuego" loading="lazy" />
-          <div class="product-overlay"></div>
-        </div>
-        <div class="product-grid-item">
-          <img src="https://i.postimg.cc/LX3tHh4b/kinder-bueno-classic-caja-de-15-ud.jpg" alt="Kinder Bueno Choco" loading="lazy" />
-          <div class="product-overlay"></div>
-        </div>
-        <div class="product-grid-item">
-          <img src="https://i.postimg.cc/TPfgtHgm/import-aecoc-images-08410199272393-8410199272393-doritos-tex-mex-aperitivo-de-maz-frito-con-sabor-a.jpg" alt="Doritos Tex Mex" loading="lazy" />
-          <div class="product-overlay"></div>
-        </div>
-        <div class="product-grid-item">
-          <img src="https://i.postimg.cc/gj02jQQV/cocacola-lata.jpg" alt="Coca-Cola 330ml" loading="lazy" />
-          <div class="product-overlay"></div>
-        </div>
-        <div class="product-grid-item">
-          <img src="https://i.postimg.cc/hGM0RpDd/07025-325x325.jpg" alt="Nutella 200g" loading="lazy" />
-          <div class="product-overlay"></div>
-        </div>
+  <!-- ═══════════ LO MAS PEDIDO ═══════════ -->
+  <section class="mas-pedido-section" id="mas-pedido">
+    <div class="mas-pedido-inner">
+      <div class="mas-pedido-header reveal-up">
+        <span class="section-label">Lo más pedido</span>
+        <h2 class="section-title">LO MÁS <span>PEDIDO</span> EN SAMIRA</h2>
+        <p class="section-desc">Selección de lo que más gusta, temporada tras temporada.</p>
       </div>
 
-      <div class="featured-text reveal-right">
-        <span class="section-label">Lo que ofrecemos</span>
-        <h2 class="section-title">LOS FAVORITOS<br>DE <span>NUESTROS</span><br>CLIENTES</h2>
+      <div class="features-chips reveal-up" style="justify-content:center;margin-bottom:2.5rem;">
+        <div class="chip"><span class="chip-dot"></span>Novedades semanales</div>
+        <div class="chip"><span class="chip-dot"></span>Bebidas frías siempre</div>
+        <div class="chip"><span class="chip-dot"></span>Embutidos frescos</div>
+        <div class="chip"><span class="chip-dot"></span>Dulces y chucherías</div>
+        <div class="chip"><span class="chip-dot"></span>Panadería diaria</div>
+        <div class="chip"><span class="chip-dot"></span>Productos hogar</div>
+      </div>
 
-        <div class="features-chips">
-          <div class="chip"><span class="chip-dot"></span>Novedades semanales</div>
-          <div class="chip"><span class="chip-dot"></span>Bebidas frías siempre</div>
-          <div class="chip"><span class="chip-dot"></span>Embutidos frescos</div>
-          <div class="chip"><span class="chip-dot"></span>Dulces y chucherías</div>
-          <div class="chip"><span class="chip-dot"></span>Panadería diaria</div>
-          <div class="chip"><span class="chip-dot"></span>Productos hogar</div>
+      <div class="mas-pedido-grid reveal-up">
+
+        <div class="mas-pedido-card">
+          <div class="mas-pedido-img-wrap">
+            <img src="https://i.postimg.cc/15wFf0jg/Barra-larga.png" alt="Barra de pan" loading="lazy" />
+          </div>
+          <div class="mas-pedido-info">
+            <span class="mas-pedido-name">Barra de Pan</span>
+            <span class="mas-pedido-micro">El que nunca falla en temporada</span>
+          </div>
         </div>
 
-        <p class="section-desc">
-          Más de 300 productos — chuches a granel, snacks variados, bebidas frías y bocadillos calientes — a 5 minutos del Luz Shopping.
-        </p>
+        <div class="mas-pedido-card">
+          <div class="mas-pedido-img-wrap">
+            <img src="https://i.postimg.cc/1zJ584SV/Bnx-Zc-X2-IUAEn9bn.jpg" alt="Oferta 2 Barras Pan" loading="lazy" />
+          </div>
+          <div class="mas-pedido-info">
+            <span class="mas-pedido-name">Oferta Pan 2 Barras</span>
+            <span class="mas-pedido-micro">Favorito que vuelve a pedir</span>
+          </div>
+        </div>
 
-        <a href="https://glovoapp.com/es/es/jerez-de-la-frontera/stores/la-tienda-de-samira-jerez-de-la-frontera" target="_blank" rel="noopener noreferrer" class="arrow-cta">
-          Pedir ahora — entrega en 30 min
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        <div class="mas-pedido-card">
+          <div class="mas-pedido-img-wrap">
+            <img src="https://i.postimg.cc/gj02jQQV/cocacola-lata.jpg" alt="Coca-Cola Lata" loading="lazy" />
+          </div>
+          <div class="mas-pedido-info">
+            <span class="mas-pedido-name">Coca-Cola Lata</span>
+            <span class="mas-pedido-micro">Se agota antes que el resto</span>
+          </div>
+        </div>
+
+        <div class="mas-pedido-card">
+          <div class="mas-pedido-img-wrap">
+            <img src="https://i.postimg.cc/mD47hZT0/ifa-eliges-agua-mineral-botella-50-cl.jpg" alt="Agua Chica 0,5L" loading="lazy" />
+          </div>
+          <div class="mas-pedido-info">
+            <span class="mas-pedido-name">Agua Chica 0,5L</span>
+            <span class="mas-pedido-micro">El más repetido de la semana</span>
+          </div>
+        </div>
+
+        <div class="mas-pedido-card">
+          <div class="mas-pedido-img-wrap">
+            <img src="https://i.postimg.cc/26PFdpND/61c-UDOQ05j-L-AC-UF894-1000-QL80.jpg" alt="Cruzcampo Litro" loading="lazy" />
+          </div>
+          <div class="mas-pedido-info">
+            <span class="mas-pedido-name">Cruzcampo 1L</span>
+            <span class="mas-pedido-micro">Raro que quede para el día siguiente</span>
+          </div>
+        </div>
+
+        <div class="mas-pedido-card">
+          <div class="mas-pedido-img-wrap">
+            <img src="https://i.postimg.cc/K8CfNy5Y/cruzcampo-lata.jpg" alt="Cruzcampo Lata" loading="lazy" />
+          </div>
+          <div class="mas-pedido-info">
+            <span class="mas-pedido-name">Cruzcampo Lata</span>
+            <span class="mas-pedido-micro">El que nunca falla en temporada</span>
+          </div>
+        </div>
+
+        <div class="mas-pedido-card">
+          <div class="mas-pedido-img-wrap">
+            <img src="https://i.postimg.cc/GtzzJ8M0/00118600300034-14-600x600.jpg" alt="Estrella Sur Lata" loading="lazy" />
+          </div>
+          <div class="mas-pedido-info">
+            <span class="mas-pedido-name">Estrella Sur Lata</span>
+            <span class="mas-pedido-micro">Favorito que vuelve a pedir</span>
+          </div>
+        </div>
+
+        <div class="mas-pedido-card">
+          <div class="mas-pedido-img-wrap">
+            <img src="https://i.postimg.cc/2ScWFpnK/00118610200372-33-600x600.jpg" alt="Coca-Cola 2 Litros" loading="lazy" />
+          </div>
+          <div class="mas-pedido-info">
+            <span class="mas-pedido-name">Coca-Cola 2L</span>
+            <span class="mas-pedido-micro">Se agota antes que el resto</span>
+          </div>
+        </div>
+
+        <div class="mas-pedido-card">
+          <div class="mas-pedido-img-wrap">
+            <img src="https://i.postimg.cc/D0mJ49sQ/fresas-silvestres-bolsa-1kg-2-24.jpg" alt="Chuches a Granel" loading="lazy" />
+          </div>
+          <div class="mas-pedido-info">
+            <span class="mas-pedido-name">Chuches a Granel</span>
+            <span class="mas-pedido-micro">El más repetido de la semana</span>
+          </div>
+        </div>
+
+        <div class="mas-pedido-card">
+          <div class="mas-pedido-img-wrap">
+            <img src="https://i.postimg.cc/5N1ZB82r/images.png" alt="Coca-Cola Zero Lata" loading="lazy" />
+          </div>
+          <div class="mas-pedido-info">
+            <span class="mas-pedido-name">Coca-Cola Zero Lata</span>
+            <span class="mas-pedido-micro">Raro que quede para el día siguiente</span>
+          </div>
+        </div>
+
+        <div class="mas-pedido-card">
+          <div class="mas-pedido-img-wrap">
+            <img src="https://i.postimg.cc/9MXjWTwK/003919-00-1.jpg" alt="Nestea Maracuya Lata" loading="lazy" />
+          </div>
+          <div class="mas-pedido-info">
+            <span class="mas-pedido-name">Nestea Maracuyá Lata</span>
+            <span class="mas-pedido-micro">El que nunca falla en temporada</span>
+          </div>
+        </div>
+
+        <div class="mas-pedido-card">
+          <div class="mas-pedido-img-wrap">
+            <img src="https://i.postimg.cc/dVVXknSs/images-1.jpg" alt="Pipas Reyes Grande" loading="lazy" />
+          </div>
+          <div class="mas-pedido-info">
+            <span class="mas-pedido-name">Pipas Reyes Grande</span>
+            <span class="mas-pedido-micro">Favorito que vuelve a pedir</span>
+          </div>
+        </div>
+
+      </div><!-- /.mas-pedido-grid -->
+
+      <div class="mas-pedido-cta reveal-up">
+        <a href="https://glovoapp.com/es/es/jerez-de-la-frontera/stores/la-tienda-de-samira-jerez-de-la-frontera"
+           target="_blank" rel="noopener noreferrer" class="btn-primary">
+          Pedir ahora en Glovo
         </a>
       </div>
-    </div>
+    </div><!-- /.mas-pedido-inner -->
   </section>
+
 
   <!-- ═══════════ CHUCHES A GRANEL EN JEREZ ═══════════ -->
   <section class="granel" id="granel">
@@ -2229,76 +2337,6 @@
     revealEls.forEach(function(el) {
       revealObserver.observe(el);
     });
-
-    // ── Product image rotation ──
-    var productPool = [
-      { src: 'https://i.postimg.cc/PfcsVYK5/Mollete-mechada-847x435.jpg', alt: 'Bocadillo Carne Mechada' },
-      { src: 'https://i.postimg.cc/pVBkpH5b/3329-r1-6.jpg', alt: 'Bocadillo Jamon Serrano' },
-      { src: 'https://i.postimg.cc/gj02jQQV/cocacola-lata.jpg', alt: 'Coca-Cola 330ml' },
-      { src: 'https://i.postimg.cc/5N1ZB82r/images.png', alt: 'Coca-Cola Zero Lata' },
-      { src: 'https://i.postimg.cc/2ScWFpnK/00118610200372-33-600x600.jpg', alt: 'Coca-Cola 2L' },
-      { src: 'https://i.postimg.cc/2jcCSHww/lata-fanta-naranja.jpg', alt: 'Fanta Naranja Lata' },
-      { src: 'https://i.postimg.cc/bvxzYpCD/lata-fanta-limon.jpg', alt: 'Fanta Limon Lata' },
-      { src: 'https://i.postimg.cc/ZnM9PJhY/141190-ISO-0-ES.avif', alt: 'Monster Verde 500ml' },
-      { src: 'https://i.postimg.cc/TwQ5wr7D/monster-lewis-hamilton.jpg', alt: 'Monster Lewis Hamilton' },
-      { src: 'https://i.postimg.cc/g2RwR9td/41q533-KXs3-L-SR600-315-PIWhite-Strip-Bottom-Left-0-35-SCLZZZZZZZ-FMpng-BG255-255-255.png', alt: 'Monster Mango Loco' },
-      { src: 'https://i.postimg.cc/vB8Dp4YH/monster-azul-lo-carb-500-ml.webp', alt: 'Monster Azul' },
-      { src: 'https://i.postimg.cc/5yT0Ypw6/bebida-energetica-white-zero-monster-500-ml.jpg', alt: 'Monster Blanco' },
-      { src: 'https://i.postimg.cc/g2PzCx4F/41-K50dh-V-x-L.jpg', alt: 'Monster Pacific Punch' },
-      { src: 'https://i.postimg.cc/L8rbCPVL/00118622300236-10-600x600.jpg', alt: 'Pepsi Lata' },
-      { src: 'https://i.postimg.cc/2yKsCKnX/Artboard1copy22.webp', alt: 'Takis Fuego' },
-      { src: 'https://i.postimg.cc/zXYwcjmJ/takis-queso-volcano-100g-8412600019689-50900761280843.webp', alt: 'Takis Queso Volcano' },
-      { src: 'https://i.postimg.cc/4d4qVg5S/takis-ninja-teriyaki-90gr-x-18u.png', alt: 'Takis Ninja Teriyaki' },
-      { src: 'https://i.postimg.cc/1zBY9dQc/61z83yrrd8l.jpg', alt: 'Takis Sweet Chili' },
-      { src: 'https://i.postimg.cc/TPfgtHgm/import-aecoc-images-08410199272393-8410199272393-doritos-tex-mex-aperitivo-de-maz-frito-con-sabor-a.jpg', alt: 'Doritos Tex Mex' },
-      { src: 'https://i.postimg.cc/ZKXLxcwF/doritos-chilli-44g.jpg', alt: 'Doritos Chili' },
-      { src: 'https://i.postimg.cc/Ss5XbZ2g/lays-campesinas.jpg', alt: 'Lays Campesinas' },
-      { src: 'https://i.postimg.cc/c4330Ncw/ruffles-sabor-a-jamon-bolsita-45gr.jpg', alt: 'Ruffles Jamon' },
-      { src: 'https://i.postimg.cc/zfdZdvVr/61-Kj3-XEko9-L.jpg', alt: 'Cheetos Gustosines' },
-      { src: 'https://i.postimg.cc/W3DKX7BG/cheetos-pelotazos-bolsita-40gr.jpg', alt: 'Cheetos Pelotazos' },
-      { src: 'https://i.postimg.cc/LX3tHh4b/kinder-bueno-classic-caja-de-15-ud.jpg', alt: 'Kinder Bueno' },
-      { src: 'https://i.postimg.cc/fy5fvy69/images-9.jpg', alt: 'Kinder Bueno White' },
-      { src: 'https://i.postimg.cc/X7y8TNS9/s-l1600.jpg', alt: 'Kinder Cards' },
-      { src: 'https://i.postimg.cc/hGM0RpDd/07025-325x325.jpg', alt: 'Nutella 200g' },
-      { src: 'https://i.postimg.cc/K8CfNy5Y/cruzcampo-lata.jpg', alt: 'Cruzcampo Lata' },
-      { src: 'https://i.postimg.cc/GtzzJ8M0/00118600300034-14-600x600.jpg', alt: 'Estrella Galicia Lata' },
-      { src: 'https://i.postimg.cc/5250y4Td/botellitas-coca-cola.jpg', alt: 'Pack Coca-Colas' },
-      { src: 'https://i.postimg.cc/15jpRkPs/580913-00-1.jpg', alt: 'Nesquik' }
-    ];
-
-    function shuffleArray(arr) {
-      for (var i = arr.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
-        var temp = arr[i]; arr[i] = arr[j]; arr[j] = temp;
-      }
-      return arr;
-    }
-
-    var productItems = document.querySelectorAll('.product-grid-item img');
-    var rotationIndex = 0;
-
-    function rotateProducts() {
-      var shuffled = shuffleArray(productPool.slice());
-      var count = productItems.length;
-      for (var i = 0; i < count; i++) {
-        var item = productItems[i];
-        var product = shuffled[i % shuffled.length];
-        item.style.transition = 'opacity 0.6s ease';
-        item.style.opacity = '0';
-        (function(el, p) {
-          setTimeout(function() {
-            el.src = p.src;
-            el.alt = p.alt;
-            el.style.opacity = '1';
-          }, 600);
-        })(item, product);
-      }
-    }
-
-    // Rotate every 8 seconds
-    setInterval(rotateProducts, 8000);
-    // Also shuffle on first load after a short delay
-    setTimeout(function() { rotateProducts(); }, 2000);
 
     // ── Hero Slideshow ──
     var heroSlides = document.querySelectorAll('.hero-slide');
