@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sweets &amp; Grocery Store in Jerez open until 11:30 PM — La Tienda de Samira | 300+ bulk sweets</title>
+  <title>Bulk Sweets &amp; Corner Shop in Jerez open until 11:30 PM | La Tienda de Samira</title>
   <meta name="description" content="Neighbourhood grocery store in Jerez de la Frontera with over 300 bulk sweets. Open mornings and evenings, until 11:30 PM, 5 minutes from Luz Shopping. Orders via Glovo. C. Tablao, Jerez." />
-  <meta name="keywords" content="grocery store Jerez, shop open late Jerez, sweets Jerez, bulk sweets Jerez, store open 11:30pm Jerez, Glovo Jerez, neighbourhood shop El Calvario, San Juan de Dios" />
+  <meta name="keywords" content="grocery store Jerez, shop open late Jerez, sweets Jerez, bulk sweets Jerez, store open 11:30 pm Jerez, Glovo Jerez, neighbourhood shop El Calvario, San Juan de Dios" />
   <meta name="author" content="La Tienda de Samira" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="geo.region" content="ES-CA" />
@@ -27,7 +27,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://latiendadesamira.cloud/en.html" />
   <meta property="og:site_name" content="La Tienda de Samira" />
-  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale" content="en_GB" />
   <meta property="og:locale:alternate" content="es_ES" />
   <meta property="og:locale:alternate" content="fr_FR" />
   <meta property="og:locale:alternate" content="de_DE" />
@@ -254,14 +254,7 @@
     .mobile-menu ul a:hover { color: var(--pink); }
 
     /* ─── LANG SWITCHER ─── */
-    .lang-switcher { position: relative; cursor: pointer; margin-left: 0.5rem; }
-    .lang-current { font-size: 0.82rem; font-weight: 700; color: rgba(255,255,255,0.85); padding: 0.3rem 0.6rem; border: 1px solid rgba(255,255,255,0.25); border-radius: 6px; transition: color var(--trans), border-color var(--trans); }
-    nav.scrolled .lang-current { color: var(--text-dark); border-color: #ddd; }
-    .lang-dropdown { display: none; position: absolute; top: 100%; right: 0; margin-top: 8px; background: var(--white); border-radius: var(--radius-sm); box-shadow: var(--shadow); overflow: hidden; z-index: 1000; min-width: 150px; }
-    .lang-switcher:hover .lang-dropdown { display: block; }
-    .lang-dropdown a { display: block; padding: 0.55rem 1rem; font-size: 0.85rem; font-weight: 600; color: var(--text-dark); text-decoration: none; transition: background 0.2s; }
-    .lang-dropdown a:hover { background: var(--gray-bg); }
-    .lang-dropdown a.lang-active { color: var(--pink); background: var(--pink-light); }
+    nav.scrolled
 
     /* ─── LANG SWITCHER ─── */
     .lang-bar {
@@ -1391,11 +1384,7 @@
       .mas-pedido-grid { grid-template-columns: repeat(2, 1fr); gap: 0.85rem; }
       .mas-pedido-name { font-size: 0.75rem; }
       .mas-pedido-micro { font-size: 0.7rem; }
-    }
-
-
-  /* === GRANEL (chuches a granel) === */
-  .granel {
+    }.granel {
       background: var(--white);
       padding: 5rem clamp(1.5rem, 5vw, 4rem);
       border-top: 1px solid #EEE;
@@ -1419,6 +1408,64 @@
     }
 
 
+
+  /* === FIXES CRITICOS (mas-pedido img + granel completo + aria) === */
+  .mas-pedido-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s;
+    }
+  .granel-inner { max-width: 860px; margin: 0 auto; }
+  .granel-body p {
+      font-size: 1.02rem;
+      color: var(--text-mid);
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+    }
+  .granel-body p strong { color: var(--text-dark); font-weight: 700; }
+  .granel-body h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 1.4rem;
+      color: var(--pink);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 2rem 0 1rem;
+    }
+  .granel-list { list-style: none; padding: 0; margin: 0 0 1.5rem; }
+  .granel-list li {
+      padding: 0.75rem 0 0.75rem 2rem;
+      font-size: 1rem;
+      color: var(--text-dark);
+      border-bottom: 1px solid #F0F0F0;
+      position: relative;
+    }
+  .granel-list li:last-child { border-bottom: none; }
+  .granel-list li::before {
+      content: "🍬";
+      position: absolute;
+      left: 0; top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.15rem;
+    }
+  .granel-cta {
+      margin-top: 2rem !important;
+      padding: 1.5rem 1.75rem !important;
+      background: var(--pink-light) !important;
+      border-left: 4px solid var(--pink);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font-size: 1.02rem !important;
+      color: var(--text-dark) !important;
+    }
+  .granel-body a { color: var(--pink); text-decoration: underline; font-weight: 600; }
+  .mobile-menu ul a[aria-current="page"] {
+      color: var(--pink);
+      font-weight: 700;
+      pointer-events: none;
+      opacity: 0.85;
+    }
 </style>
 
   <!-- JSON-LD LocalBusiness Schema -->
@@ -1574,7 +1621,7 @@
     "itemListOrder": "https://schema.org/ItemListOrderDescending",
     "numberOfItems": 12,
     "itemListElement": [
-      {"@type":"ListItem","position":1,"item":{"@type":"Product","name":"Bread Baguette","image":"https://i.postimg.cc/15wFf0jg/Barra-larga.png"}},
+      {"@type":"ListItem","position":1,"item":{"@type":"Product","name":"Baguette","image":"https://i.postimg.cc/15wFf0jg/Barra-larga.png"}},
       {"@type":"ListItem","position":2,"item":{"@type":"Product","name":"2-Baguette Deal","image":"https://i.postimg.cc/1zJ584SV/Bnx-Zc-X2-IUAEn9bn.jpg"}},
       {"@type":"ListItem","position":3,"item":{"@type":"Product","name":"Coca-Cola Can","image":"https://i.postimg.cc/gj02jQQV/cocacola-lata.jpg"}},
       {"@type":"ListItem","position":4,"item":{"@type":"Product","name":"Still Water 0.5L","image":"https://i.postimg.cc/mD47hZT0/ifa-eliges-agua-mineral-botella-50-cl.jpg"}},
@@ -1585,7 +1632,7 @@
       {"@type":"ListItem","position":9,"item":{"@type":"Product","name":"Bulk Sweets","image":"https://i.postimg.cc/D0mJ49sQ/fresas-silvestres-bolsa-1kg-2-24.jpg"}},
       {"@type":"ListItem","position":10,"item":{"@type":"Product","name":"Coca-Cola Zero Can","image":"https://i.postimg.cc/5N1ZB82r/images.png"}},
       {"@type":"ListItem","position":11,"item":{"@type":"Product","name":"Nestea Passion Fruit Can","image":"https://i.postimg.cc/9MXjWTwK/003919-00-1.jpg"}},
-      {"@type":"ListItem","position":12,"item":{"@type":"Product","name":"Pipas Reyes Large","image":"https://i.postimg.cc/dVVXknSs/images-1.jpg"}}
+      {"@type":"ListItem","position":12,"item":{"@type":"Product","name":"Reyes sunflower seeds (large)","image":"https://i.postimg.cc/dVVXknSs/images-1.jpg"}}
     ]
   }
   </script>
@@ -1605,7 +1652,7 @@
       <li><a href="#porque">About us</a></li>
       <li><a href="#delivery">Delivery</a></li>
       <li><a href="#ubicacion">Location</a></li>
-      <li><a href="tel:856615453" class="nav-cta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call</a></li>
+      <li><a href="tel:+34856615453" class="nav-cta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call</a></li>
     </ul>
 
     <div class="lang-bar">
@@ -1627,16 +1674,16 @@
       <li><a href="#porque" onclick="closeMobileMenu()">About us</a></li>
       <li><a href="#delivery" onclick="closeMobileMenu()">Delivery</a></li>
       <li><a href="#ubicacion" onclick="closeMobileMenu()">Location</a></li>
-      <li><a href="tel:856615453">📞 856 61 54 53</a></li>
+      <li><a href="tel:+34856615453">📞 856 61 54 53</a></li>
     </ul>
     <hr style="margin:1.5rem 0;border:none;border-top:1px solid rgba(128,128,128,0.25);">
     <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;opacity:0.85;margin-bottom:0.85rem;">Categories</div>
     <ul>
-      <li><a href="/pan-fresco-jerez/">Pan fresco hasta las 23:30</a></li>
-      <li><a href="/chuches-a-granel-jerez/">+300 chuches a granel</a></li>
-      <li><a href="/bocadillos-jerez/">Bocadillos recién hechos</a></li>
-      <li><a href="/tienda-abierta-tarde-jerez/">Abierta cuando otros cierran</a></li>
-      <li><a href="/cerveza-fria-jerez/">Cerveza fría para llevar</a></li>
+      <li><a href="/pan-fresco-jerez/">Fresh bread until 11:30 PM</a></li>
+      <li><a href="/chuches-a-granel-jerez/">300+ bulk sweets</a></li>
+      <li><a href="/bocadillos-jerez/">Freshly made sandwiches</a></li>
+      <li><a href="/tienda-abierta-tarde-jerez/">Open when others close</a></li>
+      <li><a href="/cerveza-fria-jerez/">Cold beer to go</a></li>
     </ul>
   </div>
 
@@ -1645,19 +1692,19 @@
   <section class="hero" id="heroSlideshow">
     <div class="hero-slides">
       <div class="hero-slide active" style="background: linear-gradient(135deg, #E91E8C 0%, #C0106E 50%, #0B0F1A 100%);">
-        <img src="https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=1920&q=80" alt="Golosinas coloridas" fetchpriority="high" />
+        <img src="https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=1920&q=80" alt="Colourful sweets" fetchpriority="high" />
       </div>
       <div class="hero-slide" style="background: linear-gradient(135deg, #F9A825 0%, #FF6F00 50%, #E65100 100%);">
         <img src="https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=1920&q=80" alt="Bulk candy" loading="lazy" />
       </div>
       <div class="hero-slide" style="background: linear-gradient(135deg, #00BCD4 0%, #00838F 50%, #004D40 100%);">
-        <img src="https://images.unsplash.com/photo-1575224300306-1b8da36134ec?w=1920&q=80" alt="Chucherias variadas" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1575224300306-1b8da36134ec?w=1920&q=80" alt="Assorted bulk sweets in Jerez" loading="lazy" />
       </div>
       <div class="hero-slide" style="background: linear-gradient(135deg, #AB47BC 0%, #7B1FA2 50%, #4A148C 100%);">
-        <img src="https://images.unsplash.com/photo-1563262924-641a8b3d397f?w=1920&q=80" alt="Caramelos de colores" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1563262924-641a8b3d397f?w=1920&q=80" alt="Coloured candy in Jerez" loading="lazy" />
       </div>
       <div class="hero-slide" style="background: linear-gradient(135deg, #E91E8C 0%, #FF6B9D 50%, #FFD700 100%);">
-        <img src="https://images.unsplash.com/photo-1499195333224-3ce974eecb47?w=1920&q=80" alt="Gominolas" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1499195333224-3ce974eecb47?w=1920&q=80" alt="Gummy sweets" loading="lazy" />
       </div>
     </div>
 
@@ -1689,9 +1736,9 @@
             <div class="hero-stat-num">23:30</div>
             <div class="hero-stat-label">Open until</div>
           </div>
-          <div class="hero-stat">
+          <div class="hero-stat"><a href="https://www.google.com/search?q=La+Tienda+de+Samira+Jerez+rese%C3%B1as" target="_blank" rel="noopener" aria-label="See reviews on Google" style="color:inherit;text-decoration:none;display:block;">
             <div class="hero-stat-num">⭐4.9</div>
-            <div class="hero-stat-label">Google</div>
+            <div class="hero-stat-label"></div></a>
           </div>
         </div>
       </div>
@@ -1714,7 +1761,7 @@
         <div class="strip-item"><div class="strip-icon">🍿</div><div class="strip-label">Snacks</div></div>
         <div class="strip-item"><div class="strip-icon">🥤</div><div class="strip-label">Drinks</div></div>
         <div class="strip-item"><div class="strip-icon">🍬</div><div class="strip-label">Sweets</div></div>
-        <div class="strip-item"><div class="strip-icon">🥩</div><div class="strip-label">Cold Cuts</div></div>
+        <div class="strip-item"><div class="strip-icon">🥩</div><div class="strip-label">Deli Meats</div></div>
         <div class="strip-item"><div class="strip-icon">🍫</div><div class="strip-label">Chocolate</div></div>
         <div class="strip-item"><div class="strip-icon">🥐</div><div class="strip-label">Bakery</div></div>
         <div class="strip-item"><div class="strip-icon">🧊</div><div class="strip-label">Frozen</div></div>
@@ -1723,7 +1770,7 @@
         <div class="strip-item"><div class="strip-icon">🍿</div><div class="strip-label">Snacks</div></div>
         <div class="strip-item"><div class="strip-icon">🥤</div><div class="strip-label">Drinks</div></div>
         <div class="strip-item"><div class="strip-icon">🍬</div><div class="strip-label">Sweets</div></div>
-        <div class="strip-item"><div class="strip-icon">🥩</div><div class="strip-label">Cold Cuts</div></div>
+        <div class="strip-item"><div class="strip-icon">🥩</div><div class="strip-label">Deli Meats</div></div>
         <div class="strip-item"><div class="strip-icon">🍫</div><div class="strip-label">Chocolate</div></div>
         <div class="strip-item"><div class="strip-icon">🥐</div><div class="strip-label">Bakery</div></div>
         <div class="strip-item"><div class="strip-icon">🧊</div><div class="strip-label">Frozen</div></div>
@@ -1744,7 +1791,7 @@
       <div class="features-chips reveal-up" style="justify-content:center;margin-bottom:2.5rem;">
         <div class="chip"><span class="chip-dot"></span>New arrivals weekly</div>
         <div class="chip"><span class="chip-dot"></span>Always cold drinks</div>
-        <div class="chip"><span class="chip-dot"></span>Fresh cold cuts</div>
+        <div class="chip"><span class="chip-dot"></span>Fresh deli meats</div>
         <div class="chip"><span class="chip-dot"></span>Sweets and candy</div>
         <div class="chip"><span class="chip-dot"></span>Daily bakery</div>
         <div class="chip"><span class="chip-dot"></span>Household products</div>
@@ -1757,7 +1804,7 @@
             <img src="https://i.postimg.cc/15wFf0jg/Barra-larga.png" alt="Bread baguette" loading="lazy" />
           </div>
           <div class="mas-pedido-info">
-            <span class="mas-pedido-name">Bread Baguette</span>
+            <span class="mas-pedido-name">Baguette</span>
             <span class="mas-pedido-micro">The one that never lets you down</span>
           </div>
         </div>
@@ -1867,7 +1914,7 @@
             <img src="https://i.postimg.cc/dVVXknSs/images-1.jpg" alt="Pipas Reyes large" loading="lazy" />
           </div>
           <div class="mas-pedido-info">
-            <span class="mas-pedido-name">Pipas Reyes Large</span>
+            <span class="mas-pedido-name">Reyes sunflower seeds (large)</span>
             <span class="mas-pedido-micro">A favourite that keeps coming back</span>
           </div>
         </div>
@@ -2127,7 +2174,7 @@
 
     <a href="https://glovoapp.com/es/es/jerez-de-la-frontera/stores/la-tienda-de-samira-jerez-de-la-frontera" target="_blank" rel="noopener noreferrer" class="delivery-banner glovo reveal">
       <div class="delivery-banner-text">
-        <div class="delivery-banner-eyebrow">Order now · Fast delivery</div>
+        <div class="delivery-banner-eyebrow">Order online · Delivered in 30 min</div>
         <div class="delivery-banner-title">Available<br>on Glovo</div>
       </div>
       <div class="delivery-banner-arrow">
@@ -2161,7 +2208,7 @@
             <div class="review-avatar">M</div>
             <div>
               <div class="review-name">Minna Sylvia Hjorth</div>
-              <div class="review-sub">Verified Google review · 5 ★</div>
+              <div class="review-sub">Verified Google review · 11 months ago · 5 ★</div>
             </div>
           </div>
         </div>
@@ -2173,7 +2220,7 @@
             <div class="review-avatar">D</div>
             <div>
               <div class="review-name">Dolores Palomeque Ruiz-Berdejo</div>
-              <div class="review-sub">Verified Google review · 5 ★</div>
+              <div class="review-sub">Verified Google review · 1 year ago · 5 ★</div>
             </div>
           </div>
         </div>
@@ -2185,7 +2232,7 @@
             <div class="review-avatar">B</div>
             <div>
               <div class="review-name">Belén Morillo</div>
-              <div class="review-sub">Verified Google review · 5 ★</div>
+              <div class="review-sub">Verified Google review · 3 days ago · 5 ★</div>
             </div>
           </div>
         </div>
@@ -2196,7 +2243,7 @@
             <div class="review-avatar">M</div>
             <div>
               <div class="review-name">Manuela Delgado Galán</div>
-              <div class="review-sub">Verified Google review · 5 ★</div>
+              <div class="review-sub">Verified Google review · 3 days ago · 5 ★</div>
             </div>
           </div>
         </div>
@@ -2207,7 +2254,7 @@
             <div class="review-avatar">Y</div>
             <div>
               <div class="review-name">Yasminaa Mohamed</div>
-              <div class="review-sub">Verified Google review · 5 ★</div>
+              <div class="review-sub">Verified Google review · 2 days ago · 5 ★</div>
             </div>
           </div>
         </div>
@@ -2245,14 +2292,14 @@
             <div class="contact-info-icon">📞</div>
             <div>
               <div class="contact-info-label">Phone</div>
-              <a href="tel:856615453" class="contact-info-value">856 61 54 53</a>
+              <a href="tel:+34856615453" class="contact-info-value">856 61 54 53</a>
             </div>
           </li>
           <li class="contact-info-item">
             <div class="contact-info-icon">🕐</div>
             <div>
               <div class="contact-info-label">Hours</div>
-              <span class="contact-info-value">Mornings: Mon–Fri 8am–3pm · Sat–Sun 9am–3:30pm<br>Evenings: Sun–Thu 5:30pm–11pm · Fri–Sat 6pm–11:30pm</span>
+              <span class="contact-info-value">Mornings: Mon–Fri 8 am–3 pm · Sat–Sun 9 am–3:30 pm<br>Evenings: Sun–Thu 5:30 pm–11 pm · Fri–Sat 6 pm–11:30 pm</span>
             </div>
           </li>
         </ul>
@@ -2279,7 +2326,7 @@
             <div class="footer-brand-name">La Tienda de Samira</div>
           </div>
           <p class="footer-brand-desc">
-            Your trusted store in Jerez de la Frontera. Snacks, drinks, sweets, cold cuts, pastries, bakery, frozen foods and household products.
+            Your trusted store in Jerez de la Frontera. Snacks, drinks, sweets, deli meats, pastries, bakery, frozen foods and household products.
           </p>
           <span class="footer-hours">🟢 Open until 11:30 PM</span>
         </div>
@@ -2299,19 +2346,20 @@
           <div class="footer-col-title">Order online</div>
           <ul class="footer-links">
             <li><a href="https://glovoapp.com/es/es/jerez-de-la-frontera/stores/la-tienda-de-samira-jerez-de-la-frontera" target="_blank" rel="noopener noreferrer">🛵 Glovo</a></li>
-            <li><a href="tel:856615453">📞 Call the store</a></li>
-            <li><a href="https://www.facebook.com/La-tienda-de-Samira" target="_blank" rel="noopener noreferrer">📘 Facebook</a></li>
+            <li><a href="tel:+34856615453">📞 Call the store</a></li>
+            <li><a href="https://wa.me/34856615453" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a></li>
+            
           </ul>
         </div>
 
         <div>
           <div class="footer-col-title">Categories in Jerez</div>
           <ul class="footer-links">
-            <li><a href="/pan-fresco-jerez/">Pan fresco en Jerez</a></li>
-            <li><a href="/chuches-a-granel-jerez/">Chuches a granel</a></li>
-            <li><a href="/bocadillos-jerez/">Bocadillos</a></li>
-            <li><a href="/tienda-abierta-tarde-jerez/">Abierta hasta 23:30</a></li>
-            <li><a href="/cerveza-fria-jerez/">Cerveza fría</a></li>
+            <li><a href="/pan-fresco-jerez/">Fresh bread in Jerez</a></li>
+            <li><a href="/chuches-a-granel-jerez/">Bulk sweets</a></li>
+            <li><a href="/bocadillos-jerez/">Sandwiches</a></li>
+            <li><a href="/tienda-abierta-tarde-jerez/">Open until 11:30 PM</a></li>
+            <li><a href="/cerveza-fria-jerez/">Cold beer</a></li>
           </ul>
         </div>
 
