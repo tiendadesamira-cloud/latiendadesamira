@@ -601,34 +601,6 @@
       align-items: center;
     }
 
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: repeat(2, 160px);
-      gap: 10px;
-    }
-    .product-grid-item {
-      border-radius: var(--radius-sm);
-      overflow: hidden;
-      position: relative;
-      box-shadow: var(--shadow-sm);
-      cursor: pointer;
-    }
-    .product-grid-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      filter: grayscale(100%) brightness(0.85);
-      transition: transform 0.6s ease, filter 0.6s ease, opacity 0.6s ease;
-    }
-    .product-grid-item:hover img { transform: scale(1.1); filter: grayscale(0%) brightness(1.05); }
-    .product-grid-item:nth-child(1) {
-      grid-column: span 2;
-      grid-row: span 2;
-    }
-    .product-grid-item:nth-child(1) { border-radius: var(--radius); }
-
     .product-overlay {
       position: absolute;
       inset: 0;
@@ -636,8 +608,6 @@
       opacity: 0;
       transition: opacity var(--trans);
     }
-    .product-grid-item:hover .product-overlay { opacity: 1; }
-
     .featured-text { }
     .section-label {
       display: inline-block;
@@ -1259,14 +1229,6 @@
       .hero-stat-num { font-size: 1.8rem; }
       .hero-stat-label { font-size: 0.72rem; }
       .featured, .anatomy, .reviews, .location { padding-top: 3.5rem !important; padding-bottom: 3.5rem !important; }
-      .product-grid {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(4, 120px);
-      }
-      .product-grid-item:nth-child(1) {
-        grid-column: span 2;
-        grid-row: span 1;
-      }
       .delivery-banner {
         flex-direction: column;
         text-align: center;
@@ -1334,7 +1296,103 @@
       outline: 3px solid var(--white);
       outline-offset: 2px;
     }
-  </style>
+  
+
+  /* === MAS PEDIDO (productos) === */
+  .mas-pedido-section {
+      background: #fdf6fb;
+      padding: 5rem clamp(1.5rem, 5vw, 4rem);
+    }
+
+.mas-pedido-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+.mas-pedido-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+.mas-pedido-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+
+.mas-pedido-card {
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 2px 12px rgba(233,30,140,0.08);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+.mas-pedido-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(233,30,140,0.18);
+    }
+
+.mas-pedido-img-wrap {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      background: #f5f5f5;
+    }
+
+.mas-pedido-card:hover .mas-pedido-img-wrap img {
+      transform: scale(1.07);
+    }
+
+.mas-pedido-info {
+      padding: 0.75rem 0.85rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+.mas-pedido-name {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #1a1a2e;
+      line-height: 1.3;
+    }
+
+.mas-pedido-micro {
+      font-size: 0.78rem;
+      color: #666;
+      font-style: italic;
+      text-align: center;
+      padding-top: 4px;
+      line-height: 1.4;
+    }
+
+.mas-pedido-cta {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+.mas-pedido-grid { grid-template-columns: repeat(3, 1fr); }
+
+.mas-pedido-grid { grid-template-columns: repeat(2, 1fr); gap: 0.85rem; }
+
+.mas-pedido-name { font-size: 0.75rem; }
+
+.mas-pedido-micro { font-size: 0.7rem; }
+
+@media (max-width: 900px) {
+      .mas-pedido-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+@media (max-width: 600px) {
+      .mas-pedido-grid { grid-template-columns: repeat(2, 1fr); gap: 0.85rem; }
+      .mas-pedido-name { font-size: 0.75rem; }
+      .mas-pedido-micro { font-size: 0.7rem; }
+    }
+</style>
 
   <!-- JSON-LD LocalBusiness Schema -->
   <script type="application/ld+json">
@@ -1604,7 +1662,7 @@
             <div class="hero-stat-label">Geöffnet bis</div>
           </div>
           <div class="hero-stat">
-            <div class="hero-stat-num">⭐4.8</div>
+            <div class="hero-stat-num">⭐4.9</div>
             <div class="hero-stat-label">Google</div>
           </div>
         </div>
