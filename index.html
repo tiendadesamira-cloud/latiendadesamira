@@ -2043,8 +2043,8 @@
 
       <div class="anatomy-features-left">
         <div class="anatomy-feature reveal delay-1">
-          <div class="anatomy-feature-title">Horario hasta 23:30</div>
-          <div class="anatomy-feature-desc">Abiertos hasta las 23:30 cuando los supermercados ya han cerrado.</div>
+          <div class="anatomy-feature-title">Hasta tarde, todos los días</div>
+          <div class="anatomy-feature-desc">Abrimos cuando los supermercados ya han cerrado: hasta las 23h de domingo a jueves y hasta las 23:30 viernes y sábado.</div>
           <div class="anatomy-dot-line">
             <div class="dot-line-bar"></div>
             <div class="dot-line-circle"></div>
@@ -2248,7 +2248,7 @@
           <p class="footer-brand-desc">
             Tu tienda de confianza en Jerez de la Frontera. Snacks, bebidas, chucherías, embutidos, dulces, panadería, congelados y productos de hogar.
           </p>
-          <span class="footer-hours">🟢 Abierto hasta las 23:30</span>
+          <span class="footer-hours">🟢 Abierto · L-J hasta 23h · V-S hasta 23:30</span>
         </div>
 
         <div>
@@ -2295,7 +2295,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p class="footer-copy">© 2026 <span>La Tienda de Samira</span>. Todos los derechos reservados.</p>
+        <p class="footer-copy">© 2026 <span>La Tienda de Samira</span>. Todos los derechos reservados. · Web por <a href="https://automarketingdigital.es" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">Automarketing Digital</a></p>
         <div class="footer-legal">
           <a href="legal.html">Aviso legal</a>
           <a href="privacidad.html">Privacidad</a>
@@ -2396,8 +2396,9 @@
     }
 
     // ── Tracking de eventos GA4 ──
-    function trackClick(label) {);
-      }
+    function trackClick(label) {
+      // Cloudflare Web Analytics no tiene API de eventos custom (solo pageviews).
+      // Funcion noop hasta que decidamos Plausible o similar.
     }
     document.addEventListener('click', function(e) {
       var t = e.target.closest('a');

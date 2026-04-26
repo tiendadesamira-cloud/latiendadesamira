@@ -2297,7 +2297,7 @@
           <p class="footer-brand-desc">
             Your trusted store in Jerez de la Frontera. Snacks, drinks, sweets, deli meats, pastries, bakery, frozen foods and household products.
           </p>
-          <span class="footer-hours">🟢 Open until 11:30 PM</span>
+          <span class="footer-hours">🟢 Open · Mon-Thu until 11 PM · Fri-Sat until 11:30 PM</span>
         </div>
 
         <div>
@@ -2345,7 +2345,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p class="footer-copy">© 2026 <span>La Tienda de Samira</span>. All rights reserved.</p>
+        <p class="footer-copy">© 2026 <span>La Tienda de Samira</span>. All rights reserved. · Website by <a href="https://automarketingdigital.es" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">Automarketing Digital</a></p>
         <div class="footer-legal">
           <a href="legal.html" title="Document in Spanish only" hreflang="es">Legal notice</a>
           <a href="privacidad.html" title="Document in Spanish only" hreflang="es">Privacy</a>
@@ -2461,8 +2461,9 @@
     }
 
     // ── Tracking de eventos GA4 ──
-    function trackClick(label) {);
-      }
+    function trackClick(label) {
+      // Cloudflare Web Analytics no tiene API de eventos custom (solo pageviews).
+      // Funcion noop hasta que decidamos Plausible o similar.
     }
     document.addEventListener('click', function(e) {
       var t = e.target.closest('a');

@@ -2262,7 +2262,7 @@
           <p class="footer-brand-desc">
             Ihr Vertrauensgeschäft in Jerez de la Frontera. Snacks, Getränke, Süßigkeiten, Wurstwaren, Gebäck, Tiefkühlkost und Haushaltsprodukte.
           </p>
-          <span class="footer-hours">🟢 Geöffnet bis 23:30 Uhr</span>
+          <span class="footer-hours">🟢 Geöffnet · Mo-Do bis 23 Uhr · Fr-Sa bis 23:30 Uhr</span>
         </div>
 
         <div>
@@ -2310,7 +2310,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p class="footer-copy">© 2026 <span>La Tienda de Samira</span>. Alle Rechte vorbehalten.</p>
+        <p class="footer-copy">© 2026 <span>La Tienda de Samira</span>. Alle Rechte vorbehalten. · Website von <a href="https://automarketingdigital.es" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">Automarketing Digital</a></p>
         <div class="footer-legal">
           <a href="legal.html" title="Dokument nur auf Spanisch" hreflang="es">Impressum</a>
           <a href="privacidad.html" title="Dokument nur auf Spanisch" hreflang="es">Datenschutz</a>
@@ -2412,8 +2412,9 @@
     }
 
     // ── Tracking de eventos GA4 ──
-    function trackClick(label) {);
-      }
+    function trackClick(label) {
+      // Cloudflare Web Analytics no tiene API de eventos custom (solo pageviews).
+      // Funcion noop hasta que decidamos Plausible o similar.
     }
     document.addEventListener('click', function(e) {
       var t = e.target.closest('a');

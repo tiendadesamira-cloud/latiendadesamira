@@ -2299,7 +2299,7 @@
           <p class="footer-brand-desc">
             Votre épicerie de confiance à Jerez de la Frontera. Snacks, boissons, bonbons, charcuterie, douceurs, boulangerie, surgelés et produits ménagers.
           </p>
-          <span class="footer-hours">🟢 Ouvert jusqu'à 23h30</span>
+          <span class="footer-hours">🟢 Ouvert · Lun-Jeu jusqu'à 23h · Ven-Sam jusqu'à 23h30</span>
         </div>
 
         <div>
@@ -2347,7 +2347,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p class="footer-copy">© 2026 <span>La Tienda de Samira</span>. Tous droits réservés.</p>
+        <p class="footer-copy">© 2026 <span>La Tienda de Samira</span>. Tous droits réservés. · Site par <a href="https://automarketingdigital.es" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">Automarketing Digital</a></p>
         <div class="footer-legal">
           <a href="legal.html" title="Document en espagnol uniquement" hreflang="es">Mentions légales</a>
           <a href="privacidad.html" title="Document en espagnol uniquement" hreflang="es">Confidentialité</a>
@@ -2449,8 +2449,9 @@
     }
 
     // ── Tracking de eventos GA4 ──
-    function trackClick(label) {);
-      }
+    function trackClick(label) {
+      // Cloudflare Web Analytics no tiene API de eventos custom (solo pageviews).
+      // Funcion noop hasta que decidamos Plausible o similar.
     }
     document.addEventListener('click', function(e) {
       var t = e.target.closest('a');
