@@ -251,8 +251,7 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 34px;
-      height: 34px;
+      width: 44px; height: 44px;
       border-radius: 50%;
       text-decoration: none;
       font-size: 1.15rem;
@@ -316,7 +315,7 @@
       border-color: var(--pink);
     }
     @media (max-width: 768px) {
-      .lang-bar a { width: 40px; height: 40px; font-size: 1rem; }
+      .lang-bar a { width: 44px; height: 44px; font-size: 1rem; }
       .footer-lang-bar { flex-wrap: wrap; justify-content: center; }
     }
 
@@ -412,7 +411,7 @@
 
     .hero-title {
       font-family: 'Barlow Condensed', sans-serif;
-      font-size: clamp(3.5rem, 8vw, 7rem);
+      font-size: clamp(2.4rem, 7vw, 7rem);
       font-weight: 900;
       line-height: 0.92;
       text-transform: uppercase;
@@ -1306,7 +1305,9 @@
     .cta-fab svg { width: 22px; height: 22px; flex-shrink: 0; }
     .cta-fab-review { background: #4285F4; }
     .cta-fab-review:hover { background: #1a6ce8; }
-    .cta-fab-call { background: #E91E8C; }
+        .cta-fab-whatsapp { background: #25D366; }
+    .cta-fab-whatsapp:hover { background: #1ea752; }
+     background: #E91E8C; }
     .cta-fab-call:hover { background: #C0106E; }
     @media (max-width: 600px) {
       .cta-stack { right: 1rem; bottom: 1rem; gap: 0.6rem; }
@@ -1384,6 +1385,20 @@
       left: 10px;
       outline: 3px solid var(--white);
       outline-offset: 2px;
+    }
+  
+    /* anatomy-tablet-fix-2026 */
+    @media (max-width: 1024px) {
+      .anatomy-inner { display: block !important; }
+      .anatomy-image-wrap, .dot-line-bar { display: none !important; }
+      .anatomy-dot-line, .anatomy-dot { display: none !important; }
+      .anatomy-features-left, .anatomy-features-right {
+        display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-bottom: 1.5rem;
+      }
+      .anatomy-features-left .anatomy-feature,
+      .anatomy-features-right .anatomy-feature {
+        align-items: center !important; text-align: center !important;
+      }
     }
   </style>
 
@@ -2186,12 +2201,7 @@
   <section class="location" id="ubicacion">
     <div class="location-inner">
       <div class="map-wrapper reveal-left">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3199.8!2d-6.1270!3d36.6780!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0dd5!2sCalle+Tablao+bloque+4+local+8+Jerez+de+la+Frontera!5e0!3m2!1ses!2ses!4v1700000000000!5m2!1ses!2ses"
-          allowfullscreen=""
-          loading="lazy"
-          title="Ubicación Tienda de Samira"
-        ></iframe>
+        <iframe src="https://www.google.com/maps?q=La+Tienda+de+Samira,+C.+Tablao,+11406+Jerez+de+la+Frontera&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicacion La Tienda de Samira"></iframe>
       </div>
 
       <div class="contact-card reveal-right">
@@ -2455,6 +2465,13 @@
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .587l3.668 7.568L24 9.423l-6 5.847L19.336 24 12 19.897 4.664 24 6 15.27 0 9.423l8.332-1.268z"/></svg>
       <span class="cta-fab-label">Reseña en Google</span>
     </a>
+        <a class="cta-fab cta-fab-whatsapp"
+       href="https://wa.me/34856615453?text=Hola%2C%20quer%C3%ADa%20preguntar%20por%20Samira"
+       target="_blank" rel="noopener noreferrer"
+       aria-label="Escribir por WhatsApp">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.74.46 3.42 1.32 4.91L2.05 22l5.31-1.39c1.43.78 3.05 1.21 4.69 1.21 5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.81 14.06c-.24.66-1.42 1.27-2.04 1.36-.55.08-1.24.11-2-.13-.46-.15-1.06-.34-1.81-.66-3.18-1.37-5.27-4.59-5.43-4.8-.16-.21-1.3-1.73-1.3-3.3 0-1.57.82-2.34 1.11-2.66.29-.32.62-.4.83-.4l.6.01c.19.01.45-.07.7.54.26.65.88 2.22.96 2.39.08.16.13.34.03.55-.1.21-.16.34-.31.51-.16.18-.33.4-.47.54-.16.16-.32.33-.14.65.18.32.79 1.31 1.7 2.12 1.17 1.04 2.16 1.36 2.48 1.52.32.16.5.13.69-.08.18-.21.79-.92.99-1.24.21-.32.41-.27.7-.16.29.11 1.85.87 2.16 1.03.32.16.53.24.61.37.08.13.08.74-.16 1.4z"/></svg>
+      <span class="cta-fab-label">WhatsApp</span>
+    </a>
     <a class="cta-fab cta-fab-call"
        href="tel:+34856615453"
        aria-label="Llamar">
@@ -2465,5 +2482,49 @@
 
 
   <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5a8ab081f11f4811abd55cc01208f50b"}'></script><!-- End Cloudflare Web Analytics -->
+
+  <script>
+    // Banner Abierto AHORA dinamico — actualiza el texto segun hora real
+    (function() {
+      var el = document.querySelector('.footer-hours');
+      if (!el) return;
+      function updateStatus() {
+        var d = new Date();
+        var dow = d.getDay(); // 0=Dom, 1=Lun, ...
+        var hh = d.getHours();
+        var mm = d.getMinutes();
+        var nowMin = hh*60 + mm;
+        // Horarios L-J/D mañana 8-15, tarde 17:30-23
+        // V mañana 8-15, tarde 18-23:30
+        // S mañana 9-15:30, tarde 18-23:30
+        // D mañana 9-15:30, tarde 17:30-23
+        var ranges;
+        if (dow === 6) ranges = [[9*60, 15*60+30], [18*60, 23*60+30]]; // Sabado
+        else if (dow === 5) ranges = [[8*60, 15*60], [18*60, 23*60+30]]; // Viernes
+        else if (dow === 0) ranges = [[9*60, 15*60+30], [17*60+30, 23*60]]; // Domingo
+        else ranges = [[8*60, 15*60], [17*60+30, 23*60]]; // Lun-Jue
+        var open = false, closeAt = 0;
+        for (var i=0;i<ranges.length;i++) {
+          if (nowMin >= ranges[i][0] && nowMin < ranges[i][1]) {
+            open = true; closeAt = ranges[i][1]; break;
+          }
+        }
+        function fmt(min) { var h=Math.floor(min/60), m=min%60; return h + (m?':'+(m<10?'0'+m:m):'h'); }
+        if (open) {
+          el.innerHTML = '🟢 Abierto · cierra a las ' + fmt(closeAt);
+        } else {
+          // Buscar siguiente apertura
+          var next = null;
+          for (var j=0;j<ranges.length;j++) {
+            if (nowMin < ranges[j][0]) { next = ranges[j][0]; break; }
+          }
+          if (next) el.innerHTML = '🔴 Cerrado · abre a las ' + fmt(next);
+          else el.innerHTML = '🔴 Cerrado · abre mañana';
+        }
+      }
+      updateStatus();
+      setInterval(updateStatus, 60000);
+    })();
+  </script>
 </body>
 </html>
