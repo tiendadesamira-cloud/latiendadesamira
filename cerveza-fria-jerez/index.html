@@ -34,24 +34,6 @@
 
   <link rel="icon" href="../img/logo.jpg" type="image/jpeg" />
 
-  <!-- Google Analytics 4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G2FT7QE2NH"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-G2FT7QE2NH', { 'anonymize_ip': true });
-  </script>
-
-  <!-- Microsoft Clarity -->
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "wetd54ajct");
-  </script>
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Barlow+Condensed:wght@700;800;900&display=swap" rel="stylesheet" />
@@ -369,9 +351,9 @@
     <div style="max-width:460px;width:100%;background:#fff;border-radius:20px;padding:2.5rem 2rem;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,0.5);">
       <div style="font-size:3rem;margin-bottom:0.5rem;" aria-hidden="true">🔞</div>
       <h2 id="ageGateTitle" style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.75rem;color:#0B0F1A;margin:0 0 1rem;text-transform:uppercase;">Verificación de edad</h2>
-      <p style="color:#4A4A6A;font-size:0.95rem;line-height:1.6;margin:0 0 1.5rem;">Esta página contiene información sobre bebidas alcohólicas. Para continuar, confirma que eres mayor de 18 años.</p>
+      <p style="color:#4A4A6A;font-size:0.95rem;line-height:1.6;margin:0 0 1.5rem;">Esta página contiene información sobre bebidas alcohólicas. Al pulsar "Confirmo tener 18 años o más" declaras bajo tu responsabilidad ser mayor de 18 años, conforme a la Ley 34/1988 art. 3c.</p>
       <div style="display:flex;flex-direction:column;gap:0.6rem;">
-        <button type="button" id="ageYes" style="background:#E91E8C;color:#fff;border:none;padding:0.85rem 1.5rem;border-radius:50px;font-weight:700;font-size:0.95rem;cursor:pointer;min-height:48px;">Sí, soy mayor de 18</button>
+        <button type="button" id="ageYes" style="background:#E91E8C;color:#fff;border:none;padding:0.85rem 1.5rem;border-radius:50px;font-weight:700;font-size:0.95rem;cursor:pointer;min-height:48px;">Confirmo tener 18 años o más</button>
         <button type="button" id="ageNo" style="background:transparent;color:#4A4A6A;border:1.5px solid #E0E0E0;padding:0.85rem 1.5rem;border-radius:50px;font-weight:600;font-size:0.9rem;cursor:pointer;min-height:48px;">No, salir</button>
       </div>
       <p style="color:#8A8A9A;font-size:0.75rem;margin:1.25rem 0 0;line-height:1.5;">El consumo de alcohol por menores de edad es ilegal. Bebe con responsabilidad. <a href="/legal.html" style="color:#E91E8C;">Aviso legal</a></p>
@@ -701,8 +683,7 @@
       entries.forEach(function(entry) { if (entry.isIntersecting) entry.target.classList.add('visible'); });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
     revealEls.forEach(function(el) { revealObs.observe(el); });
-    function trackClick(label) {
-      if (typeof gtag === 'function') { gtag('event', 'contact_click', { 'event_category': 'engagement', 'event_label': label }); }
+    function trackClick(label) {); }
     }
     document.addEventListener('click', function(e) {
       var t = e.target.closest('a'); if (!t) return;

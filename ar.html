@@ -38,24 +38,6 @@
   <meta name="twitter:image" content="https://latiendadesamira.cloud/img/foto6.jpg" />
   <link rel="icon" href="img/logo.jpg" type="image/jpeg" />
 
-  <!-- Google Analytics 4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G2FT7QE2NH"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-G2FT7QE2NH', { 'anonymize_ip': true });
-  </script>
-
-  <!-- Microsoft Clarity -->
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "wetd54ajct");
-</script>
-
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -2092,7 +2074,7 @@
           <div class="review-author">
             <div class="review-avatar">M</div>
             <div>
-              <div class="review-name">Minna Sylvia Hjorth</div>
+              <div class="review-name">Minna S. H.</div>
               <div class="review-sub">عميلة دائمة · Google</div>
             </div>
           </div>
@@ -2104,7 +2086,7 @@
           <div class="review-author">
             <div class="review-avatar">D</div>
             <div>
-              <div class="review-name">Dolores Palomeque Ruiz-Berdejo</div>
+              <div class="review-name">Dolores P.</div>
               <div class="review-sub">مراجعة موثّقة في Google · 5 ★</div>
             </div>
           </div>
@@ -2116,7 +2098,7 @@
           <div class="review-author">
             <div class="review-avatar">B</div>
             <div>
-              <div class="review-name">Belén Morillo</div>
+              <div class="review-name">Belén M.</div>
               <div class="review-sub">مراجعة موثّقة في Google · 5 ★</div>
             </div>
           </div>
@@ -2127,7 +2109,7 @@
           <div class="review-author">
             <div class="review-avatar">M</div>
             <div>
-              <div class="review-name">Manuela Delgado Galán</div>
+              <div class="review-name">Manuela D.</div>
               <div class="review-sub">مراجعة موثّقة في Google · 5 ★</div>
             </div>
           </div>
@@ -2138,7 +2120,7 @@
           <div class="review-author">
             <div class="review-avatar">Y</div>
             <div>
-              <div class="review-name">Yasminaa Mohamed</div>
+              <div class="review-name">Yasminaa M.</div>
               <div class="review-sub">مراجعة Google موثقة · 5 ★</div>
             </div>
           </div>
@@ -2319,13 +2301,11 @@
     (function() {
       var scrollFired = { 50: false, 75: false, 100: false };
       window.addEventListener('scroll', function() {
-        if (typeof gtag !== 'function') return;
         var h = document.documentElement;
         var reached = ((window.scrollY + window.innerHeight) / h.scrollHeight) * 100;
         [50, 75, 100].forEach(function(pct) {
           if (!scrollFired[pct] && reached >= pct) {
             scrollFired[pct] = true;
-            gtag('event', 'scroll_depth', { 'depth': pct, 'page': location.pathname });
           }
         });
       }, { passive: true });
@@ -2376,12 +2356,7 @@
     }
 
     // ── Tracking de eventos GA4 ──
-    function trackClick(label) {
-      if (typeof gtag === 'function') {
-        gtag('event', 'contact_click', {
-          'event_category': 'engagement',
-          'event_label': label
-        });
+    function trackClick(label) {);
       }
     }
     document.addEventListener('click', function(e) {
