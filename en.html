@@ -2464,7 +2464,7 @@
       var t = e.target.closest('a');
       if (!t) return;
       var href = t.getAttribute('href') || '';
-      else if (href.indexOf('tel:') === 0) trackClick('telefono');
+      if (href.indexOf('tel:') === 0) trackClick('telefono');
       else if (href.indexOf('glovo') !== -1) trackClick('glovo');
       else if (href.indexOf('writereview') !== -1) trackClick('resena_google');
       else if (href.indexOf('maps') !== -1) trackClick('google_maps');
