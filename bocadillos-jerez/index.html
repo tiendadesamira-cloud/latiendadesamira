@@ -568,8 +568,7 @@
       entries.forEach(function(entry) { if (entry.isIntersecting) entry.target.classList.add('visible'); });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
     revealEls.forEach(function(el) { revealObs.observe(el); });
-    function trackClick(label) {); }
-    }
+    function trackClick(label) {}
     document.addEventListener('click', function(e) {
       var t = e.target.closest('a'); if (!t) return;
       var href = t.getAttribute('href') || '';

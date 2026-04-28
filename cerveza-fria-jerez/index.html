@@ -15,7 +15,6 @@
   <link rel="canonical" href="https://latiendadesamira.cloud/cerveza-fria-jerez/" />
   <link rel="alternate" hreflang="es" href="https://latiendadesamira.cloud/cerveza-fria-jerez/" />
   <link rel="alternate" hreflang="x-default" href="https://latiendadesamira.cloud/cerveza-fria-jerez/" />
-  <link rel="alternate" hreflang="es" href="https://latiendadesamira.cloud/cerveza-fria-jerez/" />
 
   <meta property="og:title" content="Cerveza Fría en Jerez · Cruzcampo y más marcas – Tienda de Samira" />
   <meta property="og:description" content="Compra tu cerveza fría en La Tienda de Samira, Jerez. Cruzcampo litro, lata y sin alcohol, Estrella Sur, Monster y más bebidas frías hasta las 23:30." />
@@ -141,7 +140,7 @@
       {"@type":"ListItem","position":4,"item":{
         "@type":"Product","name":"Estrella Sur Lata",
         "description":"Cerveza Estrella Sur en lata de 33cl. Sabor andaluz clásico. Venta exclusiva a mayores de 18 años.",
-        "brand":{"@type":"Brand","name":"Estrella Galicia"},
+        "brand":{"@type":"Brand","name":"Cervezas Alhambra"},
         "image":"https://latiendadesamira.cloud/img/nevera_monster.jpg",
         "offers":{"@type":"Offer","price":"0.80","priceCurrency":"EUR","availability":"https://schema.org/InStock","url":"https://latiendadesamira.cloud/cerveza-fria-jerez/","itemCondition":"https://schema.org/NewCondition",
           "shippingDetails":{"@type":"OfferShippingDetails","shippingRate":{"@type":"MonetaryAmount","value":"0","currency":"EUR"},"shippingDestination":{"@type":"DefinedRegion","addressCountry":"ES"},"deliveryTime":{"@type":"ShippingDeliveryTime","handlingTime":{"@type":"QuantitativeValue","minValue":0,"maxValue":0,"unitCode":"DAY"},"transitTime":{"@type":"QuantitativeValue","minValue":0,"maxValue":1,"unitCode":"HUR"}}},
@@ -683,8 +682,7 @@
       entries.forEach(function(entry) { if (entry.isIntersecting) entry.target.classList.add('visible'); });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
     revealEls.forEach(function(el) { revealObs.observe(el); });
-    function trackClick(label) {); }
-    }
+    function trackClick(label) {}
     document.addEventListener('click', function(e) {
       var t = e.target.closest('a'); if (!t) return;
       var href = t.getAttribute('href') || '';

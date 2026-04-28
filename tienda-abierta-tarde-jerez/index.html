@@ -15,7 +15,6 @@
   <link rel="canonical" href="https://latiendadesamira.cloud/tienda-abierta-tarde-jerez/" />
   <link rel="alternate" hreflang="es" href="https://latiendadesamira.cloud/tienda-abierta-tarde-jerez/" />
   <link rel="alternate" hreflang="x-default" href="https://latiendadesamira.cloud/tienda-abierta-tarde-jerez/" />
-  <link rel="alternate" hreflang="es" href="https://latiendadesamira.cloud/tienda-abierta-tarde-jerez/" />
 
   <meta property="og:title" content="Tienda Abierta Tarde y Noche en Jerez · Hasta las 23:30 – Samira" />
   <meta property="og:description" content="¿Buscas tienda abierta tarde en Jerez? La Tienda de Samira abre mañana y tarde, hasta las 23:30. Bebidas, pan, chuches y mucho más cerca de ti." />
@@ -613,8 +612,7 @@
       entries.forEach(function(entry) { if (entry.isIntersecting) entry.target.classList.add('visible'); });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
     revealEls.forEach(function(el) { revealObs.observe(el); });
-    function trackClick(label) {); }
-    }
+    function trackClick(label) {}
     document.addEventListener('click', function(e) {
       var t = e.target.closest('a'); if (!t) return;
       var href = t.getAttribute('href') || '';
